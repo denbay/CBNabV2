@@ -28,7 +28,9 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '11.0'
 
-  s.source_files = 'Source/**/*.swift'
+  s.description      = <<-DESC
+  'DscrollView is an awesome pod aimed to make yor life easier around UIScrollViews.'
+                         DESC
   s.swift_version = '5.0'
   s.platforms = {
     "ios": "11.0"
