@@ -1,0 +1,22 @@
+{
+  "name": "CBNab",
+  "version": "0.1.0",
+  "summary": "A short description of CBNab.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/denbay/CBNab",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "denbay": "dracmor@ya.ru"
+  },
+  "source": {
+    "git": "https://github.com/denbay/CBNab.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "CBNab/Classes/**/*"
+}

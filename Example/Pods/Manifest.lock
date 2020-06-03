@@ -1,0 +1,16 @@
+PODS:
+  - CBNab (0.1.0)
+
+DEPENDENCIES:
+  - CBNab (from `../`)
+
+EXTERNAL SOURCES:
+  CBNab:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CBNab: f170432ac87d0acba5719b9e57bb9cc9bf06a41f
+
+PODFILE CHECKSUM: ac161dcc1a81a280eeab6e3d15477f23ab042809
+
+COCOAPODS: 1.8.4
