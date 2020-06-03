@@ -28,9 +28,13 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/denbay/CBNab.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '11.0'
 
-  s.source_files = 'CBNab/Classes/**/*'
+  s.source_files = 'Source/**/*'
+  s.swift_version = '5.0'
+  s.platforms = {
+    "ios": "11.0"
+  }
   
   # s.resource_bundles = {
   #   'CBNab' => ['CBNab/Assets/*.png']
@@ -38,5 +42,10 @@ TODO: Add long description of the pod here.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'SnapKit', '~> 5.0.0'
+  s.dependency 'Branch'
+  s.dependency 'FacebookSDK'
+  s.dependency 'Moya'
+  s.dependency 'SwiftyStoreKit'
+
 end

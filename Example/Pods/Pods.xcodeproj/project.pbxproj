@@ -12,11 +12,11 @@
 		3DE096F1602F38538B79C551FB5BBD28 /* Pods-CBNab_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 342E676AB380307097147F539EB38864 /* Pods-CBNab_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6922327AF81FC7966F1684C8CD27391F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		8B58DFDCFFEB696D372DFB21BA5C3886 /* CBNab-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E05CCF6363495BA874F6F84147921BF2 /* CBNab-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		926491C624885A3C006E3740 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926491C524885A3C006E3740 /* InfoViewController.swift */; };
 		AD436657FB7DC9856CE2A6E89C648C71 /* Pods-CBNab_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A2132E5BB3C846B7BB27720E52383331 /* Pods-CBNab_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEB6E667DE428D50993B3C3F72B5AAF2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		D6FA06582DA77F70BA57242B7B4BBE1D /* Pods-CBNab_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A478F5A857E48344F1FCC79C0C92A2B0 /* Pods-CBNab_Example-dummy.m */; };
 		D7779FC25DC28EFEAFDEA7DEDA42F058 /* Pods-CBNab_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF09BFECB6F954991A5461997638F75 /* Pods-CBNab_Tests-dummy.m */; };
-		F2AECFBC3E6752E1EB53179EDAAA3242 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED446BD67DAC3C7AE131F9B00DDE2C5 /* ReplaceMe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,7 @@
 /* Begin PBXFileReference section */
 		0C6A541A68B71A5ED70DFA2219E84DC5 /* CBNab-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CBNab-dummy.m"; sourceTree = "<group>"; };
 		11BA31DF83ECE0929FC618CCEE3E98F6 /* Pods-CBNab_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CBNab_Tests.modulemap"; sourceTree = "<group>"; };
-		172858BDDE883BACBE38CDDD51020D27 /* CBNab.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = CBNab.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		172858BDDE883BACBE38CDDD51020D27 /* CBNab.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = CBNab.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		206B45E19BDCD61E3B31426F6E3ED04D /* CBNab.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CBNab.modulemap; sourceTree = "<group>"; };
 		30420638384733D2DF4646F11FBC97BB /* CBNab.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CBNab.xcconfig; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -50,25 +50,25 @@
 		597C5DF72E980B0A9BBFAB7CA968472E /* Pods-CBNab_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CBNab_Tests-Info.plist"; sourceTree = "<group>"; };
 		5EF9D6958A04C4AF0F645A73B68C6415 /* Pods-CBNab_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CBNab_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		5F779390C15F23720EFB474E724965F5 /* Pods-CBNab_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CBNab_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		63869B8E3CEA91F5018F6C4E1BDDD756 /* CBNab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CBNab.framework; path = CBNab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6813DC9DFDDF6043DC074ACE2473E725 /* Pods_CBNab_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CBNab_Tests.framework; path = "Pods-CBNab_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63869B8E3CEA91F5018F6C4E1BDDD756 /* CBNab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CBNab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6813DC9DFDDF6043DC074ACE2473E725 /* Pods_CBNab_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CBNab_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		712C3DB7F05FCE5FE6B2424F768FCA38 /* Pods-CBNab_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CBNab_Example.modulemap"; sourceTree = "<group>"; };
 		71589D4D7F9A544E4BE7F2EA7FCFBEE2 /* Pods-CBNab_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CBNab_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		7EFB3C4FB29E774EFA7606374D76A78F /* Pods-CBNab_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CBNab_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		81CDD3878AAA3358DFF03D32139C392B /* Pods_CBNab_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CBNab_Example.framework; path = "Pods-CBNab_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81CDD3878AAA3358DFF03D32139C392B /* Pods_CBNab_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CBNab_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85567D03608F93957477503C8909403F /* CBNab-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CBNab-prefix.pch"; sourceTree = "<group>"; };
 		8CF4F317D1F7CFC4FDC7A3F28474F7BA /* Pods-CBNab_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CBNab_Example-Info.plist"; sourceTree = "<group>"; };
-		919A5F5E16E611DA300029484B75F41F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		919A5F5E16E611DA300029484B75F41F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		926491C524885A3C006E3740 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A1F9AFD7F455A0F9BEFA4BC1DF0F2828 /* Pods-CBNab_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CBNab_Example-frameworks.sh"; sourceTree = "<group>"; };
 		A2132E5BB3C846B7BB27720E52383331 /* Pods-CBNab_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CBNab_Example-umbrella.h"; sourceTree = "<group>"; };
 		A478F5A857E48344F1FCC79C0C92A2B0 /* Pods-CBNab_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CBNab_Example-dummy.m"; sourceTree = "<group>"; };
 		ABA79284F64ED7ABB46C42156AF2D688 /* Pods-CBNab_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CBNab_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		C8B154F82A425FDB60337B7A9E6BA21C /* Pods-CBNab_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CBNab_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E05CCF6363495BA874F6F84147921BF2 /* CBNab-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CBNab-umbrella.h"; sourceTree = "<group>"; };
-		E32287FE2C98900BDC0B47DDDB543B8C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		E32287FE2C98900BDC0B47DDDB543B8C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EC15EBCBB993976BA4224F4C33410675 /* CBNab-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CBNab-Info.plist"; sourceTree = "<group>"; };
-		FED446BD67DAC3C7AE131F9B00DDE2C5 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = CBNab/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,12 +136,20 @@
 		917508FC6F6015105C3F296309B06B68 /* CBNab */ = {
 			isa = PBXGroup;
 			children = (
-				FED446BD67DAC3C7AE131F9B00DDE2C5 /* ReplaceMe.swift */,
+				926491C4248859F8006E3740 /* Source */,
 				BF0D94665F8AB6573993BAFDE1C98247 /* Pod */,
 				E125F6040C76AC9F2AC1CB3532476F59 /* Support Files */,
 			);
 			name = CBNab;
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		926491C4248859F8006E3740 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				926491C524885A3C006E3740 /* InfoViewController.swift */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 		97016199D4454CC81F98A37D85A7CD6F /* Pods-CBNab_Example */ = {
@@ -315,6 +323,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
+				TargetAttributes = {
+					491A53BC33D1BC53FE8B8E56EB2AE4C3 = {
+						LastSwiftMigration = 1130;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -365,8 +378,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				926491C624885A3C006E3740 /* InfoViewController.swift in Sources */,
 				30A05B27B51FE93D07E92C172CA172DC /* CBNab-dummy.m in Sources */,
-				F2AECFBC3E6752E1EB53179EDAAA3242 /* ReplaceMe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +421,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 30420638384733D2DF4646F11FBC97BB /* CBNab.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -420,7 +434,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/CBNab/CBNab-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/CBNab/CBNab-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/CBNab/CBNab.modulemap";
 				PRODUCT_MODULE_NAME = CBNab;
@@ -428,7 +442,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -452,7 +466,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-CBNab_Tests/Pods-CBNab_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-CBNab_Tests/Pods-CBNab_Tests.modulemap";
@@ -486,7 +500,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-CBNab_Example/Pods-CBNab_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-CBNab_Example/Pods-CBNab_Example.modulemap";
@@ -520,7 +534,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-CBNab_Example/Pods-CBNab_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-CBNab_Example/Pods-CBNab_Example.modulemap";
@@ -585,13 +599,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -648,7 +661,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -665,6 +678,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 30420638384733D2DF4646F11FBC97BB /* CBNab.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -677,7 +691,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/CBNab/CBNab-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/CBNab/CBNab-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/CBNab/CBNab.modulemap";
 				PRODUCT_MODULE_NAME = CBNab;
@@ -685,7 +699,8 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -708,7 +723,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-CBNab_Tests/Pods-CBNab_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-CBNab_Tests/Pods-CBNab_Tests.modulemap";
