@@ -22,15 +22,13 @@ TODO: Add long description of the pod here.
                        DESC
 
   s.homepage         = 'https://github.com/denbay/CBNab'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'denbay' => 'dracmor@ya.ru' }
   s.source           = { :git => 'https://github.com/denbay/CBNab.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '11.0'
 
-  s.source_files = 'Source/**/*'
+  s.source_files = 'Source/**/*.swift'
   s.swift_version = '5.0'
   s.platforms = {
     "ios": "11.0"
@@ -43,9 +41,5 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   s.dependency 'SnapKit', '~> 5.0.0'
-  s.dependency 'Branch'
-  s.dependency 'FacebookSDK'
-  s.dependency 'Moya'
-  s.dependency 'SwiftyStoreKit'
 
 end
