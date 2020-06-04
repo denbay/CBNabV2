@@ -9,14 +9,14 @@
 import UIKit
 //import SnapKit
 
-class InfoViewController: UIViewController {
+public class InfoViewController: UIViewController {
     
     // - UI
     private let titleLabel = UILabel()
     private let contactDevelopers = UIButton()
     private let termsOfUseButton = UIButton()
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
     }
     

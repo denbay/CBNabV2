@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'CBNab'
-  s.version          = '0.1.3'
+  s.version          = '0.1.6'
   s.summary          = 'Awesome lib.'
 
   s.description      = <<-DESC
@@ -29,5 +29,9 @@ Pod::Spec.new do |s|
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   s.dependency 'SnapKit', '~> 5.0.0'
+  s.dependency 'FacebookSDK'
+  s.dependency 'Branch'
+  s.dependency 'Moya'
+  s.dependency 'SwiftyStoreKit'
 
 end

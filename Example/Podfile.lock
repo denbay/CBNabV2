@@ -1,16 +1,64 @@
 PODS:
-  - CBNab (0.1.0)
+  - Alamofire (5.2.1)
+  - Branch (0.34.0)
+  - CBNab (0.1.4):
+    - Branch
+    - FacebookSDK
+    - Moya
+    - SnapKit (~> 5.0.0)
+    - SwiftyStoreKit
+  - FacebookSDK (6.5.1):
+    - FacebookSDK/CoreKit (= 6.5.1)
+    - FacebookSDK/MarketingKit (= 6.5.1)
+  - FacebookSDK/CoreKit (6.5.1):
+    - FBSDKCoreKit (~> 6.5.1)
+  - FacebookSDK/MarketingKit (6.5.1):
+    - FacebookSDK/CoreKit
+    - FBSDKMarketingKit (~> 6.5.1)
+  - FBSDKCoreKit (6.5.2):
+    - FBSDKCoreKit/Basics (= 6.5.2)
+    - FBSDKCoreKit/Core (= 6.5.2)
+  - FBSDKCoreKit/Basics (6.5.2)
+  - FBSDKCoreKit/Core (6.5.2):
+    - FBSDKCoreKit/Basics
+  - FBSDKMarketingKit (6.5.2):
+    - FBSDKCoreKit (~> 6.5.2)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - SnapKit (5.0.1)
+  - SwiftyStoreKit (0.15.0)
 
 DEPENDENCIES:
   - CBNab (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Branch
+    - FacebookSDK
+    - FBSDKCoreKit
+    - FBSDKMarketingKit
+    - Moya
+    - SnapKit
+    - SwiftyStoreKit
 
 EXTERNAL SOURCES:
   CBNab:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CBNab: f170432ac87d0acba5719b9e57bb9cc9bf06a41f
+  Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  Branch: 446aeb832102f56f04edf5fa7cb0a752dc392ca7
+  CBNab: 14a7f12ac848123f24fac22eed0e2b8dd15e5220
+  FacebookSDK: cb4b62619b27a9712170d82a95f7ebd48a4720da
+  FBSDKCoreKit: ada5c8a05188daefc9addb985c52b8a1b26da519
+  FBSDKMarketingKit: 2c6f0e0e2c16179d8bdf9a4921e68500a4cce4d8
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftyStoreKit: 033d06b6f87955405d3f844a18a7687c2438592a
 
-PODFILE CHECKSUM: ac161dcc1a81a280eeab6e3d15477f23ab042809
+PODFILE CHECKSUM: db92f4efbf5a43bbcdb77612028649e70be73bd8
 
 COCOAPODS: 1.8.4
