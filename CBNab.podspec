@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'CBNab'
-  s.version          = '0.1.7'
+  s.version          = '0.1.8'
   s.summary          = 'Awesome lib.'
 
   s.description      = <<-DESC

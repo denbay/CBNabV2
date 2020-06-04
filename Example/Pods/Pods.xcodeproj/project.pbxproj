@@ -366,17 +366,18 @@
 		918A68FAD69B1F011230EE28682CC889 /* BNCContentDiscoveryManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B9785E7EFE2590D2413C345141A5476 /* BNCContentDiscoveryManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		91B837CE0DCD8EDB300FCDFFA1279162 /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F159DB2ACC513F8495A612ED513142D /* HTTPHeaders.swift */; };
 		92093831B264B4574CB47658832A7AF0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D268D41B0C718EBA32EEE811B602607 /* SystemConfiguration.framework */; };
-		926491D424887544006E3740 /* CBPushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926491D22488742C006E3740 /* CBPushNotificationManager.swift */; };
-		926491D724887693006E3740 /* CBPurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926491D52488768E006E3740 /* CBPurchaseManager.swift */; };
-		926491DA24887754006E3740 /* CBViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926491D824887740006E3740 /* CBViewControllerExtension.swift */; };
-		926491DD2488777D006E3740 /* CBUserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926491DB24887777006E3740 /* CBUserDefaultsManager.swift */; };
-		926491DF24887B00006E3740 /* CBDeepLinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926491DE24887B00006E3740 /* CBDeepLinkManager.swift */; };
-		926491E124887B35006E3740 /* CBURLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926491E024887B35006E3740 /* CBURLExtension.swift */; };
-		926491E424887F46006E3740 /* CBLoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926491E324887F46006E3740 /* CBLoaderViewController.swift */; };
-		926491E624887F7E006E3740 /* CBDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926491E524887F7E006E3740 /* CBDataProvider.swift */; };
-		926491E824887FF6006E3740 /* CBResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926491E724887FF6006E3740 /* CBResponseModel.swift */; };
-		926491EA24888078006E3740 /* CBPollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926491E924888078006E3740 /* CBPollViewController.swift */; };
-		926491EC24888191006E3740 /* CBShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926491EB24888191006E3740 /* CBShared.swift */; };
+		926491FB2488898C006E3740 /* CBUserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926491EE2488898C006E3740 /* CBUserDefaultsManager.swift */; };
+		926491FC2488898C006E3740 /* CBURLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926491EF2488898C006E3740 /* CBURLExtension.swift */; };
+		926491FD2488898C006E3740 /* CBNab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926491F02488898C006E3740 /* CBNab.swift */; };
+		926491FE2488898C006E3740 /* CBShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926491F12488898C006E3740 /* CBShared.swift */; };
+		926491FF2488898C006E3740 /* CBDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926491F22488898C006E3740 /* CBDataProvider.swift */; };
+		926492002488898C006E3740 /* CBLoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926491F32488898C006E3740 /* CBLoaderViewController.swift */; };
+		926492012488898C006E3740 /* CBViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926491F42488898C006E3740 /* CBViewControllerExtension.swift */; };
+		926492022488898C006E3740 /* CBResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926491F52488898C006E3740 /* CBResponseModel.swift */; };
+		926492032488898C006E3740 /* CBPurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926491F62488898C006E3740 /* CBPurchaseManager.swift */; };
+		926492042488898C006E3740 /* CBDeepLinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926491F72488898C006E3740 /* CBDeepLinkManager.swift */; };
+		926492052488898C006E3740 /* CBPushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926491F82488898C006E3740 /* CBPushNotificationManager.swift */; };
+		926492072488898C006E3740 /* CBPollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926491FA2488898C006E3740 /* CBPollViewController.swift */; };
 		9272CF91B82EF5B4C33D0B47B40CD937 /* BranchCrossPlatformID.h in Headers */ = {isa = PBXBuildFile; fileRef = DBE77D2B1340928BF1605B11F7FD8941 /* BranchCrossPlatformID.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9317165304D1F1DFA02A928715925D7A /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA9AB74B2C6E447485AC91F36F53DA3 /* Cancellable.swift */; };
 		9339FAB2610447DC6090EA7769921809 /* BranchSpotlightUrlRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B452A8A348ADDD418D59D0560250795 /* BranchSpotlightUrlRequest.m */; };
@@ -405,7 +406,6 @@
 		9D6B76CA998035154BB9AE6427F60D69 /* FBSDKAppEventsState.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CB5337DF063EE4CD7E062A010910E2 /* FBSDKAppEventsState.m */; };
 		9E0AF48FA9E45B17986B84A0C2DA1FDB /* FBSDKMeasurementEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 254503878E2D8B2ABF465600B4925EC3 /* FBSDKMeasurementEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9E9596BB9498B8E959B901884FF8DD0F /* FBSDKAppEvents.h in Headers */ = {isa = PBXBuildFile; fileRef = 97CAC0DF7FF1F8539F2C39DAC856F61F /* FBSDKAppEvents.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9EB09D40350F80BD7290AD93C428E805 /* CBNab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F59D1D89A586B1C0625B51C5D26BDC9 /* CBNab.swift */; };
 		9F5F0F3242AE8015373DD34E98B75EB5 /* FBSDKBridgeAPIProtocolWebV2.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A6EA22100A81449A0CD2E453A7D7F1B /* FBSDKBridgeAPIProtocolWebV2.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		9F63D461B6AFB6EE525AC3689B6F6FA2 /* BNCServerRequestQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = A03D558566DE7D671F8FE8E3CB93703E /* BNCServerRequestQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9FED70D1E1FBFB80E974E999EF732258 /* RetryPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE28F358475D7500ED8CD675A768CD70 /* RetryPolicy.swift */; };
@@ -893,7 +893,6 @@
 		3ED51892FF4717B07631725AA8206279 /* BranchSetIdentityRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BranchSetIdentityRequest.m; path = "Branch-SDK/Networking/Requests/BranchSetIdentityRequest.m"; sourceTree = "<group>"; };
 		3EDF61A5DC344AA912B2FAB9AB612357 /* FBSDKSwizzler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKSwizzler.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKSwizzler.m; sourceTree = "<group>"; };
 		3F4B230F641A8897D36E16FB8B6D2CE5 /* FBSDKLibAnalyzer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKLibAnalyzer.h; path = FBSDKCoreKit/FBSDKCoreKit/Basics/Instrument/FBSDKLibAnalyzer.h; sourceTree = "<group>"; };
-		3F59D1D89A586B1C0625B51C5D26BDC9 /* CBNab.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CBNab.swift; path = Source/CBNab.swift; sourceTree = "<group>"; };
 		3F8CAAD9804CC119C756E280B396326B /* AccessTokenPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AccessTokenPlugin.swift; path = Sources/Moya/Plugins/AccessTokenPlugin.swift; sourceTree = "<group>"; };
 		40305624E7FC154EDC1EDF96793E0CDC /* BNCPreferenceHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BNCPreferenceHelper.m; path = "Branch-SDK/BNCPreferenceHelper.m"; sourceTree = "<group>"; };
 		40FCA987DED5EC311520127D89BC3CE8 /* FBSDKTriStateBOOL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKTriStateBOOL.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKTriStateBOOL.h; sourceTree = "<group>"; };
@@ -1112,17 +1111,18 @@
 		90ABF4B8E5DEAD12E9AB8915A0962289 /* BNCUserAgentCollector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BNCUserAgentCollector.m; path = "Branch-SDK/BNCUserAgentCollector.m"; sourceTree = "<group>"; };
 		91A823840E3557BDC0ABF0D04704348E /* FacebookSDKStrings.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKStrings.bundle; sourceTree = "<group>"; };
 		91F00FA788606CF2788D1D6B33BC5539 /* BNCAppleReceipt.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BNCAppleReceipt.h; path = "Branch-SDK/BNCAppleReceipt.h"; sourceTree = "<group>"; };
-		926491D22488742C006E3740 /* CBPushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBPushNotificationManager.swift; sourceTree = "<group>"; };
-		926491D52488768E006E3740 /* CBPurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBPurchaseManager.swift; sourceTree = "<group>"; };
-		926491D824887740006E3740 /* CBViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBViewControllerExtension.swift; sourceTree = "<group>"; };
-		926491DB24887777006E3740 /* CBUserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBUserDefaultsManager.swift; sourceTree = "<group>"; };
-		926491DE24887B00006E3740 /* CBDeepLinkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBDeepLinkManager.swift; sourceTree = "<group>"; };
-		926491E024887B35006E3740 /* CBURLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBURLExtension.swift; sourceTree = "<group>"; };
-		926491E324887F46006E3740 /* CBLoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBLoaderViewController.swift; sourceTree = "<group>"; };
-		926491E524887F7E006E3740 /* CBDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBDataProvider.swift; sourceTree = "<group>"; };
-		926491E724887FF6006E3740 /* CBResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBResponseModel.swift; sourceTree = "<group>"; };
-		926491E924888078006E3740 /* CBPollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBPollViewController.swift; sourceTree = "<group>"; };
-		926491EB24888191006E3740 /* CBShared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBShared.swift; sourceTree = "<group>"; };
+		926491EE2488898C006E3740 /* CBUserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBUserDefaultsManager.swift; sourceTree = "<group>"; };
+		926491EF2488898C006E3740 /* CBURLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBURLExtension.swift; sourceTree = "<group>"; };
+		926491F02488898C006E3740 /* CBNab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBNab.swift; sourceTree = "<group>"; };
+		926491F12488898C006E3740 /* CBShared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBShared.swift; sourceTree = "<group>"; };
+		926491F22488898C006E3740 /* CBDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBDataProvider.swift; sourceTree = "<group>"; };
+		926491F32488898C006E3740 /* CBLoaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBLoaderViewController.swift; sourceTree = "<group>"; };
+		926491F42488898C006E3740 /* CBViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBViewControllerExtension.swift; sourceTree = "<group>"; };
+		926491F52488898C006E3740 /* CBResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBResponseModel.swift; sourceTree = "<group>"; };
+		926491F62488898C006E3740 /* CBPurchaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPurchaseManager.swift; sourceTree = "<group>"; };
+		926491F72488898C006E3740 /* CBDeepLinkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBDeepLinkManager.swift; sourceTree = "<group>"; };
+		926491F82488898C006E3740 /* CBPushNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPushNotificationManager.swift; sourceTree = "<group>"; };
+		926491FA2488898C006E3740 /* CBPollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPollViewController.swift; sourceTree = "<group>"; };
 		9269E7EF1C1892D284A71F3C500F7BEE /* FBSDKKeychainStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKKeychainStore.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKKeychainStore.h; sourceTree = "<group>"; };
 		93062AA4CEA55A85A892DAB295D400B5 /* Moya+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Moya+Alamofire.swift"; path = "Sources/Moya/Moya+Alamofire.swift"; sourceTree = "<group>"; };
 		946BC7CF5EC390C8498E0F696498047F /* NSString+Branch.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+Branch.m"; path = "Branch-SDK/NSString+Branch.m"; sourceTree = "<group>"; };
@@ -2058,18 +2058,7 @@
 		7C81C5F43A81A04C8AA62575D93742E9 /* CBNab */ = {
 			isa = PBXGroup;
 			children = (
-				3F59D1D89A586B1C0625B51C5D26BDC9 /* CBNab.swift */,
-				926491D52488768E006E3740 /* CBPurchaseManager.swift */,
-				926491D22488742C006E3740 /* CBPushNotificationManager.swift */,
-				926491DB24887777006E3740 /* CBUserDefaultsManager.swift */,
-				926491DE24887B00006E3740 /* CBDeepLinkManager.swift */,
-				926491D824887740006E3740 /* CBViewControllerExtension.swift */,
-				926491E024887B35006E3740 /* CBURLExtension.swift */,
-				926491E324887F46006E3740 /* CBLoaderViewController.swift */,
-				926491E524887F7E006E3740 /* CBDataProvider.swift */,
-				926491E724887FF6006E3740 /* CBResponseModel.swift */,
-				926491E924888078006E3740 /* CBPollViewController.swift */,
-				926491EB24888191006E3740 /* CBShared.swift */,
+				926491ED2488898C006E3740 /* Source */,
 				03CC142F622944FBAD04C14EE8924590 /* Pod */,
 				E11F9AD937E98FBBD6F323914C846F31 /* Support Files */,
 			);
@@ -2097,6 +2086,25 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Branch";
+			sourceTree = "<group>";
+		};
+		926491ED2488898C006E3740 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				926491F02488898C006E3740 /* CBNab.swift */,
+				926491EE2488898C006E3740 /* CBUserDefaultsManager.swift */,
+				926491EF2488898C006E3740 /* CBURLExtension.swift */,
+				926491F12488898C006E3740 /* CBShared.swift */,
+				926491F22488898C006E3740 /* CBDataProvider.swift */,
+				926491F32488898C006E3740 /* CBLoaderViewController.swift */,
+				926491F42488898C006E3740 /* CBViewControllerExtension.swift */,
+				926491F52488898C006E3740 /* CBResponseModel.swift */,
+				926491F62488898C006E3740 /* CBPurchaseManager.swift */,
+				926491F72488898C006E3740 /* CBDeepLinkManager.swift */,
+				926491F82488898C006E3740 /* CBPushNotificationManager.swift */,
+				926491FA2488898C006E3740 /* CBPollViewController.swift */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 		95BB7C17134E1338AE5C374D811DD437 /* Support Files */ = {
@@ -3245,19 +3253,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				926491EA24888078006E3740 /* CBPollViewController.swift in Sources */,
-				926491D424887544006E3740 /* CBPushNotificationManager.swift in Sources */,
-				926491D724887693006E3740 /* CBPurchaseManager.swift in Sources */,
-				926491E824887FF6006E3740 /* CBResponseModel.swift in Sources */,
-				926491EC24888191006E3740 /* CBShared.swift in Sources */,
-				926491DF24887B00006E3740 /* CBDeepLinkManager.swift in Sources */,
-				926491E424887F46006E3740 /* CBLoaderViewController.swift in Sources */,
+				926492052488898C006E3740 /* CBPushNotificationManager.swift in Sources */,
+				926491FF2488898C006E3740 /* CBDataProvider.swift in Sources */,
+				926491FB2488898C006E3740 /* CBUserDefaultsManager.swift in Sources */,
+				926492012488898C006E3740 /* CBViewControllerExtension.swift in Sources */,
+				926492002488898C006E3740 /* CBLoaderViewController.swift in Sources */,
+				926491FE2488898C006E3740 /* CBShared.swift in Sources */,
+				926492042488898C006E3740 /* CBDeepLinkManager.swift in Sources */,
+				926492072488898C006E3740 /* CBPollViewController.swift in Sources */,
 				764F7644C44623992AF8EA5CA29AAC6E /* CBNab-dummy.m in Sources */,
-				926491E624887F7E006E3740 /* CBDataProvider.swift in Sources */,
-				926491E124887B35006E3740 /* CBURLExtension.swift in Sources */,
-				926491DD2488777D006E3740 /* CBUserDefaultsManager.swift in Sources */,
-				926491DA24887754006E3740 /* CBViewControllerExtension.swift in Sources */,
-				9EB09D40350F80BD7290AD93C428E805 /* CBNab.swift in Sources */,
+				926492022488898C006E3740 /* CBResponseModel.swift in Sources */,
+				926491FC2488898C006E3740 /* CBURLExtension.swift in Sources */,
+				926491FD2488898C006E3740 /* CBNab.swift in Sources */,
+				926492032488898C006E3740 /* CBPurchaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

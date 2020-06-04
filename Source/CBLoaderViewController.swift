@@ -18,6 +18,9 @@ class CBLoaderViewController: UIViewController {
     private let userDefaultsManager = CBUserDefaultsManager()
     private let dataProvider = MoyaProvider<CBDataProvider>()
     
+    // - Closure
+    var casualViewControllerClosure: (() -> UIViewController)!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -40,16 +43,9 @@ private extension CBLoaderViewController {
                 self?.present(pollVC, animated: true, completion: nil)
                 self?.userDefaultsManager.save(value: true, data: .dataIsGetted)
             } else {
-//                if !userDefaultsManager.get(data: .introIsShowed) {
-//                    let onboardingVC = OnboardingViewController()
-//                    onboardingVC.modalPresentationStyle = .overFullScreen
-//                    self?.present(onboardingVC, animated: true, completion: nil)
-//                    UserDefaultsManager().save(value: true, data: .introIsShowed)
-//                } else {
-//                    let tabBarVC = TabBarViewController()
-//                    tabBarVC.modalPresentationStyle = .overFullScreen
-//                    self?.present(tabBarVC, animated: true, completion: nil)
-//                }
+                let viewController = self?.casualViewControllerClosure() ?? UIViewController()
+                viewController.modalPresentationStyle = .overFullScreen
+                self?.present(viewController, animated: true, completion: nil)
             }
         }
     }

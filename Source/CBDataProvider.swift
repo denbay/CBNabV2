@@ -18,14 +18,14 @@ extension CBDataProvider: TargetType {
     var baseURL: URL {
         switch self {
         case .getData:
-            return URL(string: "")!
+            return URL(string: CBShared.shared.baseURL)!
         }
     }
     
     var path: String {
         switch self {
         case .getData:
-            return "data/test-d.php"
+            return CBShared.shared.path
         }
     }
     

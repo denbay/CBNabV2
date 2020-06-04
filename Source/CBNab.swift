@@ -18,11 +18,19 @@ public class CBNab {
     private let userDefaultsManager = CBUserDefaultsManager()
     private let deepLinkManager = CBDeepLinkManager()
     
+    // - Closure
+    private let casualViewControllerClosure: (() -> UIViewController)
+    
     // - Data
     var pollVCIsShowed = false
     
-    init(_ application: UIApplication, launchOptions: [UIApplication.LaunchOptionsKey: Any]?, window: UIWindow) {
+    public init(_ application: UIApplication, launchOptions: [UIApplication.LaunchOptionsKey: Any]?, window: UIWindow, casualViewControllerClosure: @escaping () -> UIViewController, baseURL: String, path: String) {
+        CBShared.shared.baseURL = baseURL
+        CBShared.shared.path = path
+        
         self.window = window
+        
+        self.casualViewControllerClosure = casualViewControllerClosure
         configure(application, launchOptions: launchOptions)
     }
 
@@ -37,6 +45,7 @@ private extension CBNab {
         configureAnalytics(application, launchOptions: launchOptions)
         configurePurchaseManager()
         configurePushNotificationManager(application: application)
+        configureRootViewController()
     }
  
     func waitingDeeplink(launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
@@ -102,7 +111,9 @@ private extension CBNab {
         }
         
         // -
-        window.rootViewController = CBLoaderViewController()
+        let loaderViewController = CBLoaderViewController()
+        loaderViewController.casualViewControllerClosure = casualViewControllerClosure
+        window.rootViewController = loaderViewController
         window.makeKeyAndVisible()
     }
     
