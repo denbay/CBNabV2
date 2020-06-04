@@ -1,6 +1,6 @@
 {
   "name": "CBNab",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "summary": "Awesome lib.",
   "description": "'DscrollView is an awesome pod aimed to make yor life easier around UIScrollViews.'",
   "homepage": "https://github.com/denbay/CBNab",
@@ -13,11 +13,12 @@
   },
   "source": {
     "git": "https://github.com/denbay/CBNab.git",
-    "tag": "0.1.6"
+    "tag": "0.1.7"
   },
   "platforms": {
     "ios": "11.0"
   },
+  "source_files": "Source/**/*.swift",
   "swift_versions": "5.0",
   "dependencies": {
     "SnapKit": [
