@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'CBNab'
-  s.version          = '0.1.6'
+  s.version          = '0.1.7'
   s.summary          = 'Awesome lib.'
 
   s.description      = <<-DESC
@@ -17,6 +17,8 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
   'DscrollView is an awesome pod aimed to make yor life easier around UIScrollViews.'
                          DESC
+                         
+  s.source_files = 'Source/**/*.swift'
   s.swift_version = '5.0'
   s.platforms = {
     "ios": "11.0"

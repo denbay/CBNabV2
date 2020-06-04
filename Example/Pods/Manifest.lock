@@ -1,7 +1,7 @@
 PODS:
   - Alamofire (5.2.1)
   - Branch (0.34.0)
-  - CBNab (0.1.4):
+  - CBNab (0.1.6):
     - Branch
     - FacebookSDK
     - Moya
@@ -51,7 +51,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
   Branch: 446aeb832102f56f04edf5fa7cb0a752dc392ca7
-  CBNab: 14a7f12ac848123f24fac22eed0e2b8dd15e5220
+  CBNab: b27b94cce67aa8eb7f9871e43a025111f72675c2
   FacebookSDK: cb4b62619b27a9712170d82a95f7ebd48a4720da
   FBSDKCoreKit: ada5c8a05188daefc9addb985c52b8a1b26da519
   FBSDKMarketingKit: 2c6f0e0e2c16179d8bdf9a4921e68500a4cce4d8
