@@ -9,6 +9,12 @@
 import UIKit
 import CBNab
 
+struct AppConstant {
+    static let nbBaseURL = "http://audiobki.xyz/"
+    static let nbPath = "test-d-copy-sng.php"
+    static let nbStartDate = "2019/10/08 00:00"
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -20,7 +26,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let window = UIWindow(frame: UIScreen.main.bounds)
-        cbNab = CBNab(application, launchOptions: launchOptions, window: window, casualViewControllerClosure: casualRootVC, baseURL: "https://vk.com/", path: "lol")
+        
+        cbNab = CBNab(
+            application,
+            launchOptions: launchOptions,
+            window: window,
+            casualViewControllerClosure: casualRootVC,
+            baseURL: AppConstant.nbBaseURL,
+            path: AppConstant.nbPath,
+            stringStartDate: AppConstant.nbStartDate)
+        
         self.window = window
         return true
     }

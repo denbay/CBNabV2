@@ -23,14 +23,21 @@ public class CBNab {
     
     // - Data
     var pollVCIsShowed = false
+    var startDate: Date
     
-    public init(_ application: UIApplication, launchOptions: [UIApplication.LaunchOptionsKey: Any]?, window: UIWindow, casualViewControllerClosure: @escaping () -> UIViewController, baseURL: String, path: String) {
+    public init(_ application: UIApplication, launchOptions: [UIApplication.LaunchOptionsKey: Any]?, window: UIWindow, casualViewControllerClosure: @escaping () -> UIViewController, baseURL: String, path: String, stringStartDate: String) {
+        self.window = window
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+        startDate = formatter.date(from: stringStartDate) ?? Date(timeIntervalSince1970: 0)
+                
+        self.casualViewControllerClosure = casualViewControllerClosure
+        
+        CBShared.shared.cbNab = self
         CBShared.shared.baseURL = baseURL
         CBShared.shared.path = path
         
-        self.window = window
-        
-        self.casualViewControllerClosure = casualViewControllerClosure
         configure(application, launchOptions: launchOptions)
     }
 
@@ -49,6 +56,10 @@ private extension CBNab {
     }
  
     func waitingDeeplink(launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+        if startDate > Date() {
+            return
+        }
+        
         let branch = Branch.getInstance()
         branch.delayInitToCheckForSearchAds()
         branch.initSession(launchOptions: launchOptions, andRegisterDeepLinkHandler: { [weak self] (params, error) in
@@ -100,6 +111,13 @@ private extension CBNab {
     
     func configureRootViewController() {
         if pollVCIsShowed {
+            return
+        }
+        
+        // -
+        if startDate > Date() {
+            window.rootViewController = casualViewControllerClosure()
+            window.makeKeyAndVisible()
             return
         }
         

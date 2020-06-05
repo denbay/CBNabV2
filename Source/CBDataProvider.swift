@@ -47,7 +47,7 @@ extension CBDataProvider: TargetType {
     var task: Task {
         switch self {
         case .getData(let params):
-            return .requestCompositeData(bodyData: "".data(using: .utf8)!, urlParameters: params)
+            return .requestParameters(parameters: params, encoding: URLEncoding.default)
         }
     }
     

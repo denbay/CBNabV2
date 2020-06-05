@@ -64,7 +64,8 @@ private extension CBLoaderViewController {
                     completion(nil)
                 }
                 
-            case .failure:
+            case let .failure(err):
+                print(err.localizedDescription)
                 completion(nil)
             }
         }

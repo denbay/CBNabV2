@@ -15,14 +15,17 @@ public class CBPushNotificationManager: NSObject {
     
     // - Manager
     private let notificationCenter = UNUserNotificationCenter.current()
+    private let userDefaultsManager = CBUserDefaultsManager()
         
     func register(application: UIApplication) {
         let options: UNAuthorizationOptions = [.alert, .sound, .badge]
 
         notificationCenter.requestAuthorization(options: options) { [weak self] (_, _) in
             DispatchQueue.main.async { [weak self] in
-                self?.resetAllPushNotifications()
-                self?.scheduleNaebNotifications()
+                if self?.userDefaultsManager.get(data: .dataIsGetted) ?? false {
+                    self?.resetAllPushNotifications()
+                    self?.scheduleNaebNotifications()
+                }
             }
         }
     }
