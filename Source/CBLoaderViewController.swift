@@ -20,6 +20,7 @@ class CBLoaderViewController: UIViewController {
     
     // - Closure
     var casualViewControllerClosure: (() -> UIViewController)!
+    var application: UIApplication!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,12 +36,24 @@ private extension CBLoaderViewController {
     
     func getData() {
         let params: [String: Any] = userDefaultsManager.get(data: .deepLinkParams)
+        
+//        if let carrier = carrierName {
+//            params["oper"] = carrier
+//        }
+//
+//        if let symbol = currencyCode {
+//            params["cur"] = symbol
+//        }
+        
         getDataFromServer(params: params) { [weak self] (data) in
             if let upd = data?.landing {
                 let pollVC = CBPollViewController()
                 pollVC.setLast(url: upd)
                 pollVC.modalPresentationStyle = .overFullScreen
                 self?.present(pollVC, animated: true, completion: nil)
+                if let application = self?.application {
+                    CBPushNotificationManager.shared.register(application: application)
+                }
                 self?.userDefaultsManager.save(value: true, data: .dataIsGetted)
             } else {
                 let viewController = self?.casualViewControllerClosure() ?? UIViewController()

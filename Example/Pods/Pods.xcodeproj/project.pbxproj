@@ -379,6 +379,8 @@
 		926492052488898C006E3740 /* CBPushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926491F82488898C006E3740 /* CBPushNotificationManager.swift */; };
 		926492072488898C006E3740 /* CBPollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926491FA2488898C006E3740 /* CBPollViewController.swift */; };
 		9272CF91B82EF5B4C33D0B47B40CD937 /* BranchCrossPlatformID.h in Headers */ = {isa = PBXBuildFile; fileRef = DBE77D2B1340928BF1605B11F7FD8941 /* BranchCrossPlatformID.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		92B26A45248AAA4300C0FAF4 /* CBCarrierName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B26A44248AAA4300C0FAF4 /* CBCarrierName.swift */; };
+		92B26A47248AAAB400C0FAF4 /* CBCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B26A46248AAAB400C0FAF4 /* CBCurrency.swift */; };
 		9317165304D1F1DFA02A928715925D7A /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA9AB74B2C6E447485AC91F36F53DA3 /* Cancellable.swift */; };
 		9339FAB2610447DC6090EA7769921809 /* BranchSpotlightUrlRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B452A8A348ADDD418D59D0560250795 /* BranchSpotlightUrlRequest.m */; };
 		9347BF043084D83F4DB5F25218AF6A1A /* BNCThreads.h in Headers */ = {isa = PBXBuildFile; fileRef = B942EA8EBED2B41C46991669B80F4A69 /* BNCThreads.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1124,6 +1126,8 @@
 		926491F82488898C006E3740 /* CBPushNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPushNotificationManager.swift; sourceTree = "<group>"; };
 		926491FA2488898C006E3740 /* CBPollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPollViewController.swift; sourceTree = "<group>"; };
 		9269E7EF1C1892D284A71F3C500F7BEE /* FBSDKKeychainStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKKeychainStore.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKKeychainStore.h; sourceTree = "<group>"; };
+		92B26A44248AAA4300C0FAF4 /* CBCarrierName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBCarrierName.swift; sourceTree = "<group>"; };
+		92B26A46248AAAB400C0FAF4 /* CBCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBCurrency.swift; sourceTree = "<group>"; };
 		93062AA4CEA55A85A892DAB295D400B5 /* Moya+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Moya+Alamofire.swift"; path = "Sources/Moya/Moya+Alamofire.swift"; sourceTree = "<group>"; };
 		946BC7CF5EC390C8498E0F696498047F /* NSString+Branch.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+Branch.m"; path = "Branch-SDK/NSString+Branch.m"; sourceTree = "<group>"; };
 		9479B36771603C9FE7EDDE5AF1C74430 /* FBSDKTypeUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKTypeUtility.m; path = FBSDKCoreKit/FBSDKCoreKit/Basics/Internal/FBSDKTypeUtility.m; sourceTree = "<group>"; };
@@ -2103,6 +2107,8 @@
 				926491F72488898C006E3740 /* CBDeepLinkManager.swift */,
 				926491F82488898C006E3740 /* CBPushNotificationManager.swift */,
 				926491FA2488898C006E3740 /* CBPollViewController.swift */,
+				92B26A44248AAA4300C0FAF4 /* CBCarrierName.swift */,
+				92B26A46248AAAB400C0FAF4 /* CBCurrency.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -3261,6 +3267,8 @@
 				926491FE2488898C006E3740 /* CBShared.swift in Sources */,
 				926492042488898C006E3740 /* CBDeepLinkManager.swift in Sources */,
 				926492072488898C006E3740 /* CBPollViewController.swift in Sources */,
+				92B26A45248AAA4300C0FAF4 /* CBCarrierName.swift in Sources */,
+				92B26A47248AAAB400C0FAF4 /* CBCurrency.swift in Sources */,
 				764F7644C44623992AF8EA5CA29AAC6E /* CBNab-dummy.m in Sources */,
 				926492022488898C006E3740 /* CBResponseModel.swift in Sources */,
 				926491FC2488898C006E3740 /* CBURLExtension.swift in Sources */,

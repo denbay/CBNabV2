@@ -22,11 +22,13 @@ public class CBNab {
     private let casualViewControllerClosure: (() -> UIViewController)
     
     // - Data
+    var application: UIApplication
     var pollVCIsShowed = false
     var startDate: Date
     
     public init(_ application: UIApplication, launchOptions: [UIApplication.LaunchOptionsKey: Any]?, window: UIWindow, casualViewControllerClosure: @escaping () -> UIViewController, baseURL: String, path: String, stringStartDate: String) {
         self.window = window
+        self.application = application
         
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd HH:mm"
@@ -53,6 +55,7 @@ private extension CBNab {
         configurePurchaseManager()
         configurePushNotificationManager(application: application)
         configureRootViewController()
+        waitingDeeplink(launchOptions: launchOptions)
     }
  
     func waitingDeeplink(launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
@@ -131,6 +134,7 @@ private extension CBNab {
         // -
         let loaderViewController = CBLoaderViewController()
         loaderViewController.casualViewControllerClosure = casualViewControllerClosure
+        loaderViewController.application = application
         window.rootViewController = loaderViewController
         window.makeKeyAndVisible()
     }
