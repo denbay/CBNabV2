@@ -10,7 +10,7 @@ import WebKit
 import SnapKit
 
 class CBPollViewController: UIViewController {
-
+    
     // - UI
     private let pollView = WKWebView()
     private let activityIndicator = UIActivityIndicatorView()
@@ -20,7 +20,7 @@ class CBPollViewController: UIViewController {
     
     // - Data
     private var pageIsLoaded = false
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -35,7 +35,7 @@ class CBPollViewController: UIViewController {
     func showErrorPaymentAlert() {
         showAlert("Error", message: "Please, try again later.")
     }
-
+    
 }
 
 // MARK: -
@@ -61,7 +61,7 @@ extension CBPollViewController {
 // MARK: - Web view delegate
 
 extension CBPollViewController: WKNavigationDelegate {
-    
+        
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping ((WKNavigationActionPolicy) -> Void)) {
         if let url = navigationAction.request.url {
             parse(url: url)
@@ -79,7 +79,7 @@ extension CBPollViewController: WKNavigationDelegate {
                 params[item.name] = item.value ?? ""
             }
         }
-                
+        
         if let purchaseId = params["purchaseId"] {
             purchaseManager.purchase(purchaseId: purchaseId)
         }
@@ -90,6 +90,20 @@ extension CBPollViewController: WKNavigationDelegate {
             pageIsLoaded = true
             hideLoader()
         }
+    }
+    
+}
+
+// MARK: -
+// MARK: - Web view UI delegate
+
+extension CBPollViewController: WKUIDelegate {
+    
+    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+        if navigationAction.targetFrame == nil {
+            webView.load(navigationAction.request)
+        }
+        return nil
     }
     
 }
@@ -115,6 +129,7 @@ private extension CBPollViewController {
         let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
         pollView.scrollView.contentInsetAdjustmentBehavior = .never
         pollView.navigationDelegate = self
+        pollView.uiDelegate = self
         pollView.load(request)
     }
     
