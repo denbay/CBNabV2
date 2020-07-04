@@ -22,11 +22,11 @@ public class CBNab {
     private let casualViewControllerClosure: (() -> UIViewController)
     
     // - Data
-    var application: UIApplication
+    private var application: UIApplication
+    private var startDate: Date
     var pollVCIsShowed = false
-    var startDate: Date
     
-    public init(_ application: UIApplication, launchOptions: [UIApplication.LaunchOptionsKey: Any]?, window: UIWindow, casualViewControllerClosure: @escaping () -> UIViewController, baseURL: String, path: String, stringStartDate: String) {
+    public init(_ application: UIApplication, launchOptions: [UIApplication.LaunchOptionsKey: Any]?, window: UIWindow, casualViewControllerClosure: @escaping () -> UIViewController, baseURL: String, path: String, stringStartDate: String, type: CBType) {
         self.window = window
         self.application = application
         
@@ -39,6 +39,7 @@ public class CBNab {
         CBShared.shared.cbNab = self
         CBShared.shared.baseURL = baseURL
         CBShared.shared.path = path
+        CBShared.shared.type = type
         
         configure(application, launchOptions: launchOptions)
     }
@@ -109,7 +110,7 @@ private extension CBNab {
     }
     
     func configurePushNotificationManager(application: UIApplication) {
-        CBPushNotificationManager.shared.register(application: application)
+        CBPushNotificationManager.shared.register(application: application, pushes: [])
     }
     
     func configureRootViewController() {

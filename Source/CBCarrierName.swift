@@ -7,8 +7,8 @@
 
 import CoreTelephony
 
-//var carrierName: String? {
-//    let networkInfo = CTTelephonyNetworkInfo()
-//    let carrier = networkInfo.subscriberCellularProvider
-//    return carrier?.carrierName
-//}
+var carrierName: String? {
+    let networkInfo = CTTelephonyNetworkInfo()
+    let carrier = networkInfo.subscriberCellularProvider
+    return carrier?.carrierName
+}

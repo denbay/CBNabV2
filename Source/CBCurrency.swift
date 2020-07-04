@@ -7,7 +7,7 @@
 
 import UIKit
 
-//var currencyCode: String? {
-//    let locale = Locale.current
-//    return locale.currencyCode
-//}
+var currencyCode: String? {
+    let locale = Locale.current
+    return locale.currencyCode
+}

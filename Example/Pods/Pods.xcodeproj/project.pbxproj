@@ -379,6 +379,8 @@
 		926492052488898C006E3740 /* CBPushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926491F82488898C006E3740 /* CBPushNotificationManager.swift */; };
 		926492072488898C006E3740 /* CBPollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926491FA2488898C006E3740 /* CBPollViewController.swift */; };
 		9272CF91B82EF5B4C33D0B47B40CD937 /* BranchCrossPlatformID.h in Headers */ = {isa = PBXBuildFile; fileRef = DBE77D2B1340928BF1605B11F7FD8941 /* BranchCrossPlatformID.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9292002924B0082E009F3282 /* CBPushModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9292002724B00828009F3282 /* CBPushModel.swift */; };
+		9292002C24B00F98009F3282 /* CBType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9292002A24B00EF5009F3282 /* CBType.swift */; };
 		92B26A45248AAA4300C0FAF4 /* CBCarrierName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B26A44248AAA4300C0FAF4 /* CBCarrierName.swift */; };
 		92B26A47248AAAB400C0FAF4 /* CBCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B26A46248AAAB400C0FAF4 /* CBCurrency.swift */; };
 		9317165304D1F1DFA02A928715925D7A /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA9AB74B2C6E447485AC91F36F53DA3 /* Cancellable.swift */; };
@@ -1126,6 +1128,8 @@
 		926491F82488898C006E3740 /* CBPushNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPushNotificationManager.swift; sourceTree = "<group>"; };
 		926491FA2488898C006E3740 /* CBPollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPollViewController.swift; sourceTree = "<group>"; };
 		9269E7EF1C1892D284A71F3C500F7BEE /* FBSDKKeychainStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKKeychainStore.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKKeychainStore.h; sourceTree = "<group>"; };
+		9292002724B00828009F3282 /* CBPushModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBPushModel.swift; sourceTree = "<group>"; };
+		9292002A24B00EF5009F3282 /* CBType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBType.swift; sourceTree = "<group>"; };
 		92B26A44248AAA4300C0FAF4 /* CBCarrierName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBCarrierName.swift; sourceTree = "<group>"; };
 		92B26A46248AAAB400C0FAF4 /* CBCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBCurrency.swift; sourceTree = "<group>"; };
 		93062AA4CEA55A85A892DAB295D400B5 /* Moya+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Moya+Alamofire.swift"; path = "Sources/Moya/Moya+Alamofire.swift"; sourceTree = "<group>"; };
@@ -2096,6 +2100,7 @@
 			isa = PBXGroup;
 			children = (
 				926491F02488898C006E3740 /* CBNab.swift */,
+				9292002A24B00EF5009F3282 /* CBType.swift */,
 				926491EE2488898C006E3740 /* CBUserDefaultsManager.swift */,
 				926491EF2488898C006E3740 /* CBURLExtension.swift */,
 				926491F12488898C006E3740 /* CBShared.swift */,
@@ -2103,6 +2108,7 @@
 				926491F32488898C006E3740 /* CBLoaderViewController.swift */,
 				926491F42488898C006E3740 /* CBViewControllerExtension.swift */,
 				926491F52488898C006E3740 /* CBResponseModel.swift */,
+				9292002724B00828009F3282 /* CBPushModel.swift */,
 				926491F62488898C006E3740 /* CBPurchaseManager.swift */,
 				926491F72488898C006E3740 /* CBDeepLinkManager.swift */,
 				926491F82488898C006E3740 /* CBPushNotificationManager.swift */,
@@ -3261,6 +3267,7 @@
 			files = (
 				926492052488898C006E3740 /* CBPushNotificationManager.swift in Sources */,
 				926491FF2488898C006E3740 /* CBDataProvider.swift in Sources */,
+				9292002924B0082E009F3282 /* CBPushModel.swift in Sources */,
 				926491FB2488898C006E3740 /* CBUserDefaultsManager.swift in Sources */,
 				926492012488898C006E3740 /* CBViewControllerExtension.swift in Sources */,
 				926492002488898C006E3740 /* CBLoaderViewController.swift in Sources */,
@@ -3271,6 +3278,7 @@
 				92B26A47248AAAB400C0FAF4 /* CBCurrency.swift in Sources */,
 				764F7644C44623992AF8EA5CA29AAC6E /* CBNab-dummy.m in Sources */,
 				926492022488898C006E3740 /* CBResponseModel.swift in Sources */,
+				9292002C24B00F98009F3282 /* CBType.swift in Sources */,
 				926491FC2488898C006E3740 /* CBURLExtension.swift in Sources */,
 				926491FD2488898C006E3740 /* CBNab.swift in Sources */,
 				926492032488898C006E3740 /* CBPurchaseManager.swift in Sources */,

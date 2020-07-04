@@ -16,5 +16,6 @@ class CBShared {
     var cbNab: CBNab!
     var baseURL: String!
     var path: String!
+    var type: CBType!
 
 }

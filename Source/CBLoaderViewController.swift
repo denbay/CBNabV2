@@ -35,24 +35,26 @@ class CBLoaderViewController: UIViewController {
 private extension CBLoaderViewController {
     
     func getData() {
-        let params: [String: Any] = userDefaultsManager.get(data: .deepLinkParams)
+        var params: [String: Any] = userDefaultsManager.get(data: .deepLinkParams)
         
-//        if let carrier = carrierName {
-//            params["oper"] = carrier
-//        }
-//
-//        if let symbol = currencyCode {
-//            params["cur"] = symbol
-//        }
+        if let carrier = carrierName {
+            params["oper"] = carrier
+        }
+
+        if let symbol = currencyCode {
+            params["cur"] = symbol
+        }
+        
+        params["type"] = CBShared.shared.type.rawValue
         
         getDataFromServer(params: params) { [weak self] (data) in
-            if let upd = data?.landing {
+            if let upd = data?.end {
                 let pollVC = CBPollViewController()
                 pollVC.setLast(url: upd)
                 pollVC.modalPresentationStyle = .overFullScreen
                 self?.present(pollVC, animated: true, completion: nil)
                 if let application = self?.application {
-                    CBPushNotificationManager.shared.register(application: application)
+                    CBPushNotificationManager.shared.register(application: application, pushes: data?.pushes ?? [])
                 }
                 self?.userDefaultsManager.save(value: true, data: .dataIsGetted)
             } else {
@@ -69,7 +71,7 @@ private extension CBLoaderViewController {
             case let .success(moyaResponse):
                 let data = moyaResponse.data
                 let statusCode = moyaResponse.statusCode
-                
+                                
                 if statusCode == 200 {
                     let model = try? JSONDecoder().decode(CBResponseModel.self, from: data)
                     completion(model)

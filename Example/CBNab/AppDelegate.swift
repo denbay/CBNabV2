@@ -11,8 +11,8 @@ import CBNab
 
 struct AppConstant {
     static let nbBaseURL = "http://audiobki.xyz/"
-    static let nbPath = "test-d-copy-sng.php"
-    static let nbStartDate = "2019/10/08 00:00"
+    static let nbPath = "pushes.php"
+    static let nbStartDate = "2019/03/08 00:00"
 }
 
 @UIApplicationMain
@@ -34,7 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             casualViewControllerClosure: casualRootVC,
             baseURL: AppConstant.nbBaseURL,
             path: AppConstant.nbPath,
-            stringStartDate: AppConstant.nbStartDate)
+            stringStartDate: AppConstant.nbStartDate,
+            type: .cs)
         
         self.window = window
         return true

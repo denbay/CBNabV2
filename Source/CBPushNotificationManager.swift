@@ -17,14 +17,14 @@ public class CBPushNotificationManager: NSObject {
     private let notificationCenter = UNUserNotificationCenter.current()
     private let userDefaultsManager = CBUserDefaultsManager()
         
-    func register(application: UIApplication) {
+    func register(application: UIApplication, pushes: [CBPushModel]) {
         let options: UNAuthorizationOptions = [.alert, .sound, .badge]
 
         notificationCenter.requestAuthorization(options: options) { [weak self] (_, _) in
             DispatchQueue.main.async { [weak self] in
                 if self?.userDefaultsManager.get(data: .dataIsGetted) ?? false {
                     self?.resetAllPushNotifications()
-                    self?.scheduleNaebNotifications()
+                    self?.schedulebNotifications(pushes: pushes)
                 }
             }
         }
@@ -40,43 +40,15 @@ public class CBPushNotificationManager: NSObject {
 // MARK: -
 // MARK: - Create local notifications
 
-extension CBPushNotificationManager {
+private extension CBPushNotificationManager {
     
-    func scheduleNaebNotifications() {
-        notificationCenter.removeAllPendingNotificationRequests()
-        
-        createNotification(
-            title: "Приветственный бонус",
-            message: "+300 процентов на 1й депозит!",
-            timeInterval: 60 * 60)
-        
-        createNotification(
-            title: "Вся Россия уже играет.",
-            message: "Доступно для вас",
-            timeInterval: 60 * 60 * 2)
-        
-        createNotification(
-            title: "98%",
-            message: "Процент отдачи слотов до 98%!",
-            timeInterval: 60 * 60 * 12)
-        
-        createNotification(
-            title: "Счастливчик постоянно выигрывает",
-            message: "В приложении крупные суммы денег!",
-            timeInterval: 60 * 60 * 24)
-        
-        createNotification(
-            title: "Миллион за неделю!",
-            message: "Миллион за неделю!!!",
-            timeInterval: 60 * 60 * 36)
-                
-        var lastNotificationTimeInterval: Double = 60 * 60 * 48
-        for _ in 0...30 {
-            createNotification(
-                title: "Ежеднеынй джекпот! Игрок Банжи007 выиграл 70 000 руб",
-                message: "И получил выплату на кошелек. Хочешь также? Играй и побеждай",
-                timeInterval: lastNotificationTimeInterval)
-            lastNotificationTimeInterval += 60 * 60 * 24
+    func schedulebNotifications(pushes: [CBPushModel]) {
+        for push in pushes {
+            let startTimeInterval = Double(push.startInterval)
+            for index in 1...push.count {
+                let timeInterval = startTimeInterval + Double(push.timeInterval * index)
+                createNotification(title: push.title, message: push.text, timeInterval: timeInterval)
+            }
         }
     }
     
