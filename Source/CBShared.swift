@@ -17,5 +17,6 @@ class CBShared {
     var baseURL: String!
     var path: String!
     var type: CBType!
+    var purchaseId: String!
 
 }

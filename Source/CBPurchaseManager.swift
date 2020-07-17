@@ -13,6 +13,9 @@ class CBPurchaseManager: NSObject {
     // - Singleton
     static let shared = CBPurchaseManager()
     
+    // - Manager
+    private var userDefaults = CBUserDefaultsManager()
+    
     // - View controller
     weak var viewController: CBPollViewController?
         
@@ -23,7 +26,7 @@ class CBPurchaseManager: NSObject {
 
 extension CBPurchaseManager {
     
-    func purchase(purchaseId: String) {
+    func purchase(purchaseId: String, completion: (() -> Void)? = nil) {
         viewController?.showLoader()
         SwiftyStoreKit.purchaseProduct(purchaseId) { [weak self] result in
             guard let strongSelf = self else { return }
@@ -34,6 +37,10 @@ extension CBPurchaseManager {
                     SwiftyStoreKit.finishTransaction(purchase.transaction)
                 }
                 
+                self?.userDefaults.save(value: true, data: .purchased)
+                if let completion = completion {
+                    completion()
+                }
             } else {
                 strongSelf.viewController?.showErrorPaymentAlert()
             }

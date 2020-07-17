@@ -15,6 +15,7 @@ class CBUserDefaultsManager {
         case enabledPushes
         case introIsShowed
         case isFirstLaunch
+        case purchased
     }
     
     // - Get/Set for data

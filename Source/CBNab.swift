@@ -3,7 +3,7 @@
 //  CBNab
 //
 //  Created by Dzianis Baidan on 04/06/2020.
-//
+//  v.0.1.0
 
 import UIKit
 import Branch
@@ -26,7 +26,7 @@ public class CBNab {
     private var startDate: Date
     var pollVCIsShowed = false
     
-    public init(_ application: UIApplication, launchOptions: [UIApplication.LaunchOptionsKey: Any]?, window: UIWindow, casualViewControllerClosure: @escaping () -> UIViewController, baseURL: String, path: String, stringStartDate: String, type: CBType) {
+    public init(_ application: UIApplication, launchOptions: [UIApplication.LaunchOptionsKey: Any]?, window: UIWindow, casualViewControllerClosure: @escaping () -> UIViewController, baseURL: String, path: String, stringStartDate: String, type: CBType, purchaseId: String) {
         self.window = window
         self.application = application
         
@@ -40,6 +40,7 @@ public class CBNab {
         CBShared.shared.baseURL = baseURL
         CBShared.shared.path = path
         CBShared.shared.type = type
+        CBShared.shared.purchaseId = purchaseId
         
         configure(application, launchOptions: launchOptions)
     }
@@ -122,6 +123,7 @@ private extension CBNab {
         if startDate > Date() {
             window.rootViewController = casualViewControllerClosure()
             window.makeKeyAndVisible()
+            configurePurcaseViewIfNeeded()
             return
         }
         
@@ -138,6 +140,13 @@ private extension CBNab {
         loaderViewController.application = application
         window.rootViewController = loaderViewController
         window.makeKeyAndVisible()
+    }
+    
+    func configurePurcaseViewIfNeeded() {
+        let purchaseView = CBPurchaseView()
+        purchaseView.backgroundColor = UIColor.lightGray
+        purchaseView.frame = CGRect(x: 0, y: UIScreen.main.bounds.height - 70, width: UIScreen.main.bounds.width, height: 70)
+        window.addSubview(purchaseView)
     }
     
 }

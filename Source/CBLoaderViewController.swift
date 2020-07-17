@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Moya
+import CommonCrypto
 
 class CBLoaderViewController: UIViewController {
     
@@ -110,3 +111,5 @@ private extension CBLoaderViewController {
     }
     
 }
+
+
