@@ -371,7 +371,9 @@
 		92093831B264B4574CB47658832A7AF0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D268D41B0C718EBA32EEE811B602607 /* SystemConfiguration.framework */; };
 		926026C148C97C9B498869CF94A3E80E /* FBSDKAppLinkTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A46A7F9730B66F61AE0FE21143F867B /* FBSDKAppLinkTarget.m */; };
 		9272CF91B82EF5B4C33D0B47B40CD937 /* BranchCrossPlatformID.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DF4CD519E0930767F9F4F091BB7CCAA /* BranchCrossPlatformID.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		929C292A24C1EA6300135FF6 /* CBPurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929C292824C1EA2E00135FF6 /* CBPurchaseView.swift */; };
+		929C295024C220F400135FF6 /* CBPurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929C294E24C220F400135FF6 /* CBPurchaseView.swift */; };
+		92B164BD24CF4C0F00205B27 /* CBCrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B164BC24CF4C0F00205B27 /* CBCrypt.swift */; };
+		92B164BF24CF4C1600205B27 /* CBStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B164BE24CF4C1600205B27 /* CBStringExtension.swift */; };
 		92C0D0F8E0E9F30B49A2AA0F48598A6C /* SnapKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CA5DF079ACB4302D0F04207080E7F652 /* SnapKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93163D8AB31AD6640C661AC1B0F1D0FD /* ConstraintLayoutGuideDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DA26387BDE69A523197617F50933B5 /* ConstraintLayoutGuideDSL.swift */; };
 		9339FAB2610447DC6090EA7769921809 /* BranchSpotlightUrlRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 131FACA404E4D5ACDB8EA57CFFFBA1DC /* BranchSpotlightUrlRequest.m */; };
@@ -1122,7 +1124,9 @@
 		91AE4EC4481201644CAC6CAB347884F0 /* BranchLATDRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BranchLATDRequest.m; path = "Branch-SDK/Networking/Requests/BranchLATDRequest.m"; sourceTree = "<group>"; };
 		9221A73C3FA227CCF5C347103ED6D374 /* ConstraintMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Source/ConstraintMaker.swift; sourceTree = "<group>"; };
 		922775E90F27BA6C83C46857AA3EADCA /* FBSDKGateKeeperManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKGateKeeperManager.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/ServerConfiguration/FBSDKGateKeeperManager.m; sourceTree = "<group>"; };
-		929C292824C1EA2E00135FF6 /* CBPurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBPurchaseView.swift; sourceTree = "<group>"; };
+		929C294E24C220F400135FF6 /* CBPurchaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBPurchaseView.swift; path = Source/CBPurchaseView.swift; sourceTree = "<group>"; };
+		92B164BC24CF4C0F00205B27 /* CBCrypt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBCrypt.swift; path = Source/CBCrypt.swift; sourceTree = "<group>"; };
+		92B164BE24CF4C1600205B27 /* CBStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBStringExtension.swift; path = Source/CBStringExtension.swift; sourceTree = "<group>"; };
 		930B5B1C6EB5A516C7278C095EEB0A8A /* FBSDKDeviceUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKDeviceUtilities.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Device/FBSDKDeviceUtilities.m; sourceTree = "<group>"; };
 		931FB78185F15E82CA9CB7789370BFF1 /* FBSDKIcon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKIcon.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/UI/FBSDKIcon.m; sourceTree = "<group>"; };
 		932E7A3C1CF1F487DB7BFB6508C0A7E0 /* FBSDKLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKLogger.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKLogger.m; sourceTree = "<group>"; };
@@ -1511,8 +1515,8 @@
 				BBBFF4AFA08DBDFEDD32870E0692DA69 /* CBCurrency.swift */,
 				3C3CE9C36CF7762D51A4D5B5EAA11837 /* CBDataProvider.swift */,
 				E9C1577C83FF891364D33B46524E1882 /* CBDeepLinkManager.swift */,
-				AEB16538D444AF32ABD90994D849EDE1 /* CBLoaderViewController.swift */,
 				E0B548D06CACDB2D2F4614017625CA8D /* CBNab.swift */,
+				AEB16538D444AF32ABD90994D849EDE1 /* CBLoaderViewController.swift */,
 				4CDA64A1FCAE22989048DC90A4851CA5 /* CBPollViewController.swift */,
 				9348E8C7C3D58DAA5A098C7FB1BDD428 /* CBPurchaseManager.swift */,
 				2BBA9F5AFD418AA9716833DFC18A14E9 /* CBPushModel.swift */,
@@ -1520,10 +1524,12 @@
 				16B409C63B790423BFAF76E6E73D5138 /* CBResponseModel.swift */,
 				522DE48FEB3E1C3C40BCB96A5EFEB9A8 /* CBShared.swift */,
 				663611BCAB3F4CB76C4D590836ED2FAF /* CBType.swift */,
-				09A0E591B92A4E9631B5941739F152AB /* CBURLExtension.swift */,
 				F51A0D20FAC96F1260A2033D31AADE96 /* CBUserDefaultsManager.swift */,
+				92B164BE24CF4C1600205B27 /* CBStringExtension.swift */,
+				92B164BC24CF4C0F00205B27 /* CBCrypt.swift */,
+				929C294E24C220F400135FF6 /* CBPurchaseView.swift */,
 				8C71BD2618808219889888FD63E5E49E /* CBViewControllerExtension.swift */,
-				929C292824C1EA2E00135FF6 /* CBPurchaseView.swift */,
+				09A0E591B92A4E9631B5941739F152AB /* CBURLExtension.swift */,
 				3270802A1ADC592A406B55F76BE8E02D /* Pod */,
 				3DCBD8E40B1712B68C44B34C19A8EC2A /* Support Files */,
 			);
@@ -3363,15 +3369,17 @@
 				F28FEE3A1966B9035EE9AC24F9DDCA13 /* CBCarrierName.swift in Sources */,
 				09EF570E4324B482B63AF14948A062D5 /* CBCurrency.swift in Sources */,
 				0FCAE1B589FF6AC9B95271D3EEE3532D /* CBDataProvider.swift in Sources */,
+				92B164BF24CF4C1600205B27 /* CBStringExtension.swift in Sources */,
 				3C8500028F0E84E293B5A759C16226C4 /* CBDeepLinkManager.swift in Sources */,
 				948CC6F1E6AAA54668B0FCCBD5815811 /* CBLoaderViewController.swift in Sources */,
 				E7FA56D77ACCED06B0C7A3602BB47A0C /* CBNab-dummy.m in Sources */,
 				FE45B7949D49EE50DEF1BB78878B829F /* CBNab.swift in Sources */,
+				92B164BD24CF4C0F00205B27 /* CBCrypt.swift in Sources */,
 				EB2DB82F0C8E5423265F32B3DBEEF229 /* CBPollViewController.swift in Sources */,
 				8FD3827982ACF3942AC711549E5971AD /* CBPurchaseManager.swift in Sources */,
 				B72008BC0A64AC2F4AD3811CD9D164B4 /* CBPushModel.swift in Sources */,
 				7FD7BC9CCBC07A0D16CEDA6BC214FDF9 /* CBPushNotificationManager.swift in Sources */,
-				929C292A24C1EA6300135FF6 /* CBPurchaseView.swift in Sources */,
+				929C295024C220F400135FF6 /* CBPurchaseView.swift in Sources */,
 				B6C92F9D26BF0DC203CF96F70652A3B6 /* CBResponseModel.swift in Sources */,
 				569BB33B9DFA96ECBF4232F033515236 /* CBShared.swift in Sources */,
 				3845693C43E40EF39CFA7D532D0F8BD7 /* CBType.swift in Sources */,

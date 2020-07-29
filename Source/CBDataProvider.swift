@@ -30,7 +30,7 @@ extension CBDataProvider: TargetType {
     }
     
     var method: Moya.Method {
-        return .get
+        return .post
     }
     
     var parameterEncoding: ParameterEncoding {
@@ -47,7 +47,7 @@ extension CBDataProvider: TargetType {
     var task: Task {
         switch self {
         case .getData(let params):
-            return .requestParameters(parameters: params, encoding: URLEncoding.default)
+            return .requestParameters(parameters: params, encoding: JSONEncoding.default)
         }
     }
     

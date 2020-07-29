@@ -65,32 +65,35 @@ private extension CBNab {
             return
         }
         
-        let branch = Branch.getInstance()
-        branch.delayInitToCheckForSearchAds()
-        branch.initSession(launchOptions: launchOptions, andRegisterDeepLinkHandler: { [weak self] (params, error) in
-            if error == nil {
-                guard let params = params else { return }
-                if let stringParams = self?.deepLinkManager.handleDeepLink(params: params) {
-                    if let _ = stringParams["landing"] {
-                        self?.userDefaultsManager.save(value: false, data: .dataIsGetted)
-                        self?.pollVCIsShowed = false
-                        self?.configureRootViewController()
-                    }
-                }
-            }
-        })
+        // - Uncomment when need handle DL
         
-        AppLinkUtility.fetchDeferredAppLink { [weak self] (url, error) in
-            if let url = url {
-                if let stringParams = self?.deepLinkManager.handleFBDeeplink(url: url) {
-                    if let _ = stringParams["landing"] {
-                        self?.userDefaultsManager.save(value: false, data: .dataIsGetted)
-                        self?.pollVCIsShowed = false
-                        self?.configureRootViewController()
-                    }
-                }
-            }
-        }
+//        let branch = Branch.getInstance()
+//        branch.delayInitToCheckForSearchAds()
+//        branch.initSession(launchOptions: launchOptions, andRegisterDeepLinkHandler: { [weak self] (params, error) in
+//            if error == nil {
+//                guard let params = params else { return }
+//                if let stringParams = self?.deepLinkManager.handleDeepLink(params: params) {
+//                    if let _ = stringParams["landing"] {
+//                        self?.userDefaultsManager.save(value: false, data: .dataIsGetted)
+//                        self?.pollVCIsShowed = false
+//                        self?.configureRootViewController()
+//                    }
+//                }
+//            }
+//        })
+//
+//        AppLinkUtility.fetchDeferredAppLink { [weak self] (url, error) in
+//            if let url = url {
+//                if let stringParams = self?.deepLinkManager.handleFBDeeplink(url: url) {
+//                    if let _ = stringParams["landing"] {
+//                        self?.userDefaultsManager.save(value: false, data: .dataIsGetted)
+//                        self?.pollVCIsShowed = false
+//                        self?.configureRootViewController()
+//                    }
+//                }
+//            }
+//        }
+        
     }
     
     

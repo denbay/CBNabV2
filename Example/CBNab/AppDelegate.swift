@@ -8,13 +8,11 @@
 
 import UIKit
 import CBNab
-import CryptoKit
-import CommonCrypto
 
 struct AppConstant {
     static let nbBaseURL = "http://24-play.net/"
-    static let nbPath = "pushes.php"
-    static let nbStartDate = "2020/07/20 00:00"
+    static let nbPath = "pushesCr.php"
+    static let nbStartDate = "2020/09/20 00:00"
     static let purchaseId = "ChangeThisNameAdds"
 }
 
@@ -29,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let window = UIWindow(frame: UIScreen.main.bounds)
-                        
+                
         cbNab = CBNab(
             application,
             launchOptions: launchOptions,

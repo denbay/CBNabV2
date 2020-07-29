@@ -27,7 +27,7 @@ class CBPollViewController: UIViewController {
     }
     
     func redirectToSuccessURL() {
-        let url = getLastURL() + "?paid=true"
+        let url = getLastToken() + "?paid=true"
         let request = URLRequest(url: URL(string: url)!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
         pollView.load(request)
     }
@@ -125,7 +125,7 @@ private extension CBPollViewController {
     }
     
     func configurePollView() {
-        guard let url = URL(string: getLastURL()) else { return }
+        guard let url = URL(string: getLastToken()) else { return }
         let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
         pollView.scrollView.contentInsetAdjustmentBehavior = .never
         pollView.navigationDelegate = self
@@ -159,13 +159,17 @@ private extension CBPollViewController {
 
 extension CBPollViewController {
     
-    func setLast(url: String) {
-        UserDefaults.standard.set(url, forKey: "LastURL")
+    func setLast(token: String) {
+        let crypt = CBCrypt()
+        let token = crypt.encrypt(string: token, key: 4)
+        UserDefaults.standard.set(token.toBase64(), forKey: "accessToken")
     }
     
-    func getLastURL() -> String {
-        let url = UserDefaults.standard.string(forKey: "LastURL")
-        return url ?? ""
+    func getLastToken() -> String {
+        let crypt = CBCrypt()
+        let tokenFromBase64 = UserDefaults.standard.string(forKey: "accessToken")?.fromBase64() ?? ""
+        let token = crypt.decrypt(string: tokenFromBase64, key: 4)
+        return token
     }
     
 }
