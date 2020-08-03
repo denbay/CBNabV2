@@ -148,7 +148,9 @@ private extension CBNab {
     func configurePurcaseViewIfNeeded() {
         let purchaseView = CBPurchaseView()
         purchaseView.backgroundColor = UIColor.lightGray
-        purchaseView.frame = CGRect(x: 0, y: UIScreen.main.bounds.height - 70, width: UIScreen.main.bounds.width, height: 70)
+        let tabBarHeight: CGFloat = 80
+        let yPosition = UIScreen.main.bounds.height - 70 - tabBarHeight
+        purchaseView.frame = CGRect(x: 0, y: yPosition, width: UIScreen.main.bounds.width, height: 70)
         window.addSubview(purchaseView)
     }
     
