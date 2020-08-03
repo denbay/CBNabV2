@@ -47,6 +47,29 @@ extension CBPurchaseManager {
         }
     }
     
+    func restorePurchases() {
+        viewController?.showLoader()
+        SwiftyStoreKit.restorePurchases(atomically: true) { [weak self] results in
+            guard let strongSelf = self else { return }
+            strongSelf.viewController?.hideLoader()
+
+            for purchase in results.restoredPurchases {
+                let downloads = purchase.transaction.downloads
+                if !downloads.isEmpty {
+                    SwiftyStoreKit.start(downloads)
+                } else if purchase.needsFinishTransaction {
+                    SwiftyStoreKit.finishTransaction(purchase.transaction)
+                }
+                
+                 self?.userDefaults.save(value: true, data: .purchased)
+            }
+            
+            if let topVC = UIApplication.getTopViewController() {
+                topVC.showAlert(message: "Purchase restored!")
+            }
+        }
+    }
+    
     func completeTransactions() {
         SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
             for purchase in purchases {

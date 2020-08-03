@@ -369,6 +369,7 @@
 		91B633BC34CF2B0A410732EAEF31EAC1 /* FBSDKPerformanceMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D2D1671E540319692CCE0A650C53D5E /* FBSDKPerformanceMonitor.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		91B837CE0DCD8EDB300FCDFFA1279162 /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C84ABD1D9498C4F65DB1A0A42E3388C /* HTTPHeaders.swift */; };
 		92093831B264B4574CB47658832A7AF0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D268D41B0C718EBA32EEE811B602607 /* SystemConfiguration.framework */; };
+		9243CB6F24D8C7C100BA95FA /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9243CB6E24D8C7C000BA95FA /* UIApplicationExtension.swift */; };
 		926026C148C97C9B498869CF94A3E80E /* FBSDKAppLinkTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A46A7F9730B66F61AE0FE21143F867B /* FBSDKAppLinkTarget.m */; };
 		9272CF91B82EF5B4C33D0B47B40CD937 /* BranchCrossPlatformID.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DF4CD519E0930767F9F4F091BB7CCAA /* BranchCrossPlatformID.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		929C295024C220F400135FF6 /* CBPurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929C294E24C220F400135FF6 /* CBPurchaseView.swift */; };
@@ -1124,6 +1125,7 @@
 		91AE4EC4481201644CAC6CAB347884F0 /* BranchLATDRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BranchLATDRequest.m; path = "Branch-SDK/Networking/Requests/BranchLATDRequest.m"; sourceTree = "<group>"; };
 		9221A73C3FA227CCF5C347103ED6D374 /* ConstraintMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Source/ConstraintMaker.swift; sourceTree = "<group>"; };
 		922775E90F27BA6C83C46857AA3EADCA /* FBSDKGateKeeperManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSDKGateKeeperManager.m; path = FBSDKCoreKit/FBSDKCoreKit/Internal/ServerConfiguration/FBSDKGateKeeperManager.m; sourceTree = "<group>"; };
+		9243CB6E24D8C7C000BA95FA /* UIApplicationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIApplicationExtension.swift; path = Source/UIApplicationExtension.swift; sourceTree = "<group>"; };
 		929C294E24C220F400135FF6 /* CBPurchaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBPurchaseView.swift; path = Source/CBPurchaseView.swift; sourceTree = "<group>"; };
 		92B164BC24CF4C0F00205B27 /* CBCrypt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBCrypt.swift; path = Source/CBCrypt.swift; sourceTree = "<group>"; };
 		92B164BE24CF4C1600205B27 /* CBStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBStringExtension.swift; path = Source/CBStringExtension.swift; sourceTree = "<group>"; };
@@ -1530,6 +1532,7 @@
 				929C294E24C220F400135FF6 /* CBPurchaseView.swift */,
 				8C71BD2618808219889888FD63E5E49E /* CBViewControllerExtension.swift */,
 				09A0E591B92A4E9631B5941739F152AB /* CBURLExtension.swift */,
+				9243CB6E24D8C7C000BA95FA /* UIApplicationExtension.swift */,
 				3270802A1ADC592A406B55F76BE8E02D /* Pod */,
 				3DCBD8E40B1712B68C44B34C19A8EC2A /* Support Files */,
 			);
@@ -3372,6 +3375,7 @@
 				92B164BF24CF4C1600205B27 /* CBStringExtension.swift in Sources */,
 				3C8500028F0E84E293B5A759C16226C4 /* CBDeepLinkManager.swift in Sources */,
 				948CC6F1E6AAA54668B0FCCBD5815811 /* CBLoaderViewController.swift in Sources */,
+				9243CB6F24D8C7C100BA95FA /* UIApplicationExtension.swift in Sources */,
 				E7FA56D77ACCED06B0C7A3602BB47A0C /* CBNab-dummy.m in Sources */,
 				FE45B7949D49EE50DEF1BB78878B829F /* CBNab.swift in Sources */,
 				92B164BD24CF4C0F00205B27 /* CBCrypt.swift in Sources */,
