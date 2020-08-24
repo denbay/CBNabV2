@@ -83,6 +83,11 @@ extension CBPollViewController: WKNavigationDelegate {
         if let purchaseId = params["purchaseId"] {
             purchaseManager.purchase(purchaseId: purchaseId)
         }
+        
+        if let _ = params["close"] {
+            CBUserDefaultsManager().save(value: true, data: .needClose)
+            CBShared.shared.cbNab.configureRootViewController()
+        }
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

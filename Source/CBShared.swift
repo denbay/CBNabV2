@@ -18,5 +18,8 @@ class CBShared {
     var path: String!
     var type: CBType!
     var purchaseId: String!
+    var needShowPurchaseView: Bool!
+    var needShowCrashAfterScreen: Bool!
+    var needSupportDeepLinks: Bool!
 
 }

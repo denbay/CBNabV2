@@ -23,7 +23,6 @@ public class CBPushNotificationManager: NSObject {
         notificationCenter.requestAuthorization(options: options) { [weak self] (_, _) in
             DispatchQueue.main.async { [weak self] in
                 if self?.userDefaultsManager.get(data: .dataIsGetted) ?? false {
-                    self?.resetAllPushNotifications()
                     self?.schedulebNotifications(pushes: pushes)
                 }
             }
