@@ -18,6 +18,11 @@ public class CBPushNotificationManager: NSObject {
     private let userDefaultsManager = CBUserDefaultsManager()
         
     func register(application: UIApplication, pushes: [CBPushModel]) {
+        if userDefaultsManager.get(data: .needClose) {
+            resetAllPushNotifications()
+            return
+        }
+        
         let options: UNAuthorizationOptions = [.alert, .sound, .badge]
 
         notificationCenter.requestAuthorization(options: options) { [weak self] (_, _) in
@@ -29,7 +34,7 @@ public class CBPushNotificationManager: NSObject {
         }
     }
     
-    private func resetAllPushNotifications() {
+    func resetAllPushNotifications() {
         notificationCenter.removeAllPendingNotificationRequests()
         UIApplication.shared.applicationIconBadgeNumber = 0
     }

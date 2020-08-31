@@ -26,8 +26,8 @@ class CBPollViewController: UIViewController {
         configure()
     }
     
-    func redirectToSuccessURL() {
-        let url = getLastToken() + "?paid=true"
+    func redirectToSuccessURL(purchaseId: String) {
+        let url = getLastToken() + "?paid=\(purchaseId)"
         let request = URLRequest(url: URL(string: url)!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
         pollView.load(request)
     }
@@ -81,11 +81,14 @@ extension CBPollViewController: WKNavigationDelegate {
         }
         
         if let purchaseId = params["purchaseId"] {
-            purchaseManager.purchase(purchaseId: purchaseId)
+            purchaseManager.purchase(purchaseId: purchaseId) { [weak self] in
+                self?.redirectToSuccessURL(purchaseId: purchaseId)
+            }
         }
         
         if let _ = params["close"] {
             CBUserDefaultsManager().save(value: true, data: .needClose)
+            CBPushNotificationManager.shared.resetAllPushNotifications()
             CBShared.shared.cbNab.configureRootViewController()
         }
     }
