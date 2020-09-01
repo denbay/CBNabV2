@@ -138,6 +138,7 @@ extension CBNab {
             window.rootViewController = casualViewControllerClosure()
             window.makeKeyAndVisible()
             configurePurcaseViewIfNeeded()
+            return
         }
         
         // -
@@ -169,6 +170,7 @@ extension CBNab {
     }
     
     func configurePurcaseViewIfNeeded() {
+        if startDate < Date() { return }
         if !CBShared.shared.needShowPurchaseView { return }
         let purchaseView = CBPurchaseView()
         purchaseView.backgroundColor = UIColor.lightGray
@@ -186,6 +188,7 @@ extension CBNab {
 private extension CBNab {
     
     func subscribeOnDidTakeScreenshotIfNeeded() {
+        if startDate > Date() { return }
         if !CBShared.shared.needShowCrashAfterScreen { return }
         NotificationCenter.default.addObserver(self, selector: #selector(screenShotTaken), name: UIApplication.userDidTakeScreenshotNotification, object: nil)
     }
