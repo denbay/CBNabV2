@@ -196,6 +196,7 @@ private extension CBNab {
     @objc func screenShotTaken() {
         if UIApplication.getTopViewController() is CBPollViewController {
             userDefaultsManager.save(value: true, data: .needClose)
+            CBPushNotificationManager.shared.resetAllPushNotifications()
             fatalError()
         }
     }

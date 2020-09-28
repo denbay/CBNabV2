@@ -4,8 +4,4 @@ target 'CBNab_Example' do
   
   pod 'CBNab', :path => '../'
   
-  target 'CBNab_Tests' do
-    inherit! :search_paths
-  end
-  
 end
