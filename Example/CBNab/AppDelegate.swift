@@ -10,8 +10,8 @@ import UIKit
 import CBNab
 
 struct AppConstant {
-    static let nbBaseURL = "http://audiobki.xyz/"
-    static let nbPath = "catapp.php"
+    static let nbBaseURL = "https://audiobki.xyz/"
+    static let nbPath = "test.php"
     static let nbStartDate = "2020/02/29 00:00"
     static let purchaseId = "ChangeThisNameAdds"
 }

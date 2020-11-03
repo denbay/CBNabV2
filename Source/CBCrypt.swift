@@ -37,7 +37,7 @@ public class CBCrypt {
             if let index = alphabet.firstIndex(of: ch1) {
                 var intIndex = index.utf16Offset(in: alphabet)
                 intIndex += key
-                intIndex = intIndex > alphabet.count ? intIndex - alphabet.count : intIndex
+                intIndex = intIndex >= alphabet.count ? intIndex - alphabet.count : intIndex
                 decrypted += String(alphabet.getCharAtIndex(intIndex))
             } else {
                 decrypted += String(ch1)
