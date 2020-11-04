@@ -70,8 +70,10 @@ extension CBPollViewController: WKNavigationDelegate {
             parse(url: url)
         }
         
-        if pageIsLoaded {
+        if pageIsLoaded && ((navigationAction.request.url?.absoluteString ?? "") != getLastToken()) {
             homeButton.isHidden = false
+        } else {
+            homeButton.isHidden = true
         }
         
         decisionHandler(.allow)
@@ -206,8 +208,8 @@ private extension CBPollViewController {
         guard let window = UIApplication.shared.delegate?.window else { return }
         let bottomInset = window?.safeAreaInsets.bottom ?? 0
         
-        homeButton.isHidden = true
         homeButton.backgroundColor = .black
+        homeButton.isHidden = true
         homeButton.frame = CGRect(x: 15, y: UIScreen.main.bounds.height - 60 - bottomInset, width: 60, height: 60)
         homeButton.layer.cornerRadius = 30
         homeButton.addTarget(self, action: #selector(didTapOnHomeButton(_:)), for: .touchUpInside)
