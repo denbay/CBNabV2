@@ -1,6 +1,0 @@
-framework module CBNab {
-  umbrella header "CBNab-umbrella.h"
-
-  export *
-  module * { export * }
-}
