@@ -8,6 +8,19 @@
 import UIKit
 
 // MARK: -
+// MARK: - Date
+
+extension String {
+    
+    func toDate() -> Date {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+        return formatter.date(from: self) ?? Date(timeIntervalSince1970: 0)
+    }
+    
+}
+
+// MARK: -
 // MARK: - Base64
 
 extension String {

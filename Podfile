@@ -4,7 +4,9 @@ target 'CBNab_Example' do
 
   pod 'Moya'
   pod 'SnapKit'
-  pod 'SnapKit'
+  pod 'Kingfisher'
   pod 'SwiftyStoreKit'
+  pod 'AppsFlyerFramework'
+
 
 end

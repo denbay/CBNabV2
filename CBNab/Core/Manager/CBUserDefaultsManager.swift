@@ -12,6 +12,7 @@ class CBUserDefaultsManager {
     enum Data: String {
         case dataIsGetted
         case deepLinkParams
+        case returnedData
         case enabledPushes
         case introIsShowed
         case isFirstLaunch

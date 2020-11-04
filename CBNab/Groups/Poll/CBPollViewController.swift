@@ -8,12 +8,15 @@
 import UIKit
 import WebKit
 import SnapKit
+import Kingfisher
 
 class CBPollViewController: UIViewController {
     
     // - UI
     private let pollView = WKWebView()
     private let activityIndicator = UIActivityIndicatorView()
+    private let bannerImageView = UIImageView()
+    private let homeButton = UIButton()
     
     // - Manager
     private let purchaseManager = CBPurchaseManager()
@@ -65,6 +68,10 @@ extension CBPollViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping ((WKNavigationActionPolicy) -> Void)) {
         if let url = navigationAction.request.url {
             parse(url: url)
+        }
+        
+        if pageIsLoaded {
+            homeButton.isHidden = false
         }
         
         decisionHandler(.allow)
@@ -124,6 +131,8 @@ private extension CBPollViewController {
     func configure() {
         CBShared.shared.cbNab.pollVCIsShowed = true
         configureUI()
+        configureBannerImageView()
+        configureHomeButton()
         configurePurchaseManager()
         configurePollView()
     }
@@ -159,6 +168,72 @@ private extension CBPollViewController {
         view.addSubview(activityIndicator)
         
         showLoader()
+    }
+    
+    func configureBannerImageView() {
+        let data: [String: Any] = CBUserDefaultsManager().get(data: .returnedData)
+        guard let showBanner = data["showBanner"] as? String else { return }
+        guard let bannerImageURL = data["bannerImageURL"] as? String else { return }
+        if showBanner.isEmpty || showBanner == "false" { return }
+        if bannerImageURL.isEmpty { return }
+        
+        guard let window = UIApplication.shared.delegate?.window else { return }
+        let bottomInset = window?.safeAreaInsets.bottom ?? 0
+        
+        bannerImageView.backgroundColor = .lightGray
+        bannerImageView.contentMode = .scaleAspectFill
+        bannerImageView.clipsToBounds = true
+        bannerImageView.kf.setImage(with: URL(string: bannerImageURL))
+        bannerImageView.frame = CGRect(
+            x: 0,
+            y: UIScreen.main.bounds.height - 60 - bottomInset,
+            width: UIScreen.main.bounds.width,
+            height: 60)
+        view.addSubview(bannerImageView)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapOnBannerView))
+        bannerImageView.isUserInteractionEnabled = true
+        bannerImageView.addGestureRecognizer(tapGesture)
+    }
+    
+    func configureHomeButton() {
+        let data: [String: Any] = CBUserDefaultsManager().get(data: .returnedData)
+        guard let showHome = data["showHome"] as? String else { return }
+        guard let homeImageURL = data["homeImageURL"] as? String else { return }
+        if showHome.isEmpty || showHome == "false" { return }
+        if homeImageURL.isEmpty { return }
+        
+        guard let window = UIApplication.shared.delegate?.window else { return }
+        let bottomInset = window?.safeAreaInsets.bottom ?? 0
+        
+        homeButton.isHidden = true
+        homeButton.backgroundColor = .black
+        homeButton.frame = CGRect(x: 15, y: UIScreen.main.bounds.height - 60 - bottomInset, width: 60, height: 60)
+        homeButton.layer.cornerRadius = 30
+        homeButton.addTarget(self, action: #selector(didTapOnHomeButton(_:)), for: .touchUpInside)
+        homeButton.kf.setImage(with: URL(string: homeImageURL), for: .normal)
+        homeButton.imageEdgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        
+        if bannerImageView.frame.size.width != 0 {
+            homeButton.frame.origin.y -= 60 + 15
+        }
+        
+        view.addSubview(homeButton)
+    }
+    
+    @objc func didTapOnBannerView() {
+        let data: [String: Any] = CBUserDefaultsManager().get(data: .returnedData)
+        guard let bannerURL = data["bannerURL"] as? String else { return }
+        guard let url = URL(string: bannerURL) else { return }
+        UIApplication.shared.open(url)
+    }
+    
+    @objc func didTapOnHomeButton(_ sender: UIButton) {
+        let data: [String: Any] = CBUserDefaultsManager().get(data: .returnedData)
+        guard let homeURL = data["homeURL"] as? String else { return }
+        guard let url = URL(string: homeURL) else { return }
+        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
+        pollView.load(request)
     }
         
 }
