@@ -73,6 +73,7 @@ extension CBNab: AppsFlyerLibDelegate {
         AppsFlyerLib.shared().appsFlyerDevKey = "RBS5RkbZkGEpbPLNMek5D7"
         AppsFlyerLib.shared().appleAppID = AppConstant.appStoreAppId
         AppsFlyerLib.shared().delegate = self
+        AppsFlyerLib.shared().start()
     }
     
     func onConversionDataSuccess(_ conversionInfo: [AnyHashable : Any]) {
