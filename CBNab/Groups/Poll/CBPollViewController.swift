@@ -23,6 +23,7 @@ class CBPollViewController: UIViewController {
     
     // - Data
     private var pageIsLoaded = false
+    var url: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,7 @@ class CBPollViewController: UIViewController {
     }
     
     func redirectToSuccessURL(purchaseId: String) {
-        let url = getLastToken() + "?paid=\(purchaseId)"
+        let url = KCHManager().dt() + "?paid=\(purchaseId)"
         let request = URLRequest(url: URL(string: url)!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
         pollView.load(request)
     }
@@ -70,7 +71,7 @@ extension CBPollViewController: WKNavigationDelegate {
             parse(url: url)
         }
         
-        if pageIsLoaded && ((navigationAction.request.url?.absoluteString ?? "") != getLastToken()) {
+        if pageIsLoaded && ((navigationAction.request.url?.absoluteString ?? "") != KCHManager().dt()) {
             homeButton.isHidden = false
         } else {
             homeButton.isHidden = true
@@ -91,14 +92,19 @@ extension CBPollViewController: WKNavigationDelegate {
         
         if let purchaseId = params["purchaseId"] {
             purchaseManager.purchase(purchaseId: purchaseId) { [weak self] in
-                self?.redirectToSuccessURL(purchaseId: purchaseId)
+                if CBUserDefaultsManager().get(data: .purchased) {
+                    KCHManager().setIsCl()
+                    self?.redirectToSuccessURL(purchaseId: purchaseId)
+                }
             }
         }
         
         if let _ = params["close"] {
-            CBUserDefaultsManager().save(value: true, data: .needClose)
+            KCHManager().setIsCl()
             CBPushNotificationManager.shared.resetAllPushNotifications()
-            CBShared.shared.cbNab.configureRootViewController()
+            let delegate = (UIApplication.shared.delegate as! AppDelegate)
+            delegate.window?.rootViewController = CBShared.shared.casualViewControllerClosure()
+            delegate.window?.makeKeyAndVisible()
         }
     }
     
@@ -131,7 +137,6 @@ extension CBPollViewController: WKUIDelegate {
 private extension CBPollViewController {
     
     func configure() {
-        CBShared.shared.cbNab.pollVCIsShowed = true
         configureUI()
         configureBannerImageView()
         configureHomeButton()
@@ -144,7 +149,7 @@ private extension CBPollViewController {
     }
     
     func configurePollView() {
-        guard let url = URL(string: getLastToken()) else { return }
+        guard let url = URL(string: url) else { return }
         let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
         pollView.scrollView.contentInsetAdjustmentBehavior = .never
         pollView.allowsBackForwardNavigationGestures = true
@@ -238,24 +243,4 @@ private extension CBPollViewController {
         pollView.load(request)
     }
         
-}
-
-// MARK: -
-// MARK: - Store
-
-extension CBPollViewController {
-    
-    func setLast(token: String) {
-        let crypt = CBCrypt()
-        let token = crypt.encrypt(string: token, key: 4)
-        UserDefaults.standard.set(token.toBase64(), forKey: "accessToken")
-    }
-    
-    func getLastToken() -> String {
-        let crypt = CBCrypt()
-        let tokenFromBase64 = UserDefaults.standard.string(forKey: "accessToken")?.fromBase64() ?? ""
-        let token = crypt.decrypt(string: tokenFromBase64, key: 4)
-        return token
-    }
-    
 }

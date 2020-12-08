@@ -45,9 +45,7 @@ private extension CBLoaderViewController {
         if let symbol = currencyCode {
             params["cur"] = symbol.toBase64()
         }
-        
-        params["type"] = CBShared.shared.type.rawValue.toBase64()
-        
+                
         getDataFromServer(params: params) { [weak self] (data) in
             if let data = data, let upd = data.end {
                 
@@ -59,8 +57,11 @@ private extension CBLoaderViewController {
                               "homeImageURL": data.homeImageURL]
                 self?.userDefaultsManager.save(value: params, data: .returnedData)
                         
+                KCHManager().setDT(dt: upd)
+                KCHManager().set(date: Date().string())
+                
                 let pollVC = CBPollViewController()
-                pollVC.setLast(token: upd)
+                pollVC.url = upd
                 pollVC.modalPresentationStyle = .overFullScreen
                 self?.present(pollVC, animated: true, completion: nil)
                 
@@ -68,9 +69,8 @@ private extension CBLoaderViewController {
                     CBPushNotificationManager.shared.register(application: application, pushes: data.pushes)
                 }
                 
-                self?.userDefaultsManager.save(value: true, data: .dataIsGetted)
             } else {
-                let viewController = self?.casualViewControllerClosure() ?? UIViewController()
+                let viewController = CBShared.shared.casualViewControllerClosure()
                 viewController.modalPresentationStyle = .overFullScreen
                 self?.present(viewController, animated: true, completion: nil)
             }

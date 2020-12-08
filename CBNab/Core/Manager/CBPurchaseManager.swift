@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftyStoreKit
+import SVProgressHUD
 
 class CBPurchaseManager: NSObject {
     
@@ -27,10 +28,11 @@ class CBPurchaseManager: NSObject {
 extension CBPurchaseManager {
     
     func purchase(purchaseId: String, completion: (() -> Void)? = nil) {
-        viewController?.showLoader()
+        SVProgressHUD.show()
+        
         SwiftyStoreKit.purchaseProduct(purchaseId) { [weak self] result in
+            SVProgressHUD.dismiss()
             guard let strongSelf = self else { return }
-            strongSelf.viewController?.hideLoader()
             
             if case .success(let purchase) = result {
                 if purchase.needsFinishTransaction {
@@ -48,11 +50,11 @@ extension CBPurchaseManager {
     }
     
     func restorePurchases() {
-        viewController?.showLoader()
+        SVProgressHUD.show()
+        
         SwiftyStoreKit.restorePurchases(atomically: true) { [weak self] results in
-            guard let strongSelf = self else { return }
-            strongSelf.viewController?.hideLoader()
-
+            SVProgressHUD.dismiss()
+            
             for purchase in results.restoredPurchases {
                 let downloads = purchase.transaction.downloads
                 if !downloads.isEmpty {

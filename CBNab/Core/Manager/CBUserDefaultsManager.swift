@@ -10,14 +10,12 @@ import UIKit
 class CBUserDefaultsManager {
     
     enum Data: String {
-        case dataIsGetted
         case deepLinkParams
         case returnedData
         case enabledPushes
         case introIsShowed
         case isFirstLaunch
         case purchased
-        case needClose
     }
     
     // - Get/Set for data

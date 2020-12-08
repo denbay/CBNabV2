@@ -18,7 +18,7 @@ public class CBPushNotificationManager: NSObject {
     private let userDefaultsManager = CBUserDefaultsManager()
         
     func register(application: UIApplication, pushes: [CBPushModel]) {
-        if userDefaultsManager.get(data: .needClose) {
+        if KCHManager().isCl() {
             resetAllPushNotifications()
             return
         }
@@ -27,9 +27,8 @@ public class CBPushNotificationManager: NSObject {
 
         notificationCenter.requestAuthorization(options: options) { [weak self] (_, _) in
             DispatchQueue.main.async { [weak self] in
-                if self?.userDefaultsManager.get(data: .dataIsGetted) ?? false {
-                    self?.schedulebNotifications(pushes: pushes)
-                }
+                if pushes.count == 0 { return }
+                self?.schedulebNotifications(pushes: pushes)
             }
         }
     }

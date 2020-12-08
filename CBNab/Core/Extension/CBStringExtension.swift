@@ -12,6 +12,12 @@ import UIKit
 
 extension String {
     
+    func date() -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        return dateFormatter.date(from: self) ?? Date()
+    }
+        
     func toDate() -> Date {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd HH:mm"

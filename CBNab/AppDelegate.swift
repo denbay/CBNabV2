@@ -36,7 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             baseURL: AppConstant.nbBaseURL,
             path: AppConstant.nbPath,
             stringStartDate: AppConstant.nbStartDate,
-            type: .cs,
             purchaseId: AppConstant.purchaseId)
         
         self.window = window

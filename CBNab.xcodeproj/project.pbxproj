@@ -25,14 +25,14 @@
 		924C7795255247F30019ECE0 /* CBNab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7786255247F30019ECE0 /* CBNab.swift */; };
 		924C7796255247F30019ECE0 /* CBCrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7787255247F30019ECE0 /* CBCrypt.swift */; };
 		924C7797255247F30019ECE0 /* CBPurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7788255247F30019ECE0 /* CBPurchaseManager.swift */; };
-		924C7798255247F30019ECE0 /* CBDeepLinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7789255247F30019ECE0 /* CBDeepLinkManager.swift */; };
 		924C7799255247F30019ECE0 /* CBPushModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C778B255247F30019ECE0 /* CBPushModel.swift */; };
 		924C77A9255249290019ECE0 /* CBLoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C77A8255249290019ECE0 /* CBLoaderViewController.swift */; };
-		924C77AD255249360019ECE0 /* CBType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C77AB255249360019ECE0 /* CBType.swift */; };
 		924C77AE255249360019ECE0 /* CBShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C77AC255249360019ECE0 /* CBShared.swift */; };
 		924C77B1255249470019ECE0 /* CBResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C77B0255249470019ECE0 /* CBResponseModel.swift */; };
 		924C77B4255249520019ECE0 /* CBPushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C77B3255249520019ECE0 /* CBPushNotificationManager.swift */; };
 		924C77B7255249620019ECE0 /* CBPurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C77B6255249620019ECE0 /* CBPurchaseView.swift */; };
+		92C2A739257F350C002EEE84 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C2A738257F350C002EEE84 /* KeychainManager.swift */; };
+		92C2A745257F37DA002EEE84 /* CBDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C2A744257F37DA002EEE84 /* CBDateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,14 +55,14 @@
 		924C7786255247F30019ECE0 /* CBNab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBNab.swift; sourceTree = "<group>"; };
 		924C7787255247F30019ECE0 /* CBCrypt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBCrypt.swift; sourceTree = "<group>"; };
 		924C7788255247F30019ECE0 /* CBPurchaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPurchaseManager.swift; sourceTree = "<group>"; };
-		924C7789255247F30019ECE0 /* CBDeepLinkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBDeepLinkManager.swift; sourceTree = "<group>"; };
 		924C778B255247F30019ECE0 /* CBPushModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPushModel.swift; sourceTree = "<group>"; };
 		924C77A8255249290019ECE0 /* CBLoaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBLoaderViewController.swift; sourceTree = "<group>"; };
-		924C77AB255249360019ECE0 /* CBType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBType.swift; sourceTree = "<group>"; };
 		924C77AC255249360019ECE0 /* CBShared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBShared.swift; sourceTree = "<group>"; };
 		924C77B0255249470019ECE0 /* CBResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBResponseModel.swift; sourceTree = "<group>"; };
 		924C77B3255249520019ECE0 /* CBPushNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPushNotificationManager.swift; sourceTree = "<group>"; };
 		924C77B6255249620019ECE0 /* CBPurchaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPurchaseView.swift; sourceTree = "<group>"; };
+		92C2A738257F350C002EEE84 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		92C2A744257F37DA002EEE84 /* CBDateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBDateExtension.swift; sourceTree = "<group>"; };
 		A804B11F75DB8739B81DE9E5 /* Pods_CBNab_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CBNab_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D127A4EE10B8105F154CFDA8 /* Pods-CBNab_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBNab_Example.debug.xcconfig"; path = "Target Support Files/Pods-CBNab_Example/Pods-CBNab_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F1CEFB54C26686617BEFA2A0 /* Pods-CBNab_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBNab_Example.release.xcconfig"; path = "Target Support Files/Pods-CBNab_Example/Pods-CBNab_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -157,7 +157,6 @@
 				924C7782255247F30019ECE0 /* Server */,
 				924C7784255247F30019ECE0 /* Manager */,
 				924C778A255247F30019ECE0 /* Model */,
-				924C77BB25524AFF0019ECE0 /* Enum */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -178,6 +177,7 @@
 				924C777F255247F30019ECE0 /* UIApplicationExtension.swift */,
 				924C7780255247F30019ECE0 /* CBViewControllerExtension.swift */,
 				924C7781255247F30019ECE0 /* CBStringExtension.swift */,
+				92C2A744257F37DA002EEE84 /* CBDateExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -197,7 +197,7 @@
 				924C7785255247F30019ECE0 /* CBUserDefaultsManager.swift */,
 				924C7787255247F30019ECE0 /* CBCrypt.swift */,
 				924C7788255247F30019ECE0 /* CBPurchaseManager.swift */,
-				924C7789255247F30019ECE0 /* CBDeepLinkManager.swift */,
+				92C2A738257F350C002EEE84 /* KeychainManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -226,14 +226,6 @@
 				924C77B6255249620019ECE0 /* CBPurchaseView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		924C77BB25524AFF0019ECE0 /* Enum */ = {
-			isa = PBXGroup;
-			children = (
-				924C77AB255249360019ECE0 /* CBType.swift */,
-			);
-			path = Enum;
 			sourceTree = "<group>";
 		};
 		9B2CFB20B1BE190D265BCA5C /* Pods */ = {
@@ -347,16 +339,20 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CBNab_Example/Pods-CBNab_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyStoreKit.framework",
 			);
@@ -372,7 +368,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				924C77AD255249360019ECE0 /* CBType.swift in Sources */,
 				924C77B4255249520019ECE0 /* CBPushNotificationManager.swift in Sources */,
 				924C7796255247F30019ECE0 /* CBCrypt.swift in Sources */,
 				924C7795255247F30019ECE0 /* CBNab.swift in Sources */,
@@ -383,13 +378,14 @@
 				924C7791255247F30019ECE0 /* CBViewControllerExtension.swift in Sources */,
 				924C77A9255249290019ECE0 /* CBLoaderViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
-				924C7798255247F30019ECE0 /* CBDeepLinkManager.swift in Sources */,
 				924C7797255247F30019ECE0 /* CBPurchaseManager.swift in Sources */,
 				924C7794255247F30019ECE0 /* CBUserDefaultsManager.swift in Sources */,
 				924C77B7255249620019ECE0 /* CBPurchaseView.swift in Sources */,
 				924C7793255247F30019ECE0 /* CBDataProvider.swift in Sources */,
+				92C2A745257F37DA002EEE84 /* CBDateExtension.swift in Sources */,
 				924C7792255247F30019ECE0 /* CBStringExtension.swift in Sources */,
 				924C77AE255249360019ECE0 /* CBShared.swift in Sources */,
+				92C2A739257F350C002EEE84 /* KeychainManager.swift in Sources */,
 				924C778E255247F30019ECE0 /* CBCarrierName.swift in Sources */,
 				924C77B1255249470019ECE0 /* CBResponseModel.swift in Sources */,
 				924C7790255247F30019ECE0 /* UIApplicationExtension.swift in Sources */,

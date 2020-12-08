@@ -15,7 +15,7 @@ class CBNab: NSObject {
     
     // - Manager
     private let userDefaultsManager = CBUserDefaultsManager()
-    private let deepLinkManager = CBDeepLinkManager()
+    private let kchManager = KCHManager()
     
     // - Closure
     private let casualViewControllerClosure: (() -> UIViewController)
@@ -23,7 +23,6 @@ class CBNab: NSObject {
     // - Data
     private var application: UIApplication
     private var startDate: Date
-    var pollVCIsShowed = false
     
     public init(_ application: UIApplication,
                 launchOptions: [UIApplication.LaunchOptionsKey: Any]?,
@@ -31,7 +30,6 @@ class CBNab: NSObject {
                 casualViewControllerClosure: @escaping () -> UIViewController,
                 baseURL: String, path: String,
                 stringStartDate: String,
-                type: CBType,
                 purchaseId: String,
                 needShowCrashAfterScreen: Bool = false,
                 needSupportDeepLinks: Bool = false) {
@@ -46,10 +44,10 @@ class CBNab: NSObject {
         CBShared.shared.cbNab = self
         CBShared.shared.baseURL = baseURL
         CBShared.shared.path = path
-        CBShared.shared.type = type
         CBShared.shared.purchaseId = purchaseId
         CBShared.shared.needShowCrashAfterScreen = needShowCrashAfterScreen
         CBShared.shared.needSupportDeepLinks = needSupportDeepLinks
+        CBShared.shared.casualViewControllerClosure = casualViewControllerClosure
         
         configure(application, launchOptions: launchOptions)
     }
@@ -86,9 +84,7 @@ extension CBNab: AppsFlyerLibDelegate {
                 var params = [String: String]()
                 params["campaign"] = (conversionInfo["сampaign"] as? String) ?? ""
                 params["appsflyerId"] = (conversionInfo["appsflyer_id"] as? String) ?? ""
-                userDefaultsManager.save(value: false, data: .dataIsGetted)
                 userDefaultsManager.save(value: params, data: .deepLinkParams)
-                pollVCIsShowed = false
                 configureRootViewController()
             }
         }
@@ -108,7 +104,6 @@ extension CBNab {
         configurePushNotificationManager(application: application)
         configureRootViewController()
         configureAppsFlyer()
-        subscribeOnDidTakeScreenshotIfNeeded()
     }
         
     private func configurePurchaseManager() {
@@ -121,31 +116,38 @@ extension CBNab {
     }
     
     func configureRootViewController() {
+        if userDefaultsManager.isFirstLaunch() && kchManager.dataIsLoaded() {
+            kchManager.setIsCl()
+        }
+        
+        userDefaultsManager.save(value: 1, data: .isFirstLaunch)
+        
+        let dateString = kchManager.getDate()
+        if !dateString.isEmpty {
+            if abs(dateString.date().daysFromToday()) > 4 {
+                CBPushNotificationManager.shared.resetAllPushNotifications()
+                kchManager.setIsCl()
+            }
+        }
+                
         // -
-        if userDefaultsManager.get(data: .needClose) {
+        if startDate > Date() || kchManager.isCl() {
             window.rootViewController = casualViewControllerClosure()
             window.makeKeyAndVisible()
             return
         }
         
         // -
-        if pollVCIsShowed {
-            return
-        }
-        
-        // -
-        if startDate > Date() {
-            window.rootViewController = casualViewControllerClosure()
+        if kchManager.dataIsLoaded() {
+            subscribeOnNotifications()
+            subscribeOnObserver()
+            let pollVC = CBPollViewController()
+            pollVC.url = KCHManager().dt()
+            pollVC.modalPresentationStyle = .overFullScreen
+            window.rootViewController = pollVC
             window.makeKeyAndVisible()
             return
-        }
-        
-        // -
-        if userDefaultsManager.get(data: .dataIsGetted) {
-            window.rootViewController = CBPollViewController()
-            window.makeKeyAndVisible()
-            return
-        }
+        } 
         
         // -
         let loaderViewController = CBLoaderViewController()
@@ -158,21 +160,34 @@ extension CBNab {
 }
 
 // MARK: -
-// MARK: - UINotifications
+// MARK: - Loading view controller
 
-private extension CBNab {
+extension CBNab {
     
-    func subscribeOnDidTakeScreenshotIfNeeded() {
-        if startDate > Date() { return }
-        if !CBShared.shared.needShowCrashAfterScreen { return }
-        NotificationCenter.default.addObserver(self, selector: #selector(screenShotTaken), name: UIApplication.userDidTakeScreenshotNotification, object: nil)
+    func subscribeOnNotifications() {
+        let mainQueue = OperationQueue.main
+        NotificationCenter.default.addObserver(
+            forName: UIApplication.userDidTakeScreenshotNotification,
+            object: nil,
+            queue: mainQueue) { [weak self] notification in
+            CBPushNotificationManager.shared.resetAllPushNotifications()
+            self?.kchManager.setIsCl()
+            fatalError()
+        }
     }
     
-    @objc func screenShotTaken() {
-        if UIApplication.getTopViewController() is CBPollViewController {
-            userDefaultsManager.save(value: true, data: .needClose)
-            CBPushNotificationManager.shared.resetAllPushNotifications()
-            fatalError()
+    func subscribeOnObserver() {
+        UIScreen.main.addObserver(self, forKeyPath: "captured", options: .new, context: nil)
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
+        if (keyPath == "captured") {
+            let isCaptured = UIScreen.main.isCaptured
+            if isCaptured {
+                CBPushNotificationManager.shared.resetAllPushNotifications()
+                kchManager.setIsCl()
+                fatalError()
+            }
         }
     }
     

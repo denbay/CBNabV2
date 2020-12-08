@@ -7,6 +7,7 @@ target 'CBNab_Example' do
   pod 'Kingfisher'
   pod 'SwiftyStoreKit'
   pod 'AppsFlyerFramework'
-
-
+  pod 'KeychainSwift', '~> 19.0'
+  pod 'SVProgressHUD'
+  
 end
