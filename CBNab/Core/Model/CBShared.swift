@@ -16,7 +16,6 @@ class CBShared {
     var cbNab: CBNab!
     var baseURL: String!
     var path: String!
-    var purchaseId: String!
     var needShowCrashAfterScreen: Bool!
     var needSupportDeepLinks: Bool!
     var casualViewControllerClosure: ( () -> UIViewController)!

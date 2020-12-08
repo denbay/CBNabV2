@@ -30,7 +30,6 @@
 		924C77AE255249360019ECE0 /* CBShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C77AC255249360019ECE0 /* CBShared.swift */; };
 		924C77B1255249470019ECE0 /* CBResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C77B0255249470019ECE0 /* CBResponseModel.swift */; };
 		924C77B4255249520019ECE0 /* CBPushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C77B3255249520019ECE0 /* CBPushNotificationManager.swift */; };
-		924C77B7255249620019ECE0 /* CBPurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C77B6255249620019ECE0 /* CBPurchaseView.swift */; };
 		92C2A739257F350C002EEE84 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C2A738257F350C002EEE84 /* KeychainManager.swift */; };
 		92C2A745257F37DA002EEE84 /* CBDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C2A744257F37DA002EEE84 /* CBDateExtension.swift */; };
 /* End PBXBuildFile section */
@@ -60,7 +59,6 @@
 		924C77AC255249360019ECE0 /* CBShared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBShared.swift; sourceTree = "<group>"; };
 		924C77B0255249470019ECE0 /* CBResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBResponseModel.swift; sourceTree = "<group>"; };
 		924C77B3255249520019ECE0 /* CBPushNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPushNotificationManager.swift; sourceTree = "<group>"; };
-		924C77B6255249620019ECE0 /* CBPurchaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPurchaseView.swift; sourceTree = "<group>"; };
 		92C2A738257F350C002EEE84 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		92C2A744257F37DA002EEE84 /* CBDateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBDateExtension.swift; sourceTree = "<group>"; };
 		A804B11F75DB8739B81DE9E5 /* Pods_CBNab_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CBNab_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,8 +112,8 @@
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
-				924C7779255247F30019ECE0 /* Core */,
 				924C7775255247F30019ECE0 /* Groups */,
+				924C7779255247F30019ECE0 /* Core */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for CBNab";
@@ -151,7 +149,6 @@
 			isa = PBXGroup;
 			children = (
 				924C7786255247F30019ECE0 /* CBNab.swift */,
-				924C77B9255249650019ECE0 /* View */,
 				924C777A255247F30019ECE0 /* Methods */,
 				924C777D255247F30019ECE0 /* Extension */,
 				924C7782255247F30019ECE0 /* Server */,
@@ -218,14 +215,6 @@
 				924C77A8255249290019ECE0 /* CBLoaderViewController.swift */,
 			);
 			path = Loader;
-			sourceTree = "<group>";
-		};
-		924C77B9255249650019ECE0 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				924C77B6255249620019ECE0 /* CBPurchaseView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		9B2CFB20B1BE190D265BCA5C /* Pods */ = {
@@ -380,7 +369,6 @@
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				924C7797255247F30019ECE0 /* CBPurchaseManager.swift in Sources */,
 				924C7794255247F30019ECE0 /* CBUserDefaultsManager.swift in Sources */,
-				924C77B7255249620019ECE0 /* CBPurchaseView.swift in Sources */,
 				924C7793255247F30019ECE0 /* CBDataProvider.swift in Sources */,
 				92C2A745257F37DA002EEE84 /* CBDateExtension.swift in Sources */,
 				924C7792255247F30019ECE0 /* CBStringExtension.swift in Sources */,

@@ -64,9 +64,7 @@ private extension CBPushNotificationManager {
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
         let request = UNNotificationRequest(identifier: "\(timeInterval)", content: content, trigger: trigger)
-        
-        print(title, message, timeInterval)
-        
+                
         notificationCenter.add(request) { (error) in
             print(error)
         }

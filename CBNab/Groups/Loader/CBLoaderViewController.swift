@@ -84,7 +84,9 @@ private extension CBLoaderViewController {
                 let data = moyaResponse.data
                 let statusCode = moyaResponse.statusCode
                 
-                let bs64String = String(data: data, encoding: .utf8)!.components(separatedBy: .whitespacesAndNewlines).joined()
+                guard let bs64String = String(data: data, encoding: .utf8)?.components(separatedBy: .whitespacesAndNewlines).joined() else {
+                    return
+                }
                 
                 guard let decodedData = Data(base64Encoded: bs64String) else {
                     completion(nil)

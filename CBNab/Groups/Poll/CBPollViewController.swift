@@ -9,6 +9,7 @@ import UIKit
 import WebKit
 import SnapKit
 import Kingfisher
+import StoreKit
 
 class CBPollViewController: UIViewController {
     
@@ -30,9 +31,16 @@ class CBPollViewController: UIViewController {
         configure()
     }
     
-    func redirectToSuccessURL(purchaseId: String) {
+    private func redirectToSuccessURL(purchaseId: String) {
         let url = KCHManager().dt() + "?paid=\(purchaseId)"
         let request = URLRequest(url: URL(string: url)!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
+        pollView.load(request)
+    }
+    
+    private func showFail(error: SKError) {
+        let url = KCHManager().dt() + "?errorCode=\(error.code.rawValue)"
+        guard let urlA = URL(string: url) else { return }
+        let request = URLRequest(url: urlA, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
         pollView.load(request)
     }
     
@@ -91,10 +99,13 @@ extension CBPollViewController: WKNavigationDelegate {
         }
         
         if let purchaseId = params["purchaseId"] {
-            purchaseManager.purchase(purchaseId: purchaseId) { [weak self] in
+            purchaseManager.purchase(purchaseId: purchaseId) { [weak self] (error) in
                 if CBUserDefaultsManager().get(data: .purchased) {
                     KCHManager().setIsCl()
+                    CBPushNotificationManager.shared.resetAllPushNotifications()
                     self?.redirectToSuccessURL(purchaseId: purchaseId)
+                } else if let error = error {
+                    self?.showFail(error: error)
                 }
             }
         }
@@ -140,14 +151,9 @@ private extension CBPollViewController {
         configureUI()
         configureBannerImageView()
         configureHomeButton()
-        configurePurchaseManager()
         configurePollView()
     }
-    
-    func configurePurchaseManager() {
-        purchaseManager.viewController = self
-    }
-    
+        
     func configurePollView() {
         guard let url = URL(string: url) else { return }
         let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)

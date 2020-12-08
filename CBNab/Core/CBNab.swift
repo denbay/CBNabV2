@@ -7,6 +7,7 @@
 
 import UIKit
 import AppsFlyerLib
+import KeychainSwift
 
 class CBNab: NSObject {
     
@@ -30,8 +31,6 @@ class CBNab: NSObject {
                 casualViewControllerClosure: @escaping () -> UIViewController,
                 baseURL: String, path: String,
                 stringStartDate: String,
-                purchaseId: String,
-                needShowCrashAfterScreen: Bool = false,
                 needSupportDeepLinks: Bool = false) {
         
         self.window = window
@@ -44,12 +43,17 @@ class CBNab: NSObject {
         CBShared.shared.cbNab = self
         CBShared.shared.baseURL = baseURL
         CBShared.shared.path = path
-        CBShared.shared.purchaseId = purchaseId
-        CBShared.shared.needShowCrashAfterScreen = needShowCrashAfterScreen
         CBShared.shared.needSupportDeepLinks = needSupportDeepLinks
         CBShared.shared.casualViewControllerClosure = casualViewControllerClosure
         
         configure(application, launchOptions: launchOptions)
+    }
+    
+    static func clearC() {
+        let keychain = KeychainSwift()
+        keychain.set(false, forKey: "cl")
+        keychain.set("", forKey: "date1")
+        keychain.set("", forKey: "dt")
     }
 
 }

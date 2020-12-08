@@ -8,6 +8,7 @@
 import UIKit
 import SwiftyStoreKit
 import SVProgressHUD
+import StoreKit
 
 class CBPurchaseManager: NSObject {
     
@@ -16,9 +17,6 @@ class CBPurchaseManager: NSObject {
     
     // - Manager
     private var userDefaults = CBUserDefaultsManager()
-    
-    // - View controller
-    weak var viewController: CBPollViewController?
         
 }
 
@@ -27,12 +25,11 @@ class CBPurchaseManager: NSObject {
 
 extension CBPurchaseManager {
     
-    func purchase(purchaseId: String, completion: (() -> Void)? = nil) {
+    func purchase(purchaseId: String, completion: ((_ error: SKError?) -> Void)? = nil) {
         SVProgressHUD.show()
         
         SwiftyStoreKit.purchaseProduct(purchaseId) { [weak self] result in
             SVProgressHUD.dismiss()
-            guard let strongSelf = self else { return }
             
             if case .success(let purchase) = result {
                 if purchase.needsFinishTransaction {
@@ -41,10 +38,12 @@ extension CBPurchaseManager {
                 
                 self?.userDefaults.save(value: true, data: .purchased)
                 if let completion = completion {
-                    completion()
+                    completion(nil)
                 }
-            } else {
-                strongSelf.viewController?.showErrorPaymentAlert()
+            } else if case .error(let error) = result {
+                if let completion = completion {
+                    completion(error)
+                }
             }
         }
     }
