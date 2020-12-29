@@ -11,7 +11,7 @@ import UIKit
 struct AppConstant {
     static let nbBaseURL = "https://audiobki.xyz/"
     static let nbPath = "slotsgames/slotsgames.php"
-    static let nbStartDate = "2021/03/21 00:00"
+    static let nbStartDate = "2019/02/21 00:00"
     static let appStoreAppId = ""
     static let purchaseId = "premium"
 }
