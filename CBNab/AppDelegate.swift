@@ -10,9 +10,10 @@ import UIKit
 
 struct AppConstant {
     static let nbBaseURL = "https://audiobki.xyz/"
-    static let nbPath = "testFlyer.php"
-    static let nbStartDate = "2020/02/29 00:00"
+    static let nbPath = "slotsgames/slotsgames.php"
+    static let nbStartDate = "2021/03/21 00:00"
     static let appStoreAppId = ""
+    static let purchaseId = "premium"
 }
 
 @UIApplicationMain
@@ -26,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let window = UIWindow(frame: UIScreen.main.bounds)
-                
+        
         cbNab = CBNab(
             application,
             launchOptions: launchOptions,
@@ -34,6 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             casualViewControllerClosure: casualRootVC,
             baseURL: AppConstant.nbBaseURL,
             path: AppConstant.nbPath,
+            purchaseId: AppConstant.purchaseId,
             stringStartDate: AppConstant.nbStartDate)
                 
         self.window = window

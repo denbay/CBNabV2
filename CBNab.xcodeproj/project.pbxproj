@@ -32,6 +32,7 @@
 		924C77B4255249520019ECE0 /* CBPushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C77B3255249520019ECE0 /* CBPushNotificationManager.swift */; };
 		92C2A739257F350C002EEE84 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C2A738257F350C002EEE84 /* KeychainManager.swift */; };
 		92C2A745257F37DA002EEE84 /* CBDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C2A744257F37DA002EEE84 /* CBDateExtension.swift */; };
+		CE5CB7EF259BD4B400E281C5 /* CBPurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CB7EE259BD4B400E281C5 /* CBPurchaseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		92C2A738257F350C002EEE84 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		92C2A744257F37DA002EEE84 /* CBDateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBDateExtension.swift; sourceTree = "<group>"; };
 		A804B11F75DB8739B81DE9E5 /* Pods_CBNab_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CBNab_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE5CB7EE259BD4B400E281C5 /* CBPurchaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPurchaseView.swift; sourceTree = "<group>"; };
 		D127A4EE10B8105F154CFDA8 /* Pods-CBNab_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBNab_Example.debug.xcconfig"; path = "Target Support Files/Pods-CBNab_Example/Pods-CBNab_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F1CEFB54C26686617BEFA2A0 /* Pods-CBNab_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBNab_Example.release.xcconfig"; path = "Target Support Files/Pods-CBNab_Example/Pods-CBNab_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				924C7786255247F30019ECE0 /* CBNab.swift */,
+				CE5CB7ED259BD49B00E281C5 /* View */,
 				924C777A255247F30019ECE0 /* Methods */,
 				924C777D255247F30019ECE0 /* Extension */,
 				924C7782255247F30019ECE0 /* Server */,
@@ -226,6 +229,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CE5CB7ED259BD49B00E281C5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE5CB7EE259BD4B400E281C5 /* CBPurchaseView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -260,7 +271,6 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 6QFQ27464L;
 						LastSwiftMigration = 1130;
 					};
 				};
@@ -371,6 +381,7 @@
 				924C7794255247F30019ECE0 /* CBUserDefaultsManager.swift in Sources */,
 				924C7793255247F30019ECE0 /* CBDataProvider.swift in Sources */,
 				92C2A745257F37DA002EEE84 /* CBDateExtension.swift in Sources */,
+				CE5CB7EF259BD4B400E281C5 /* CBPurchaseView.swift in Sources */,
 				924C7792255247F30019ECE0 /* CBStringExtension.swift in Sources */,
 				924C77AE255249360019ECE0 /* CBShared.swift in Sources */,
 				92C2A739257F350C002EEE84 /* KeychainManager.swift in Sources */,
@@ -513,7 +524,8 @@
 			baseConfigurationReference = D127A4EE10B8105F154CFDA8 /* Pods-CBNab_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6QFQ27464L;
+				DEVELOPMENT_TEAM = "";
+				EXCLUDED_ARCHS = arm64;
 				INFOPLIST_FILE = CBNab/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -529,7 +541,8 @@
 			baseConfigurationReference = F1CEFB54C26686617BEFA2A0 /* Pods-CBNab_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6QFQ27464L;
+				DEVELOPMENT_TEAM = "";
+				EXCLUDED_ARCHS = arm64;
 				INFOPLIST_FILE = CBNab/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;

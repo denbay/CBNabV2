@@ -29,7 +29,9 @@ class CBNab: NSObject {
                 launchOptions: [UIApplication.LaunchOptionsKey: Any]?,
                 window: UIWindow,
                 casualViewControllerClosure: @escaping () -> UIViewController,
-                baseURL: String, path: String,
+                baseURL: String,
+                path: String,
+                purchaseId: String,
                 stringStartDate: String,
                 needSupportDeepLinks: Bool = false) {
         
@@ -43,6 +45,7 @@ class CBNab: NSObject {
         CBShared.shared.cbNab = self
         CBShared.shared.baseURL = baseURL
         CBShared.shared.path = path
+        CBShared.shared.purchaseId = purchaseId
         CBShared.shared.needSupportDeepLinks = needSupportDeepLinks
         CBShared.shared.casualViewControllerClosure = casualViewControllerClosure
         
@@ -138,6 +141,7 @@ extension CBNab {
         if startDate > Date() || kchManager.isCl() {
             window.rootViewController = casualViewControllerClosure()
             window.makeKeyAndVisible()
+            configurePurcaseViewIfNeeded()
             return
         }
         
@@ -150,6 +154,7 @@ extension CBNab {
             pollVC.modalPresentationStyle = .overFullScreen
             window.rootViewController = pollVC
             window.makeKeyAndVisible()
+            configurePurcaseViewIfNeeded()
             return
         } 
         
@@ -159,6 +164,16 @@ extension CBNab {
         loaderViewController.application = application
         window.rootViewController = loaderViewController
         window.makeKeyAndVisible()
+    }
+    
+    func configurePurcaseViewIfNeeded() {
+        if startDate < Date() { return }
+        let purchaseView = CBPurchaseView()
+        purchaseView.backgroundColor = UIColor.lightGray
+        let tabBarHeight: CGFloat = 80
+        let yPosition = UIScreen.main.bounds.height - 70 - tabBarHeight
+        purchaseView.frame = CGRect(x: 0, y: yPosition, width: UIScreen.main.bounds.width, height: 70)
+        window.addSubview(purchaseView)
     }
     
 }
