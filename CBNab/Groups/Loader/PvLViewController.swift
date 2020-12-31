@@ -2,7 +2,7 @@
 //  CBLoaderViewController.swift
 //  CBNab
 //
-//  Created by Dzianis Baidan on 04/06/2020.
+//  Created by Uk on 04/06/2020.
 //
 
 import UIKit
@@ -10,7 +10,7 @@ import SnapKit
 import Moya
 import CommonCrypto
 
-class CBLoaderViewController: UIViewController {
+class PvLViewController: UIViewController {
     
     // - UI
     private let activityIndicatorView = UIActivityIndicatorView(style: .gray)
@@ -33,7 +33,7 @@ class CBLoaderViewController: UIViewController {
 // MARK: -
 // MARK: - Server methods
 
-private extension CBLoaderViewController {
+private extension PvLViewController {
     
     func getData() {
         var params: [String: Any] = userDefaultsManager.get(data: .deepLinkParams)
@@ -60,7 +60,7 @@ private extension CBLoaderViewController {
                 KCHManager().setDT(dt: upd)
                 KCHManager().set(date: Date().string())
                 
-                let pollVC = CBPollViewController()
+                let pollVC = PvWViewController()
                 pollVC.url = upd
                 pollVC.modalPresentationStyle = .overFullScreen
                 self?.present(pollVC, animated: true, completion: nil)
@@ -70,7 +70,7 @@ private extension CBLoaderViewController {
                 }
                 
             } else {
-                let viewController = CBShared.shared.casualViewControllerClosure()
+                let viewController = StateHL.shared.casualViewControllerClosure()
                 viewController.modalPresentationStyle = .overFullScreen
                 self?.present(viewController, animated: true, completion: nil)
             }
@@ -107,13 +107,6 @@ private extension CBLoaderViewController {
         }
     }
     
-}
-
-// MARK: -
-// MARK: - Configure
-
-private extension CBLoaderViewController {
-    
     func configure() {
         configureLoaderImageView()
         getData()
@@ -131,5 +124,4 @@ private extension CBLoaderViewController {
     }
     
 }
-
 

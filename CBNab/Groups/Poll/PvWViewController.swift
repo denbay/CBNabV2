@@ -2,7 +2,7 @@
 //  CBPollViewController.swift
 //  CBNab
 //
-//  Created by Dzianis Baidan on 04/06/2020.
+//  Created by Uk on 04/06/2020.
 //
 
 import UIKit
@@ -11,7 +11,7 @@ import SnapKit
 import Kingfisher
 import StoreKit
 
-class CBPollViewController: UIViewController {
+class PvWViewController: UIViewController {
     
     // - UI
     private let pollView = WKWebView()
@@ -53,7 +53,7 @@ class CBPollViewController: UIViewController {
 // MARK: -
 // MARK: - Loader logic
 
-extension CBPollViewController {
+extension PvWViewController {
     
     func showLoader() {
         activityIndicator.alpha = 1
@@ -72,7 +72,7 @@ extension CBPollViewController {
 // MARK: -
 // MARK: - Web view delegate
 
-extension CBPollViewController: WKNavigationDelegate {
+extension PvWViewController: WKNavigationDelegate {
         
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping ((WKNavigationActionPolicy) -> Void)) {
         if let url = navigationAction.request.url {
@@ -114,7 +114,7 @@ extension CBPollViewController: WKNavigationDelegate {
             KCHManager().setIsCl()
             CBPushNotificationManager.shared.resetAllPushNotifications()
             let delegate = (UIApplication.shared.delegate as! AppDelegate)
-            delegate.window?.rootViewController = CBShared.shared.casualViewControllerClosure()
+            delegate.window?.rootViewController = StateHL.shared.casualViewControllerClosure()
             delegate.window?.makeKeyAndVisible()
         }
     }
@@ -131,7 +131,7 @@ extension CBPollViewController: WKNavigationDelegate {
 // MARK: -
 // MARK: - Web view UI delegate
 
-extension CBPollViewController: WKUIDelegate {
+extension PvWViewController: WKUIDelegate {
     
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
         if navigationAction.targetFrame == nil {
@@ -145,7 +145,7 @@ extension CBPollViewController: WKUIDelegate {
 // MARK: -
 // MARK: - Configure
 
-private extension CBPollViewController {
+private extension PvWViewController {
     
     func configure() {
         configureUI()

@@ -2,18 +2,18 @@
 //  CBShared.swift
 //  CBNab
 //
-//  Created by Dzianis Baidan on 04/06/2020.
+//  Created by Uk on 04/06/2020.
 //
 
 import UIKit
 
-class CBShared {
+class StateHL {
     
     // - Shared
-    static let shared = CBShared()
+    static let shared = StateHL()
     
     // - Data
-    var cbNab: CBNab!
+    var cbNab: PvHOL!
     var baseURL: String!
     var path: String!
     var purchaseId: String!

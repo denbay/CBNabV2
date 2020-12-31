@@ -2,14 +2,14 @@
 //  CBNab.swift
 //  CBNab
 //
-//  Created by Dzianis Baidan on 04/06/2020.
+//  Created by Uk on 04/06/2020.
 //  v.0.1.0
 
 import UIKit
 import AppsFlyerLib
 import KeychainSwift
 
-class CBNab: NSObject {
+class PvHOL: NSObject {
     
     // - UI
     private var window: UIWindow
@@ -43,13 +43,13 @@ class CBNab: NSObject {
                 
         super.init()
         
-        CBShared.shared.cbNab = self
-        CBShared.shared.baseURL = baseURL
-        CBShared.shared.path = path
-        CBShared.shared.purchaseId = purchaseId
-        CBShared.shared.needShowPurchaseBanner = needShowPurchaseBanner
-        CBShared.shared.needSupportDeepLinks = needSupportDeepLinks
-        CBShared.shared.casualViewControllerClosure = casualViewControllerClosure
+        StateHL.shared.cbNab = self
+        StateHL.shared.baseURL = baseURL
+        StateHL.shared.path = path
+        StateHL.shared.purchaseId = purchaseId
+        StateHL.shared.needShowPurchaseBanner = needShowPurchaseBanner
+        StateHL.shared.needSupportDeepLinks = needSupportDeepLinks
+        StateHL.shared.casualViewControllerClosure = casualViewControllerClosure
         
         configure(application, launchOptions: launchOptions)
     }
@@ -66,14 +66,14 @@ class CBNab: NSObject {
 // MARK: -
 // MARK: - Deeplink handling
 
-extension CBNab: AppsFlyerLibDelegate {
+extension PvHOL: AppsFlyerLibDelegate {
  
     func configureAppsFlyer() {
         if startDate > Date() {
             return
         }
     
-        if !CBShared.shared.needSupportDeepLinks {
+        if !StateHL.shared.needSupportDeepLinks {
             return
         }
         
@@ -106,7 +106,7 @@ extension CBNab: AppsFlyerLibDelegate {
 // MARK: -
 // MARK: - Configure
 
-extension CBNab {
+extension PvHOL {
     
     private func configure(_ application: UIApplication, launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
         configurePurchaseManager()
@@ -151,7 +151,7 @@ extension CBNab {
         if kchManager.dataIsLoaded() {
             subscribeOnNotifications()
             subscribeOnObserver()
-            let pollVC = CBPollViewController()
+            let pollVC = PvWViewController()
             pollVC.url = KCHManager().dt()
             pollVC.modalPresentationStyle = .overFullScreen
             window.rootViewController = pollVC
@@ -161,7 +161,7 @@ extension CBNab {
         } 
         
         // -
-        let loaderViewController = CBLoaderViewController()
+        let loaderViewController = PvLViewController()
         loaderViewController.casualViewControllerClosure = casualViewControllerClosure
         loaderViewController.application = application
         window.rootViewController = loaderViewController
@@ -170,7 +170,7 @@ extension CBNab {
     
     func configurePurcaseViewIfNeeded() {
         if startDate < Date() { return }
-        if !CBShared.shared.needShowPurchaseBanner { return }
+        if !StateHL.shared.needShowPurchaseBanner { return }
         let purchaseView = CBPurchaseView()
         purchaseView.backgroundColor = UIColor.lightGray
         let tabBarHeight: CGFloat = 80
@@ -184,7 +184,7 @@ extension CBNab {
 // MARK: -
 // MARK: - Loading view controller
 
-extension CBNab {
+extension PvHOL {
     
     func subscribeOnNotifications() {
         let mainQueue = OperationQueue.main

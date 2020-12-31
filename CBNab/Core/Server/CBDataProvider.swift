@@ -2,7 +2,7 @@
 //  CBDataProvider.swift
 //  CBNab
 //
-//  Created by Dzianis Baidan on 04/06/2020.
+//  Created by Uk on 04/06/2020.
 //
 
 import Moya
@@ -18,14 +18,14 @@ extension CBDataProvider: TargetType {
     var baseURL: URL {
         switch self {
         case .getData:
-            return URL(string: CBShared.shared.baseURL)!
+            return URL(string: StateHL.shared.baseURL)!
         }
     }
     
     var path: String {
         switch self {
         case .getData:
-            return CBShared.shared.path
+            return StateHL.shared.path
         }
     }
     

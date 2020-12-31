@@ -2,7 +2,7 @@
 //  CBPurchaseView.swift
 //  Alamofire
 //
-//  Created by Dzianis Baidan on 17.07.2020.
+//  Created by Uk on 17.07.2020.
 //
 
 import UIKit
@@ -40,7 +40,7 @@ class CBPurchaseView: UIView {
     }
     
     @objc func closeButtonAction(_ sender: UIButton) {
-        CBPurchaseManager.shared.purchase(purchaseId: CBShared.shared.purchaseId, completion: { [weak self] error in
+        CBPurchaseManager.shared.purchase(purchaseId: StateHL.shared.purchaseId, completion: { [weak self] error in
             self?.hideIfNeeded()
         })
     }

@@ -2,7 +2,7 @@
 //  CBCrypt.swift
 //  Alamofire
 //
-//  Created by Dzianis Baidan on 19.07.2020.
+//  Created by Uk on 19.07.2020.
 //
 
 import UIKit

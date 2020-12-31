@@ -23,12 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     // - CBNab
-    private var cbNab: CBNab!
+    private var cbNab: PvHOL!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let window = UIWindow(frame: UIScreen.main.bounds)
         
-        cbNab = CBNab(
+        cbNab = PvHOL(
             application,
             launchOptions: launchOptions,
             window: window,
