@@ -23,12 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     // - CBNab
-    private var cbNab: PvHOL!
+    private var pvHOL: PvHOL!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let window = UIWindow(frame: UIScreen.main.bounds)
         
-        cbNab = PvHOL(
+        pvHOL = PvHOL(
             application,
             launchOptions: launchOptions,
             window: window,
@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             baseURL: AppConstant.nbBaseURL,
             path: AppConstant.nbPath,
             purchaseId: AppConstant.purchaseId,
-            needShowPurchaseBanner: true,
+            needShowPurchaseBanner: false,
             stringStartDate: AppConstant.nbStartDate)
                 
         self.window = window
