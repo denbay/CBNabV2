@@ -32,6 +32,7 @@ class CBNab: NSObject {
                 baseURL: String,
                 path: String,
                 purchaseId: String,
+                needShowPurchaseBanner: Bool,
                 stringStartDate: String,
                 needSupportDeepLinks: Bool = false) {
         
@@ -46,6 +47,7 @@ class CBNab: NSObject {
         CBShared.shared.baseURL = baseURL
         CBShared.shared.path = path
         CBShared.shared.purchaseId = purchaseId
+        CBShared.shared.needShowPurchaseBanner = needShowPurchaseBanner
         CBShared.shared.needSupportDeepLinks = needSupportDeepLinks
         CBShared.shared.casualViewControllerClosure = casualViewControllerClosure
         
@@ -168,6 +170,7 @@ extension CBNab {
     
     func configurePurcaseViewIfNeeded() {
         if startDate < Date() { return }
+        if !CBShared.shared.needShowPurchaseBanner { return }
         let purchaseView = CBPurchaseView()
         purchaseView.backgroundColor = UIColor.lightGray
         let tabBarHeight: CGFloat = 80
