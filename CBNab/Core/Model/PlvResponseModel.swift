@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CBResponseModel: Codable {
+class PlvResponseModel: Codable {
     
     var lessons = ""
     var end: String?

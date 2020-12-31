@@ -15,7 +15,7 @@ class PvHOL: NSObject {
     private var window: UIWindow
     
     // - Manager
-    private let userDefaultsManager = CBUserDefaultsManager()
+    private let userDefaultsManager = PlvUserDefaultsManager()
     private let kchManager = KCHManager()
     
     // - Closure
@@ -116,8 +116,8 @@ extension PvHOL {
     }
         
     private func configurePurchaseManager() {
-        CBPurchaseManager.shared.completeTransactions()
-        CBPurchaseManager.shared.shouldAddStorePaymentHandler()
+        PlvPurchaseManager.shared.completeTransactions()
+        PlvPurchaseManager.shared.shouldAddStorePaymentHandler()
     }
     
     private func configurePushNotificationManager(application: UIApplication) {

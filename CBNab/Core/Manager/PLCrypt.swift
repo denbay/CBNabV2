@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class CBCrypt {
+public class PLCrypt {
     
     private let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
     

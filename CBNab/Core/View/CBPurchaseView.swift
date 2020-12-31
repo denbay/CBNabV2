@@ -15,7 +15,7 @@ class CBPurchaseView: UIView {
     private let adsLabel = UILabel()
     
     // - Manager
-    private var userDefaultsManager = CBUserDefaultsManager()
+    private var userDefaultsManager = PlvUserDefaultsManager()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,13 +40,13 @@ class CBPurchaseView: UIView {
     }
     
     @objc func closeButtonAction(_ sender: UIButton) {
-        CBPurchaseManager.shared.purchase(purchaseId: StateHL.shared.purchaseId, completion: { [weak self] error in
+        PlvPurchaseManager.shared.purchase(purchaseId: StateHL.shared.purchaseId, completion: { [weak self] error in
             self?.hideIfNeeded()
         })
     }
     
     @objc func restoreButtonAction(_ sender: UIButton) {
-        CBPurchaseManager.shared.restorePurchases()
+        PlvPurchaseManager.shared.restorePurchases()
     }
     
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CBUserDefaultsManager {
+class PlvUserDefaultsManager {
     
     enum Data: String {
         case deepLinkParams

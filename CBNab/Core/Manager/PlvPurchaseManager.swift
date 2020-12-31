@@ -10,20 +10,20 @@ import SwiftyStoreKit
 import SVProgressHUD
 import StoreKit
 
-class CBPurchaseManager: NSObject {
+class PlvPurchaseManager: NSObject {
     
     // - Singleton
-    static let shared = CBPurchaseManager()
+    static let shared = PlvPurchaseManager()
     
     // - Manager
-    private var userDefaults = CBUserDefaultsManager()
+    private var userDefaults = PlvUserDefaultsManager()
         
 }
 
 // MARK: -
 // MARK: - IAP methods
 
-extension CBPurchaseManager {
+extension PlvPurchaseManager {
     
     func purchase(purchaseId: String, completion: ((_ error: SKError?) -> Void)? = nil) {
         SVProgressHUD.show()

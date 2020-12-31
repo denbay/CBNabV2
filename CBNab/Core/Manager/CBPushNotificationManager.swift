@@ -15,7 +15,7 @@ public class CBPushNotificationManager: NSObject {
     
     // - Manager
     private let notificationCenter = UNUserNotificationCenter.current()
-    private let userDefaultsManager = CBUserDefaultsManager()
+    private let userDefaultsManager = PlvUserDefaultsManager()
         
     func register(application: UIApplication, pushes: [HlPushModel]) {
         if KCHManager().isCl() {

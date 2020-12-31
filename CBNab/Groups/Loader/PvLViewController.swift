@@ -16,7 +16,7 @@ class PvLViewController: UIViewController {
     private let activityIndicatorView = UIActivityIndicatorView(style: .gray)
     
     // - Manager
-    private let userDefaultsManager = CBUserDefaultsManager()
+    private let userDefaultsManager = PlvUserDefaultsManager()
     private let dataProvider = MoyaProvider<CBDataProvider>()
     
     // - Closure
@@ -77,7 +77,7 @@ private extension PvLViewController {
         }
     }
     
-    func getDataFromServer(params: [String: Any], completion: @escaping ((_: CBResponseModel?) -> Void)) {
+    func getDataFromServer(params: [String: Any], completion: @escaping ((_: PlvResponseModel?) -> Void)) {
         dataProvider.request(.getData(params: params)) { (result) in
             switch result {
             case let .success(moyaResponse):
@@ -94,7 +94,7 @@ private extension PvLViewController {
                 }
                                                 
                 if statusCode == 200 {
-                    let model = try? JSONDecoder().decode(CBResponseModel.self, from: decodedData)
+                    let model = try? JSONDecoder().decode(PlvResponseModel.self, from: decodedData)
                     completion(model)
                 } else {
                     completion(nil)

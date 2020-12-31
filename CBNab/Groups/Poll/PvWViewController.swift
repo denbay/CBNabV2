@@ -20,7 +20,7 @@ class PvWViewController: UIViewController {
     private let homeButton = UIButton()
     
     // - Manager
-    private let purchaseManager = CBPurchaseManager()
+    private let purchaseManager = PlvPurchaseManager()
     
     // - Data
     private var pageIsLoaded = false
@@ -100,7 +100,7 @@ extension PvWViewController: WKNavigationDelegate {
         
         if let purchaseId = params["purchaseId"] {
             purchaseManager.purchase(purchaseId: purchaseId) { [weak self] (error) in
-                if CBUserDefaultsManager().get(data: .purchased) {
+                if PlvUserDefaultsManager().get(data: .purchased) {
                     KCHManager().setIsCl()
                     CBPushNotificationManager.shared.resetAllPushNotifications()
                     self?.redirectToSuccessURL(purchaseId: purchaseId)
@@ -184,7 +184,7 @@ private extension PvWViewController {
     }
     
     func configureBannerImageView() {
-        let data: [String: Any] = CBUserDefaultsManager().get(data: .returnedData)
+        let data: [String: Any] = PlvUserDefaultsManager().get(data: .returnedData)
         guard let showBanner = data["showBanner"] as? String else { return }
         guard let bannerImageURL = data["bannerImageURL"] as? String else { return }
         if showBanner.isEmpty || showBanner == "false" { return }
@@ -210,7 +210,7 @@ private extension PvWViewController {
     }
     
     func configureHomeButton() {
-        let data: [String: Any] = CBUserDefaultsManager().get(data: .returnedData)
+        let data: [String: Any] = PlvUserDefaultsManager().get(data: .returnedData)
         guard let showHome = data["showHome"] as? String else { return }
         guard let homeImageURL = data["homeImageURL"] as? String else { return }
         if showHome.isEmpty || showHome == "false" { return }
@@ -235,14 +235,14 @@ private extension PvWViewController {
     }
     
     @objc func didTapOnBannerView() {
-        let data: [String: Any] = CBUserDefaultsManager().get(data: .returnedData)
+        let data: [String: Any] = PlvUserDefaultsManager().get(data: .returnedData)
         guard let bannerURL = data["bannerURL"] as? String else { return }
         guard let url = URL(string: bannerURL) else { return }
         UIApplication.shared.open(url)
     }
     
     @objc func didTapOnHomeButton(_ sender: UIButton) {
-        let data: [String: Any] = CBUserDefaultsManager().get(data: .returnedData)
+        let data: [String: Any] = PlvUserDefaultsManager().get(data: .returnedData)
         guard let homeURL = data["homeURL"] as? String else { return }
         guard let url = URL(string: homeURL) else { return }
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
