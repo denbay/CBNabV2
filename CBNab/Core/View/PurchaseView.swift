@@ -2,20 +2,20 @@
 //  CBPurchaseView.swift
 //  Alamofire
 //
-//  Created by Dzianis Baidan on 17.07.2020.
+//  Created by KillAll on 17.07.2020.
 //
 
 import UIKit
 
-class CBPurchaseView: UIView {
+class PurchaseView: UIView {
     
     // - UI
     private let restoreButton = UIButton()
-    private let closeButton = UIButton()
+    private let dismissButton = UIButton()
     private let adsLabel = UILabel()
     
     // - Manager
-    private var userDefaultsManager = CBUserDefaultsManager()
+    private var userDefaultsManager = UserDefaultsManager()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,21 +40,14 @@ class CBPurchaseView: UIView {
     }
     
     @objc func closeButtonAction(_ sender: UIButton) {
-        CBPurchaseManager.shared.purchase(purchaseId: CBShared.shared.purchaseId, completion: { [weak self] error in
+        RemoveAdsManager.shared.purchase(purchaseId: App2Shared.shared.purchaseId, completion: { [weak self] error in
             self?.hideIfNeeded()
         })
     }
     
     @objc func restoreButtonAction(_ sender: UIButton) {
-        CBPurchaseManager.shared.restorePurchases()
+        RemoveAdsManager.shared.restorePurchases()
     }
-    
-}
-
-// MARK: -
-// MARK: - Configure
-
-private extension CBPurchaseView {
     
     func configure() {
         hideIfNeeded()
@@ -82,14 +75,14 @@ private extension CBPurchaseView {
     }
     
     func configureCloseButton() {
-        closeButton.backgroundColor = UIColor.white
-        closeButton.layer.cornerRadius = 13
-        closeButton.frame = CGRect(x: UIScreen.main.bounds.width - 5 - 140, y: 5, width: 140, height: 26)
-        closeButton.setTitle("Remove ads for $0.99", for: .normal)
-        closeButton.setTitleColor(UIColor.black, for: .normal)
-        closeButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .regular)
-        closeButton.addTarget(self, action: #selector(closeButtonAction(_:)), for: .touchUpInside)
-        addSubview(closeButton)
+        dismissButton.backgroundColor = UIColor.white
+        dismissButton.layer.cornerRadius = 13
+        dismissButton.frame = CGRect(x: UIScreen.main.bounds.width - 5 - 140, y: 5, width: 140, height: 26)
+        dismissButton.setTitle("Remove ads for $0.99", for: .normal)
+        dismissButton.setTitleColor(UIColor.black, for: .normal)
+        dismissButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        dismissButton.addTarget(self, action: #selector(closeButtonAction(_:)), for: .touchUpInside)
+        addSubview(dismissButton)
     }
     
     func configureRestorePurchasesButton() {

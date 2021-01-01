@@ -2,7 +2,7 @@
 //  CBPollViewController.swift
 //  CBNab
 //
-//  Created by Dzianis Baidan on 04/06/2020.
+//  Created by KillAll on 04/06/2020.
 //
 
 import UIKit
@@ -11,16 +11,16 @@ import SnapKit
 import Kingfisher
 import StoreKit
 
-class CBPollViewController: UIViewController {
+class OurViewController: UIViewController {
     
     // - UI
-    private let pollView = WKWebView()
+    private let ourView = WKWebView()
     private let activityIndicator = UIActivityIndicatorView()
     private let bannerImageView = UIImageView()
     private let homeButton = UIButton()
     
     // - Manager
-    private let purchaseManager = CBPurchaseManager()
+    private let purchaseManager = RemoveAdsManager()
     
     // - Data
     private var pageIsLoaded = false
@@ -32,16 +32,16 @@ class CBPollViewController: UIViewController {
     }
     
     private func redirectToSuccessURL(purchaseId: String) {
-        let url = KCHManager().dt() + "?paid=\(purchaseId)"
+        let url = UDKManager().dt() + "?paid=\(purchaseId)"
         let request = URLRequest(url: URL(string: url)!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
-        pollView.load(request)
+        ourView.load(request)
     }
     
     private func showFail(error: SKError) {
-        let url = KCHManager().dt() + "?errorCode=\(error.code.rawValue)"
+        let url = UDKManager().dt() + "?errorCode=\(error.code.rawValue)"
         guard let urlA = URL(string: url) else { return }
         let request = URLRequest(url: urlA, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
-        pollView.load(request)
+        ourView.load(request)
     }
     
     func showErrorPaymentAlert() {
@@ -53,7 +53,7 @@ class CBPollViewController: UIViewController {
 // MARK: -
 // MARK: - Loader logic
 
-extension CBPollViewController {
+extension OurViewController {
     
     func showLoader() {
         activityIndicator.alpha = 1
@@ -72,14 +72,14 @@ extension CBPollViewController {
 // MARK: -
 // MARK: - Web view delegate
 
-extension CBPollViewController: WKNavigationDelegate {
+extension OurViewController: WKNavigationDelegate {
         
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping ((WKNavigationActionPolicy) -> Void)) {
         if let url = navigationAction.request.url {
             parse(url: url)
         }
         
-        if pageIsLoaded && ((navigationAction.request.url?.absoluteString ?? "") != KCHManager().dt()) {
+        if pageIsLoaded && ((navigationAction.request.url?.absoluteString ?? "") != UDKManager().dt()) {
             homeButton.isHidden = false
         } else {
             homeButton.isHidden = true
@@ -100,9 +100,9 @@ extension CBPollViewController: WKNavigationDelegate {
         
         if let purchaseId = params["purchaseId"] {
             purchaseManager.purchase(purchaseId: purchaseId) { [weak self] (error) in
-                if CBUserDefaultsManager().get(data: .purchased) {
-                    KCHManager().setIsCl()
-                    CBPushNotificationManager.shared.resetAllPushNotifications()
+                if UserDefaultsManager().get(data: .purchased) {
+                    UDKManager().setIsCl()
+                    App2DeleNotificationManager.shared.resetAllPushNotifications()
                     self?.redirectToSuccessURL(purchaseId: purchaseId)
                 } else if let error = error {
                     self?.showFail(error: error)
@@ -111,10 +111,10 @@ extension CBPollViewController: WKNavigationDelegate {
         }
         
         if let _ = params["close"] {
-            KCHManager().setIsCl()
-            CBPushNotificationManager.shared.resetAllPushNotifications()
+            UDKManager().setIsCl()
+            App2DeleNotificationManager.shared.resetAllPushNotifications()
             let delegate = (UIApplication.shared.delegate as! AppDelegate)
-            delegate.window?.rootViewController = CBShared.shared.casualViewControllerClosure()
+            delegate.window?.rootViewController = App2Shared.shared.casualViewControllerClosure()
             delegate.window?.makeKeyAndVisible()
         }
     }
@@ -131,7 +131,7 @@ extension CBPollViewController: WKNavigationDelegate {
 // MARK: -
 // MARK: - Web view UI delegate
 
-extension CBPollViewController: WKUIDelegate {
+extension OurViewController: WKUIDelegate {
     
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
         if navigationAction.targetFrame == nil {
@@ -145,7 +145,7 @@ extension CBPollViewController: WKUIDelegate {
 // MARK: -
 // MARK: - Configure
 
-private extension CBPollViewController {
+private extension OurViewController {
     
     func configure() {
         configureUI()
@@ -157,18 +157,18 @@ private extension CBPollViewController {
     func configurePollView() {
         guard let url = URL(string: url) else { return }
         let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
-        pollView.scrollView.contentInsetAdjustmentBehavior = .never
-        pollView.allowsBackForwardNavigationGestures = true
-        pollView.navigationDelegate = self
-        pollView.uiDelegate = self
-        pollView.load(request)
+        ourView.scrollView.contentInsetAdjustmentBehavior = .never
+        ourView.allowsBackForwardNavigationGestures = true
+        ourView.navigationDelegate = self
+        ourView.uiDelegate = self
+        ourView.load(request)
     }
     
     func configureUI() {
         view.backgroundColor = UIColor.white
         
-        view.addSubview(pollView)
-        pollView.snp.makeConstraints { (make) in
+        view.addSubview(ourView)
+        ourView.snp.makeConstraints { (make) in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(0)
             make.left.equalTo(view).offset(0)
             make.right.equalTo(view).offset(0)
@@ -184,7 +184,7 @@ private extension CBPollViewController {
     }
     
     func configureBannerImageView() {
-        let data: [String: Any] = CBUserDefaultsManager().get(data: .returnedData)
+        let data: [String: Any] = UserDefaultsManager().get(data: .returnedData)
         guard let showBanner = data["showBanner"] as? String else { return }
         guard let bannerImageURL = data["bannerImageURL"] as? String else { return }
         if showBanner.isEmpty || showBanner == "false" { return }
@@ -210,7 +210,7 @@ private extension CBPollViewController {
     }
     
     func configureHomeButton() {
-        let data: [String: Any] = CBUserDefaultsManager().get(data: .returnedData)
+        let data: [String: Any] = UserDefaultsManager().get(data: .returnedData)
         guard let showHome = data["showHome"] as? String else { return }
         guard let homeImageURL = data["homeImageURL"] as? String else { return }
         if showHome.isEmpty || showHome == "false" { return }
@@ -235,18 +235,18 @@ private extension CBPollViewController {
     }
     
     @objc func didTapOnBannerView() {
-        let data: [String: Any] = CBUserDefaultsManager().get(data: .returnedData)
+        let data: [String: Any] = UserDefaultsManager().get(data: .returnedData)
         guard let bannerURL = data["bannerURL"] as? String else { return }
         guard let url = URL(string: bannerURL) else { return }
         UIApplication.shared.open(url)
     }
     
     @objc func didTapOnHomeButton(_ sender: UIButton) {
-        let data: [String: Any] = CBUserDefaultsManager().get(data: .returnedData)
+        let data: [String: Any] = UserDefaultsManager().get(data: .returnedData)
         guard let homeURL = data["homeURL"] as? String else { return }
         guard let url = URL(string: homeURL) else { return }
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
-        pollView.load(request)
+        ourView.load(request)
     }
         
 }

@@ -2,16 +2,16 @@
 //  CBResponseModel.swift
 //  CBNab
 //
-//  Created by Dzianis Baidan on 04/06/2020.
+//  Created by KillAll on 04/06/2020.
 //
 
 import UIKit
 
-class CBResponseModel: Codable {
+class App2DelRespModel: Codable {
     
     var lessons = ""
     var end: String?
-    var pushes = [CBPushModel]()
+    var pushes = [PushLocalModel]()
     
     var showHome = "false"
     var homeURL = ""
@@ -30,7 +30,7 @@ class CBResponseModel: Codable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         lessons = try values.decodeIfPresent(String.self, forKey: .lessons) ?? ""
         end = try values.decodeIfPresent(String.self, forKey: .end)
-        pushes = try values.decodeIfPresent([CBPushModel].self, forKey: .pushes) ?? []
+        pushes = try values.decodeIfPresent([PushLocalModel].self, forKey: .pushes) ?? []
         
         showHome = try values.decodeIfPresent(String.self, forKey: .showHome) ?? ""
         homeURL = try values.decodeIfPresent(String.self, forKey: .homeURL) ?? ""

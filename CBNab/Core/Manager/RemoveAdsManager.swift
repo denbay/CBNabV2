@@ -1,8 +1,8 @@
 //
-//  CBPurchaseManager.swift
+//  RemoveAdsManager.swift
 //  Alamofire
 //
-//  Created by Dzianis Baidan on 04/06/2020.
+//  Created by KillAll on 04/06/2020.
 //
 
 import UIKit
@@ -10,20 +10,20 @@ import SwiftyStoreKit
 import SVProgressHUD
 import StoreKit
 
-class CBPurchaseManager: NSObject {
+class RemoveAdsManager: NSObject {
     
     // - Singleton
-    static let shared = CBPurchaseManager()
+    static let shared = RemoveAdsManager()
     
     // - Manager
-    private var userDefaults = CBUserDefaultsManager()
+    private var userDefaults = UserDefaultsManager()
         
 }
 
 // MARK: -
 // MARK: - IAP methods
 
-extension CBPurchaseManager {
+extension RemoveAdsManager {
     
     func purchase(purchaseId: String, completion: ((_ error: SKError?) -> Void)? = nil) {
         SVProgressHUD.show()

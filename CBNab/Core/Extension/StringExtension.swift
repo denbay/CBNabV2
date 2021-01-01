@@ -2,7 +2,7 @@
 //  StringExtension.swift
 //  Alamofire
 //
-//  Created by Dzianis Baidan on 22.07.2020.
+//  Created by KillAll on 22.07.2020.
 //
 
 import UIKit

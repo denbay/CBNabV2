@@ -2,17 +2,15 @@
 //  CBCrypt.swift
 //  Alamofire
 //
-//  Created by Dzianis Baidan on 19.07.2020.
+//  Created by KillAll on 19.07.2020.
 //
 
 import UIKit
 
-public class CBCrypt {
+class AlphaCrypt {
     
     private let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-    
-    public init() {}
-    
+        
     public func encrypt(string: String, key: Int) -> String {
         var encrypted = ""
         

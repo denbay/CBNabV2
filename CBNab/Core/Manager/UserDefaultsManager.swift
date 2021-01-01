@@ -2,12 +2,12 @@
 //  CBUserDefaultsManager.swift
 //  Alamofire
 //
-//  Created by Dzianis Baidan on 04/06/2020.
+//  Created by KillAll on 04/06/2020.
 //
 
 import UIKit
 
-class CBUserDefaultsManager {
+class UserDefaultsManager {
     
     enum Data: String {
         case deepLinkParams
@@ -15,6 +15,9 @@ class CBUserDefaultsManager {
         case enabledPushes
         case introIsShowed
         case isFirstLaunch
+        case sasd
+        case sdfsad
+        case lkj3
         case purchased
     }
     

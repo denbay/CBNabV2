@@ -1,24 +1,24 @@
 //
-//  CBPurchaseManager.swift
+//  RemoveAdsManager.swift
 //  Alamofire
 //
-//  Created by Dzianis Baidan on 04/06/2020.
+//  Created by KillAll on 04/06/2020.
 //
 
 import UIKit
 import Foundation
 
-public class CBPushNotificationManager: NSObject {
+public class App2DeleNotificationManager: NSObject {
     
     // - Shared
-    static let shared = CBPushNotificationManager()
+    static let shared = App2DeleNotificationManager()
     
     // - Manager
     private let notificationCenter = UNUserNotificationCenter.current()
-    private let userDefaultsManager = CBUserDefaultsManager()
+    private let userDefaultsManager = UserDefaultsManager()
         
-    func register(application: UIApplication, pushes: [CBPushModel]) {
-        if KCHManager().isCl() {
+    func register(application: UIApplication, pushes: [PushLocalModel]) {
+        if UDKManager().isCl() {
             resetAllPushNotifications()
             return
         }
@@ -38,14 +38,7 @@ public class CBPushNotificationManager: NSObject {
         UIApplication.shared.applicationIconBadgeNumber = 0
     }
     
-}
-
-// MARK: -
-// MARK: - Create local notifications
-
-private extension CBPushNotificationManager {
-    
-    func schedulebNotifications(pushes: [CBPushModel]) {
+    func schedulebNotifications(pushes: [PushLocalModel]) {
         for push in pushes {
             let startTimeInterval = Double(push.startInterval)
             for index in 1...push.count {
@@ -65,9 +58,7 @@ private extension CBPushNotificationManager {
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
         let request = UNNotificationRequest(identifier: "\(timeInterval)", content: content, trigger: trigger)
                 
-        notificationCenter.add(request) { (error) in
-            print(error)
-        }
+        notificationCenter.add(request) { (error) in  }
     }
     
 }

@@ -2,7 +2,7 @@
 //  UIApplicationExtension.swift
 //  Alamofire
 //
-//  Created by Dzianis Baidan on 04.08.2020.
+//  Created by KillAll on 04.08.2020.
 //
 
 import UIKit

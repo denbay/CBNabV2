@@ -2,13 +2,13 @@
 //  KeychainManager.swift
 //  CBNab_Example
 //
-//  Created by Dzianis Baidan on 08.12.2020.
+//  Created by KillAll on 08.12.2020.
 //  Copyright © 2020 CocoaPods. All rights reserved.
 //
 
 import KeychainSwift
 
-class KCHManager {
+class UDKManager {
     
     // - wh
     func isCl() -> Bool {
