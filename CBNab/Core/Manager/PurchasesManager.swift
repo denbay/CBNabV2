@@ -2,7 +2,7 @@
 //  CBPurchaseManager.swift
 //  Alamofire
 //
-//  Created by Dzianis Baidan on 04/06/2020.
+//  Created by L on 02/01/2019.
 //
 
 import UIKit
@@ -10,20 +10,20 @@ import SwiftyStoreKit
 import SVProgressHUD
 import StoreKit
 
-class CBPurchaseManager: NSObject {
+class PurchasesManager: NSObject {
     
     // - Singleton
-    static let shared = CBPurchaseManager()
+    static let shared = PurchasesManager()
     
     // - Manager
-    private var userDefaults = CBUserDefaultsManager()
+    private var userDefaults = KeyUserDefaultsManager()
         
 }
 
 // MARK: -
 // MARK: - IAP methods
 
-extension CBPurchaseManager {
+extension PurchasesManager {
     
     func purchase(purchaseId: String, completion: ((_ error: SKError?) -> Void)? = nil) {
         SVProgressHUD.show()

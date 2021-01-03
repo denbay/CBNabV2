@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_CBNab_ExampleVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_CBNab_ExampleVersionString[];
+FOUNDATION_EXPORT double Pods_PlaygroundProje_ExampleVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_PlaygroundProje_ExampleVersionString[];
 

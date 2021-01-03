@@ -1,19 +1,19 @@
 //
 //  CBShared.swift
-//  CBNab
+//  PlaygroundProje
 //
-//  Created by Dzianis Baidan on 04/06/2020.
+//  Created by L on 02/01/2019.
 //
 
 import UIKit
 
-class CBShared {
+class InDoGoCommon {
     
     // - Shared
-    static let shared = CBShared()
+    static let shared = InDoGoCommon()
     
     // - Data
-    var cbNab: CBNab!
+    var PlaygroundProje: InDoGo!
     var baseURL: String!
     var path: String!
     var purchaseId: String!

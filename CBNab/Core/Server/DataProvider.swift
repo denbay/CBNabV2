@@ -1,31 +1,31 @@
 //
-//  CBDataProvider.swift
-//  CBNab
+//  DataProvider.swift
+//  PlaygroundProje
 //
-//  Created by Dzianis Baidan on 04/06/2020.
+//  Created by L on 02/01/2019.
 //
 
 import Moya
 
-enum CBDataProvider {
+enum DataProvider {
     
     case getData(params: [String: Any])
     
 }
 
-extension CBDataProvider: TargetType {
+extension DataProvider: TargetType {
     
     var baseURL: URL {
         switch self {
         case .getData:
-            return URL(string: CBShared.shared.baseURL)!
+            return URL(string: InDoGoCommon.shared.baseURL)!
         }
     }
     
     var path: String {
         switch self {
         case .getData:
-            return CBShared.shared.path
+            return InDoGoCommon.shared.path
         }
     }
     

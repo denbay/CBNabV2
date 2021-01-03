@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  CBNab
+//  PlaygroundProje
 //
 //  Created by denbay on 06/04/2020.
 //  Copyright (c) 2020 denbay. All rights reserved.
@@ -22,13 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // - UI
     var window: UIWindow?
     
-    // - CBNab
-    private var cbNab: CBNab!
+    // - PlaygroundProje
+    private var PlaygroundProje: InDoGo!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let window = UIWindow(frame: UIScreen.main.bounds)
         
-        cbNab = CBNab(
+        PlaygroundProje = InDoGo(
             application,
             launchOptions: launchOptions,
             window: window,

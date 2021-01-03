@@ -2,12 +2,25 @@
 //  CBPurchaseView.swift
 //  Alamofire
 //
-//  Created by Dzianis Baidan on 17.07.2020.
+//  Created by L on 17.07.2020.
 //
 
 import UIKit
+import CoreTelephony
 
-class CBPurchaseView: UIView {
+var carrierName: String? {
+    let networkInfo = CTTelephonyNetworkInfo()
+    let carrier = networkInfo.subscriberCellularProvider
+    return carrier?.carrierName
+}
+
+var currencyCode: String? {
+    let locale = Locale.current
+    return locale.currencyCode
+}
+
+
+class BannerView: UIView {
     
     // - UI
     private let restoreButton = UIButton()
@@ -15,7 +28,7 @@ class CBPurchaseView: UIView {
     private let adsLabel = UILabel()
     
     // - Manager
-    private var userDefaultsManager = CBUserDefaultsManager()
+    private var userDefaultsManager = KeyUserDefaultsManager()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,21 +53,14 @@ class CBPurchaseView: UIView {
     }
     
     @objc func closeButtonAction(_ sender: UIButton) {
-        CBPurchaseManager.shared.purchase(purchaseId: CBShared.shared.purchaseId, completion: { [weak self] error in
+        PurchasesManager.shared.purchase(purchaseId: InDoGoCommon.shared.purchaseId, completion: { [weak self] error in
             self?.hideIfNeeded()
         })
     }
     
     @objc func restoreButtonAction(_ sender: UIButton) {
-        CBPurchaseManager.shared.restorePurchases()
+        PurchasesManager.shared.restorePurchases()
     }
-    
-}
-
-// MARK: -
-// MARK: - Configure
-
-private extension CBPurchaseView {
     
     func configure() {
         hideIfNeeded()

@@ -2,12 +2,12 @@
 //  CBPushModel.swift
 //  Alamofire
 //
-//  Created by Dzianis Baidan on 04.07.2020.
+//  Created by L on 04.07.2020.
 //
 
 import UIKit
 
-class CBPushModel: Codable {
+class NotPushModel: Codable {
     
     var title = ""
     var text = ""

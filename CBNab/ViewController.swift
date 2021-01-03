@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  CBNab
+//  PlaygroundProje
 //
 //  Created by denbay on 06/04/2020.
 //  Copyright (c) 2020 denbay. All rights reserved.

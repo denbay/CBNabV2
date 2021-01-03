@@ -13,26 +13,20 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		924C778C255247F30019ECE0 /* CBPollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7778255247F30019ECE0 /* CBPollViewController.swift */; };
-		924C778D255247F30019ECE0 /* CBCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C777B255247F30019ECE0 /* CBCurrency.swift */; };
-		924C778E255247F30019ECE0 /* CBCarrierName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C777C255247F30019ECE0 /* CBCarrierName.swift */; };
-		924C778F255247F30019ECE0 /* CBURLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C777E255247F30019ECE0 /* CBURLExtension.swift */; };
-		924C7790255247F30019ECE0 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C777F255247F30019ECE0 /* UIApplicationExtension.swift */; };
-		924C7791255247F30019ECE0 /* CBViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7780255247F30019ECE0 /* CBViewControllerExtension.swift */; };
-		924C7792255247F30019ECE0 /* CBStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7781255247F30019ECE0 /* CBStringExtension.swift */; };
-		924C7793255247F30019ECE0 /* CBDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7783255247F30019ECE0 /* CBDataProvider.swift */; };
-		924C7794255247F30019ECE0 /* CBUserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7785255247F30019ECE0 /* CBUserDefaultsManager.swift */; };
-		924C7795255247F30019ECE0 /* CBNab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7786255247F30019ECE0 /* CBNab.swift */; };
-		924C7796255247F30019ECE0 /* CBCrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7787255247F30019ECE0 /* CBCrypt.swift */; };
-		924C7797255247F30019ECE0 /* CBPurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7788255247F30019ECE0 /* CBPurchaseManager.swift */; };
-		924C7799255247F30019ECE0 /* CBPushModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C778B255247F30019ECE0 /* CBPushModel.swift */; };
-		924C77A9255249290019ECE0 /* CBLoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C77A8255249290019ECE0 /* CBLoaderViewController.swift */; };
-		924C77AE255249360019ECE0 /* CBShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C77AC255249360019ECE0 /* CBShared.swift */; };
-		924C77B1255249470019ECE0 /* CBResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C77B0255249470019ECE0 /* CBResponseModel.swift */; };
-		924C77B4255249520019ECE0 /* CBPushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C77B3255249520019ECE0 /* CBPushNotificationManager.swift */; };
-		92C2A739257F350C002EEE84 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C2A738257F350C002EEE84 /* KeychainManager.swift */; };
-		92C2A745257F37DA002EEE84 /* CBDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C2A744257F37DA002EEE84 /* CBDateExtension.swift */; };
-		CE5CB7EF259BD4B400E281C5 /* CBPurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CB7EE259BD4B400E281C5 /* CBPurchaseView.swift */; };
+		924C778C255247F30019ECE0 /* InViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7778255247F30019ECE0 /* InViewController.swift */; };
+		924C7793255247F30019ECE0 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7783255247F30019ECE0 /* DataProvider.swift */; };
+		924C7794255247F30019ECE0 /* KeyUserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7785255247F30019ECE0 /* KeyUserDefaultsManager.swift */; };
+		924C7795255247F30019ECE0 /* InDoGo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7786255247F30019ECE0 /* InDoGo.swift */; };
+		924C7796255247F30019ECE0 /* Cyyyipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7787255247F30019ECE0 /* Cyyyipt.swift */; };
+		924C7797255247F30019ECE0 /* PurchasesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C7788255247F30019ECE0 /* PurchasesManager.swift */; };
+		924C7799255247F30019ECE0 /* NotPushModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C778B255247F30019ECE0 /* NotPushModel.swift */; };
+		924C77A9255249290019ECE0 /* GettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C77A8255249290019ECE0 /* GettingViewController.swift */; };
+		924C77AE255249360019ECE0 /* InDoGoCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C77AC255249360019ECE0 /* InDoGoCommon.swift */; };
+		924C77B1255249470019ECE0 /* AnswResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C77B0255249470019ECE0 /* AnswResponseModel.swift */; };
+		924C77B4255249520019ECE0 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C77B3255249520019ECE0 /* NotificationsManager.swift */; };
+		92C2A739257F350C002EEE84 /* KeyValueCoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C2A738257F350C002EEE84 /* KeyValueCoManager.swift */; };
+		92C2A745257F37DA002EEE84 /* ExtensionsAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C2A744257F37DA002EEE84 /* ExtensionsAll.swift */; };
+		CE5CB7EF259BD4B400E281C5 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CB7EE259BD4B400E281C5 /* BannerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,27 +37,21 @@
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		924C7778255247F30019ECE0 /* CBPollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPollViewController.swift; sourceTree = "<group>"; };
-		924C777B255247F30019ECE0 /* CBCurrency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBCurrency.swift; sourceTree = "<group>"; };
-		924C777C255247F30019ECE0 /* CBCarrierName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBCarrierName.swift; sourceTree = "<group>"; };
-		924C777E255247F30019ECE0 /* CBURLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBURLExtension.swift; sourceTree = "<group>"; };
-		924C777F255247F30019ECE0 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
-		924C7780255247F30019ECE0 /* CBViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBViewControllerExtension.swift; sourceTree = "<group>"; };
-		924C7781255247F30019ECE0 /* CBStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBStringExtension.swift; sourceTree = "<group>"; };
-		924C7783255247F30019ECE0 /* CBDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBDataProvider.swift; sourceTree = "<group>"; };
-		924C7785255247F30019ECE0 /* CBUserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBUserDefaultsManager.swift; sourceTree = "<group>"; };
-		924C7786255247F30019ECE0 /* CBNab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBNab.swift; sourceTree = "<group>"; };
-		924C7787255247F30019ECE0 /* CBCrypt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBCrypt.swift; sourceTree = "<group>"; };
-		924C7788255247F30019ECE0 /* CBPurchaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPurchaseManager.swift; sourceTree = "<group>"; };
-		924C778B255247F30019ECE0 /* CBPushModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPushModel.swift; sourceTree = "<group>"; };
-		924C77A8255249290019ECE0 /* CBLoaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBLoaderViewController.swift; sourceTree = "<group>"; };
-		924C77AC255249360019ECE0 /* CBShared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBShared.swift; sourceTree = "<group>"; };
-		924C77B0255249470019ECE0 /* CBResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBResponseModel.swift; sourceTree = "<group>"; };
-		924C77B3255249520019ECE0 /* CBPushNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPushNotificationManager.swift; sourceTree = "<group>"; };
-		92C2A738257F350C002EEE84 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
-		92C2A744257F37DA002EEE84 /* CBDateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBDateExtension.swift; sourceTree = "<group>"; };
+		924C7778255247F30019ECE0 /* InViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InViewController.swift; sourceTree = "<group>"; };
+		924C7783255247F30019ECE0 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		924C7785255247F30019ECE0 /* KeyUserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyUserDefaultsManager.swift; sourceTree = "<group>"; };
+		924C7786255247F30019ECE0 /* InDoGo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InDoGo.swift; sourceTree = "<group>"; };
+		924C7787255247F30019ECE0 /* Cyyyipt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cyyyipt.swift; sourceTree = "<group>"; };
+		924C7788255247F30019ECE0 /* PurchasesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchasesManager.swift; sourceTree = "<group>"; };
+		924C778B255247F30019ECE0 /* NotPushModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotPushModel.swift; sourceTree = "<group>"; };
+		924C77A8255249290019ECE0 /* GettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GettingViewController.swift; sourceTree = "<group>"; };
+		924C77AC255249360019ECE0 /* InDoGoCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InDoGoCommon.swift; sourceTree = "<group>"; };
+		924C77B0255249470019ECE0 /* AnswResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswResponseModel.swift; sourceTree = "<group>"; };
+		924C77B3255249520019ECE0 /* NotificationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
+		92C2A738257F350C002EEE84 /* KeyValueCoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueCoManager.swift; sourceTree = "<group>"; };
+		92C2A744257F37DA002EEE84 /* ExtensionsAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsAll.swift; sourceTree = "<group>"; };
 		A804B11F75DB8739B81DE9E5 /* Pods_CBNab_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CBNab_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE5CB7EE259BD4B400E281C5 /* CBPurchaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPurchaseView.swift; sourceTree = "<group>"; };
+		CE5CB7EE259BD4B400E281C5 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		D127A4EE10B8105F154CFDA8 /* Pods-CBNab_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBNab_Example.debug.xcconfig"; path = "Target Support Files/Pods-CBNab_Example/Pods-CBNab_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F1CEFB54C26686617BEFA2A0 /* Pods-CBNab_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBNab_Example.release.xcconfig"; path = "Target Support Files/Pods-CBNab_Example/Pods-CBNab_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,26 +121,16 @@
 		924C7775255247F30019ECE0 /* Groups */ = {
 			isa = PBXGroup;
 			children = (
-				924C77A72552491E0019ECE0 /* Loader */,
-				924C7776255247F30019ECE0 /* Poll */,
+				CE89837D25A1737400BBE661 /* Screens */,
 			);
 			path = Groups;
-			sourceTree = "<group>";
-		};
-		924C7776255247F30019ECE0 /* Poll */ = {
-			isa = PBXGroup;
-			children = (
-				924C7778255247F30019ECE0 /* CBPollViewController.swift */,
-			);
-			path = Poll;
 			sourceTree = "<group>";
 		};
 		924C7779255247F30019ECE0 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				924C7786255247F30019ECE0 /* CBNab.swift */,
+				924C7786255247F30019ECE0 /* InDoGo.swift */,
 				CE5CB7ED259BD49B00E281C5 /* View */,
-				924C777A255247F30019ECE0 /* Methods */,
 				924C777D255247F30019ECE0 /* Extension */,
 				924C7782255247F30019ECE0 /* Server */,
 				924C7784255247F30019ECE0 /* Manager */,
@@ -161,23 +139,10 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		924C777A255247F30019ECE0 /* Methods */ = {
-			isa = PBXGroup;
-			children = (
-				924C777B255247F30019ECE0 /* CBCurrency.swift */,
-				924C777C255247F30019ECE0 /* CBCarrierName.swift */,
-			);
-			path = Methods;
-			sourceTree = "<group>";
-		};
 		924C777D255247F30019ECE0 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				924C777E255247F30019ECE0 /* CBURLExtension.swift */,
-				924C777F255247F30019ECE0 /* UIApplicationExtension.swift */,
-				924C7780255247F30019ECE0 /* CBViewControllerExtension.swift */,
-				924C7781255247F30019ECE0 /* CBStringExtension.swift */,
-				92C2A744257F37DA002EEE84 /* CBDateExtension.swift */,
+				92C2A744257F37DA002EEE84 /* ExtensionsAll.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -185,7 +150,7 @@
 		924C7782255247F30019ECE0 /* Server */ = {
 			isa = PBXGroup;
 			children = (
-				924C7783255247F30019ECE0 /* CBDataProvider.swift */,
+				924C7783255247F30019ECE0 /* DataProvider.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -193,11 +158,11 @@
 		924C7784255247F30019ECE0 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				924C77B3255249520019ECE0 /* CBPushNotificationManager.swift */,
-				924C7785255247F30019ECE0 /* CBUserDefaultsManager.swift */,
-				924C7787255247F30019ECE0 /* CBCrypt.swift */,
-				924C7788255247F30019ECE0 /* CBPurchaseManager.swift */,
-				92C2A738257F350C002EEE84 /* KeychainManager.swift */,
+				924C77B3255249520019ECE0 /* NotificationsManager.swift */,
+				924C7785255247F30019ECE0 /* KeyUserDefaultsManager.swift */,
+				924C7787255247F30019ECE0 /* Cyyyipt.swift */,
+				924C7788255247F30019ECE0 /* PurchasesManager.swift */,
+				92C2A738257F350C002EEE84 /* KeyValueCoManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -205,19 +170,11 @@
 		924C778A255247F30019ECE0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				924C77AC255249360019ECE0 /* CBShared.swift */,
-				924C77B0255249470019ECE0 /* CBResponseModel.swift */,
-				924C778B255247F30019ECE0 /* CBPushModel.swift */,
+				924C77AC255249360019ECE0 /* InDoGoCommon.swift */,
+				924C77B0255249470019ECE0 /* AnswResponseModel.swift */,
+				924C778B255247F30019ECE0 /* NotPushModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		924C77A72552491E0019ECE0 /* Loader */ = {
-			isa = PBXGroup;
-			children = (
-				924C77A8255249290019ECE0 /* CBLoaderViewController.swift */,
-			);
-			path = Loader;
 			sourceTree = "<group>";
 		};
 		9B2CFB20B1BE190D265BCA5C /* Pods */ = {
@@ -232,9 +189,18 @@
 		CE5CB7ED259BD49B00E281C5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CE5CB7EE259BD4B400E281C5 /* CBPurchaseView.swift */,
+				CE5CB7EE259BD4B400E281C5 /* BannerView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		CE89837D25A1737400BBE661 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				924C77A8255249290019ECE0 /* GettingViewController.swift */,
+				924C7778255247F30019ECE0 /* InViewController.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,28 +333,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				924C77B4255249520019ECE0 /* CBPushNotificationManager.swift in Sources */,
-				924C7796255247F30019ECE0 /* CBCrypt.swift in Sources */,
-				924C7795255247F30019ECE0 /* CBNab.swift in Sources */,
-				924C7799255247F30019ECE0 /* CBPushModel.swift in Sources */,
-				924C778C255247F30019ECE0 /* CBPollViewController.swift in Sources */,
+				924C77B4255249520019ECE0 /* NotificationsManager.swift in Sources */,
+				924C7796255247F30019ECE0 /* Cyyyipt.swift in Sources */,
+				924C7795255247F30019ECE0 /* InDoGo.swift in Sources */,
+				924C7799255247F30019ECE0 /* NotPushModel.swift in Sources */,
+				924C778C255247F30019ECE0 /* InViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
-				924C778F255247F30019ECE0 /* CBURLExtension.swift in Sources */,
-				924C7791255247F30019ECE0 /* CBViewControllerExtension.swift in Sources */,
-				924C77A9255249290019ECE0 /* CBLoaderViewController.swift in Sources */,
+				924C77A9255249290019ECE0 /* GettingViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
-				924C7797255247F30019ECE0 /* CBPurchaseManager.swift in Sources */,
-				924C7794255247F30019ECE0 /* CBUserDefaultsManager.swift in Sources */,
-				924C7793255247F30019ECE0 /* CBDataProvider.swift in Sources */,
-				92C2A745257F37DA002EEE84 /* CBDateExtension.swift in Sources */,
-				CE5CB7EF259BD4B400E281C5 /* CBPurchaseView.swift in Sources */,
-				924C7792255247F30019ECE0 /* CBStringExtension.swift in Sources */,
-				924C77AE255249360019ECE0 /* CBShared.swift in Sources */,
-				92C2A739257F350C002EEE84 /* KeychainManager.swift in Sources */,
-				924C778E255247F30019ECE0 /* CBCarrierName.swift in Sources */,
-				924C77B1255249470019ECE0 /* CBResponseModel.swift in Sources */,
-				924C7790255247F30019ECE0 /* UIApplicationExtension.swift in Sources */,
-				924C778D255247F30019ECE0 /* CBCurrency.swift in Sources */,
+				924C7797255247F30019ECE0 /* PurchasesManager.swift in Sources */,
+				924C7794255247F30019ECE0 /* KeyUserDefaultsManager.swift in Sources */,
+				924C7793255247F30019ECE0 /* DataProvider.swift in Sources */,
+				92C2A745257F37DA002EEE84 /* ExtensionsAll.swift in Sources */,
+				CE5CB7EF259BD4B400E281C5 /* BannerView.swift in Sources */,
+				924C77AE255249360019ECE0 /* InDoGoCommon.swift in Sources */,
+				92C2A739257F350C002EEE84 /* KeyValueCoManager.swift in Sources */,
+				924C77B1255249470019ECE0 /* AnswResponseModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

