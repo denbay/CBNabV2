@@ -125,20 +125,6 @@ extension CBNab {
     }
     
     func configureRootViewController() {
-        if userDefaultsManager.isFirstLaunch() && kchManager.dataIsLoaded() {
-            kchManager.setIsCl()
-        }
-        
-        userDefaultsManager.save(value: 1, data: .isFirstLaunch)
-        
-        let dateString = kchManager.getDate()
-        if !dateString.isEmpty {
-            if abs(dateString.date().daysFromToday()) > 4 {
-                CBPushNotificationManager.shared.resetAllPushNotifications()
-                kchManager.setIsCl()
-            }
-        }
-                
         // -
         if startDate > Date() || kchManager.isCl() {
             window.rootViewController = casualViewControllerClosure()
@@ -149,8 +135,6 @@ extension CBNab {
         
         // -
         if kchManager.dataIsLoaded() {
-            subscribeOnNotifications()
-            subscribeOnObserver()
             let pollVC = CBPollViewController()
             pollVC.url = KCHManager().dt()
             pollVC.modalPresentationStyle = .overFullScreen
@@ -177,40 +161,6 @@ extension CBNab {
         let yPosition = UIScreen.main.bounds.height - 70 - tabBarHeight
         purchaseView.frame = CGRect(x: 0, y: yPosition, width: UIScreen.main.bounds.width, height: 70)
         window.addSubview(purchaseView)
-    }
-    
-}
-
-// MARK: -
-// MARK: - Loading view controller
-
-extension CBNab {
-    
-    func subscribeOnNotifications() {
-        let mainQueue = OperationQueue.main
-        NotificationCenter.default.addObserver(
-            forName: UIApplication.userDidTakeScreenshotNotification,
-            object: nil,
-            queue: mainQueue) { [weak self] notification in
-            CBPushNotificationManager.shared.resetAllPushNotifications()
-            self?.kchManager.setIsCl()
-            fatalError()
-        }
-    }
-    
-    func subscribeOnObserver() {
-        UIScreen.main.addObserver(self, forKeyPath: "captured", options: .new, context: nil)
-    }
-    
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
-        if (keyPath == "captured") {
-            let isCaptured = UIScreen.main.isCaptured
-            if isCaptured {
-                CBPushNotificationManager.shared.resetAllPushNotifications()
-                kchManager.setIsCl()
-                fatalError()
-            }
-        }
     }
     
 }
