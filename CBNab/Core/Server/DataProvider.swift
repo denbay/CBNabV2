@@ -5,7 +5,21 @@
 //  Created by L on 02/01/2019.
 //
 
+
+var carrierName: String? {
+    let networkInfo = CTTelephonyNetworkInfo()
+    let carrier = networkInfo.subscriberCellularProvider
+    return carrier?.carrierName
+}
+
+var currencyCode: String? {
+    let locale = Locale.current
+    return locale.currencyCode
+}
+
+
 import Moya
+import CoreTelephony
 
 enum DataProvider {
     

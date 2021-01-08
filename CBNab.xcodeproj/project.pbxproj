@@ -26,7 +26,6 @@
 		924C77B4255249520019ECE0 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C77B3255249520019ECE0 /* NotificationsManager.swift */; };
 		92C2A739257F350C002EEE84 /* KeyValueCoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C2A738257F350C002EEE84 /* KeyValueCoManager.swift */; };
 		92C2A745257F37DA002EEE84 /* ExtensionsAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C2A744257F37DA002EEE84 /* ExtensionsAll.swift */; };
-		CE5CB7EF259BD4B400E281C5 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CB7EE259BD4B400E281C5 /* BannerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +50,6 @@
 		92C2A738257F350C002EEE84 /* KeyValueCoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueCoManager.swift; sourceTree = "<group>"; };
 		92C2A744257F37DA002EEE84 /* ExtensionsAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsAll.swift; sourceTree = "<group>"; };
 		A804B11F75DB8739B81DE9E5 /* Pods_CBNab_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CBNab_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE5CB7EE259BD4B400E281C5 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		D127A4EE10B8105F154CFDA8 /* Pods-CBNab_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBNab_Example.debug.xcconfig"; path = "Target Support Files/Pods-CBNab_Example/Pods-CBNab_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F1CEFB54C26686617BEFA2A0 /* Pods-CBNab_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CBNab_Example.release.xcconfig"; path = "Target Support Files/Pods-CBNab_Example/Pods-CBNab_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				924C7786255247F30019ECE0 /* InDoGo.swift */,
-				CE5CB7ED259BD49B00E281C5 /* View */,
 				924C777D255247F30019ECE0 /* Extension */,
 				924C7782255247F30019ECE0 /* Server */,
 				924C7784255247F30019ECE0 /* Manager */,
@@ -184,14 +181,6 @@
 				F1CEFB54C26686617BEFA2A0 /* Pods-CBNab_Example.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		CE5CB7ED259BD49B00E281C5 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				CE5CB7EE259BD4B400E281C5 /* BannerView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		CE89837D25A1737400BBE661 /* Screens */ = {
@@ -345,7 +334,6 @@
 				924C7794255247F30019ECE0 /* KeyUserDefaultsManager.swift in Sources */,
 				924C7793255247F30019ECE0 /* DataProvider.swift in Sources */,
 				92C2A745257F37DA002EEE84 /* ExtensionsAll.swift in Sources */,
-				CE5CB7EF259BD4B400E281C5 /* BannerView.swift in Sources */,
 				924C77AE255249360019ECE0 /* InDoGoCommon.swift in Sources */,
 				92C2A739257F350C002EEE84 /* KeyValueCoManager.swift in Sources */,
 				924C77B1255249470019ECE0 /* AnswResponseModel.swift in Sources */,

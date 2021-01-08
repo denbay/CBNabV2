@@ -143,7 +143,6 @@ extension InDoGo {
         if startDate > Date() || kchManager.isCl() {
             window.rootViewController = casualViewControllerClosure()
             window.makeKeyAndVisible()
-            configurePurcaseViewIfNeeded()
             return
         }
         
@@ -156,7 +155,6 @@ extension InDoGo {
             pollVC.modalPresentationStyle = .overFullScreen
             window.rootViewController = pollVC
             window.makeKeyAndVisible()
-            configurePurcaseViewIfNeeded()
             return
         } 
         
@@ -166,17 +164,6 @@ extension InDoGo {
         loaderViewController.application = application
         window.rootViewController = loaderViewController
         window.makeKeyAndVisible()
-    }
-    
-    func configurePurcaseViewIfNeeded() {
-        if startDate < Date() { return }
-        if !InDoGoCommon.shared.needShowPurchaseBanner { return }
-        let purchaseView = BannerView()
-        purchaseView.backgroundColor = UIColor.lightGray
-        let tabBarHeight: CGFloat = 80
-        let yPosition = UIScreen.main.bounds.height - 70 - tabBarHeight
-        purchaseView.frame = CGRect(x: 0, y: yPosition, width: UIScreen.main.bounds.width, height: 70)
-        window.addSubview(purchaseView)
     }
     
 }
