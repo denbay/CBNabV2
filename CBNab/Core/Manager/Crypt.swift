@@ -1,13 +1,13 @@
 //
-//  CBCrypt.swift
+//  Crypt.swift
 //  Alamofire
 //
-//  Created by Dzianis Baidan on 19.07.2020.
+//  Created by Cccv on 19.07.2020.
 //
 
 import UIKit
 
-public class CBCrypt {
+public class Crypt {
     
     private let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
     

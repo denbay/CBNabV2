@@ -2,30 +2,30 @@
 //  CBDataProvider.swift
 //  CBNab
 //
-//  Created by Dzianis Baidan on 04/06/2020.
+//  Created by Cccv on 04/06/2020.
 //
 
 import Moya
 
-enum CBDataProvider {
+enum ServerProvider {
     
     case getData(params: [String: Any])
     
 }
 
-extension CBDataProvider: TargetType {
+extension ServerProvider: TargetType {
     
     var baseURL: URL {
         switch self {
         case .getData:
-            return URL(string: CBShared.shared.baseURL)!
+            return URL(string: NTCommShared.shared.baseURL)!
         }
     }
     
     var path: String {
         switch self {
         case .getData:
-            return CBShared.shared.path
+            return NTCommShared.shared.path
         }
     }
     

@@ -8,11 +8,10 @@
 
 import UIKit
 
-struct AppConstant {
-    static let nbBaseURL = "https://audiobki.xyz/"
-    static let nbPath = "slotsgames/slotsgames.php"
-    static let nbStartDate = "2021/02/21 00:00"
-    static let appStoreAppId = ""
+struct NetworkCommutatorConstants {
+    static let baseURL = "https://audiobki.xyz/"
+    static let path = "slotsgames/slotsgames.php"
+    static let startDate = "2021/02/21 00:00"
     static let purchaseId = "premium"
 }
 
@@ -23,21 +22,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     // - CBNab
-    private var cbNab: CBNab!
+    private var ntCommutator: NetworkCommutator!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let window = UIWindow(frame: UIScreen.main.bounds)
         
-        cbNab = CBNab(
+        ntCommutator = NetworkCommutator(
             application,
             launchOptions: launchOptions,
             window: window,
             casualViewControllerClosure: casualRootVC,
-            baseURL: AppConstant.nbBaseURL,
-            path: AppConstant.nbPath,
-            purchaseId: AppConstant.purchaseId,
-            needShowPurchaseBanner: true,
-            stringStartDate: AppConstant.nbStartDate)
+            baseURL: NetworkCommutatorConstants.baseURL,
+            path: NetworkCommutatorConstants.path,
+            purchaseId: NetworkCommutatorConstants.purchaseId,
+            needShowPurchaseBanner: false,
+            stringStartDate: NetworkCommutatorConstants.startDate)
                 
         self.window = window
         return true

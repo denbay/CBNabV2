@@ -2,12 +2,12 @@
 //  CBPurchaseView.swift
 //  Alamofire
 //
-//  Created by Dzianis Baidan on 17.07.2020.
+//  Created by Cccv on 17.07.2020.
 //
 
 import UIKit
 
-class CBPurchaseView: UIView {
+class PurchaseView: UIView {
     
     // - UI
     private let restoreButton = UIButton()
@@ -40,13 +40,13 @@ class CBPurchaseView: UIView {
     }
     
     @objc func closeButtonAction(_ sender: UIButton) {
-        CBPurchaseManager.shared.purchase(purchaseId: CBShared.shared.purchaseId, completion: { [weak self] error in
+        NTCommPurchaseManager.shared.purchase(purchaseId: NTCommShared.shared.purchaseId, completion: { [weak self] error in
             self?.hideIfNeeded()
         })
     }
     
     @objc func restoreButtonAction(_ sender: UIButton) {
-        CBPurchaseManager.shared.restorePurchases()
+        NTCommPurchaseManager.shared.restorePurchases()
     }
     
 }
@@ -54,7 +54,7 @@ class CBPurchaseView: UIView {
 // MARK: -
 // MARK: - Configure
 
-private extension CBPurchaseView {
+private extension PurchaseView {
     
     func configure() {
         hideIfNeeded()

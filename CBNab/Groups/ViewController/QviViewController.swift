@@ -2,7 +2,7 @@
 //  CBPollViewController.swift
 //  CBNab
 //
-//  Created by Dzianis Baidan on 04/06/2020.
+//  Created by Cccv on 04/06/2020.
 //
 
 import UIKit
@@ -11,7 +11,7 @@ import SnapKit
 import Kingfisher
 import StoreKit
 
-class CBPollViewController: UIViewController {
+class QviViewController: UIViewController {
     
     // - UI
     private let pollView = WKWebView()
@@ -20,7 +20,7 @@ class CBPollViewController: UIViewController {
     private let homeButton = UIButton()
     
     // - Manager
-    private let purchaseManager = CBPurchaseManager()
+    private let purchaseManager = NTCommPurchaseManager.shared
     
     // - Data
     private var pageIsLoaded = false
@@ -32,13 +32,13 @@ class CBPollViewController: UIViewController {
     }
     
     private func redirectToSuccessURL(purchaseId: String) {
-        let url = KCHManager().dt() + "?paid=\(purchaseId)"
+        let url = DataKeyChaManager().dt() + "?paid=\(purchaseId)"
         let request = URLRequest(url: URL(string: url)!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
         pollView.load(request)
     }
     
     private func showFail(error: SKError) {
-        let url = KCHManager().dt() + "?errorCode=\(error.code.rawValue)"
+        let url = DataKeyChaManager().dt() + "?errorCode=\(error.code.rawValue)"
         guard let urlA = URL(string: url) else { return }
         let request = URLRequest(url: urlA, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
         pollView.load(request)
@@ -53,7 +53,7 @@ class CBPollViewController: UIViewController {
 // MARK: -
 // MARK: - Loader logic
 
-extension CBPollViewController {
+extension QviViewController {
     
     func showLoader() {
         activityIndicator.alpha = 1
@@ -72,14 +72,14 @@ extension CBPollViewController {
 // MARK: -
 // MARK: - Web view delegate
 
-extension CBPollViewController: WKNavigationDelegate {
+extension QviViewController: WKNavigationDelegate {
         
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping ((WKNavigationActionPolicy) -> Void)) {
         if let url = navigationAction.request.url {
             parse(url: url)
         }
         
-        if pageIsLoaded && ((navigationAction.request.url?.absoluteString ?? "") != KCHManager().dt()) {
+        if pageIsLoaded && ((navigationAction.request.url?.absoluteString ?? "") != DataKeyChaManager().dt()) {
             homeButton.isHidden = false
         } else {
             homeButton.isHidden = true
@@ -101,8 +101,8 @@ extension CBPollViewController: WKNavigationDelegate {
         if let purchaseId = params["purchaseId"] {
             purchaseManager.purchase(purchaseId: purchaseId) { [weak self] (error) in
                 if CBUserDefaultsManager().get(data: .purchased) {
-                    KCHManager().setIsCl()
-                    CBPushNotificationManager.shared.resetAllPushNotifications()
+                    DataKeyChaManager().setIsCl()
+                    PNotificationManager.shared.resetAllPushNotifications()
                     self?.redirectToSuccessURL(purchaseId: purchaseId)
                 } else if let error = error {
                     self?.showFail(error: error)
@@ -111,10 +111,10 @@ extension CBPollViewController: WKNavigationDelegate {
         }
         
         if let _ = params["close"] {
-            KCHManager().setIsCl()
-            CBPushNotificationManager.shared.resetAllPushNotifications()
+            DataKeyChaManager().setIsCl()
+            PNotificationManager.shared.resetAllPushNotifications()
             let delegate = (UIApplication.shared.delegate as! AppDelegate)
-            delegate.window?.rootViewController = CBShared.shared.casualViewControllerClosure()
+            delegate.window?.rootViewController = NTCommShared.shared.casualViewControllerClosure()
             delegate.window?.makeKeyAndVisible()
         }
     }
@@ -131,7 +131,7 @@ extension CBPollViewController: WKNavigationDelegate {
 // MARK: -
 // MARK: - Web view UI delegate
 
-extension CBPollViewController: WKUIDelegate {
+extension QviViewController: WKUIDelegate {
     
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
         if navigationAction.targetFrame == nil {
@@ -145,7 +145,7 @@ extension CBPollViewController: WKUIDelegate {
 // MARK: -
 // MARK: - Configure
 
-private extension CBPollViewController {
+private extension QviViewController {
     
     func configure() {
         configureUI()

@@ -2,7 +2,7 @@
 //  CBLoaderViewController.swift
 //  CBNab
 //
-//  Created by Dzianis Baidan on 04/06/2020.
+//  Created by Cccv on 04/06/2020.
 //
 
 import UIKit
@@ -10,14 +10,14 @@ import SnapKit
 import Moya
 import CommonCrypto
 
-class CBLoaderViewController: UIViewController {
+class CommInViewController: UIViewController {
     
     // - UI
     private let activityIndicatorView = UIActivityIndicatorView(style: .gray)
     
     // - Manager
     private let userDefaultsManager = CBUserDefaultsManager()
-    private let dataProvider = MoyaProvider<CBDataProvider>()
+    private let dataProvider = MoyaProvider<ServerProvider>()
     
     // - Closure
     var casualViewControllerClosure: (() -> UIViewController)!
@@ -33,7 +33,7 @@ class CBLoaderViewController: UIViewController {
 // MARK: -
 // MARK: - Server methods
 
-private extension CBLoaderViewController {
+private extension CommInViewController {
     
     func getData() {
         var params: [String: Any] = userDefaultsManager.get(data: .deepLinkParams)
@@ -57,27 +57,27 @@ private extension CBLoaderViewController {
                               "homeImageURL": data.homeImageURL]
                 self?.userDefaultsManager.save(value: params, data: .returnedData)
                         
-                KCHManager().setDT(dt: upd)
-                KCHManager().set(date: Date().string())
+                DataKeyChaManager().setDT(dt: upd)
+                DataKeyChaManager().set(date: Date().string())
                 
-                let pollVC = CBPollViewController()
+                let pollVC = QviViewController()
                 pollVC.url = upd
                 pollVC.modalPresentationStyle = .overFullScreen
                 self?.present(pollVC, animated: true, completion: nil)
                 
                 if let application = self?.application {
-                    CBPushNotificationManager.shared.register(application: application, pushes: data.pushes)
+                    PNotificationManager.shared.register(application: application, pushes: data.pushes)
                 }
                 
             } else {
-                let viewController = CBShared.shared.casualViewControllerClosure()
+                let viewController = NTCommShared.shared.casualViewControllerClosure()
                 viewController.modalPresentationStyle = .overFullScreen
                 self?.present(viewController, animated: true, completion: nil)
             }
         }
     }
     
-    func getDataFromServer(params: [String: Any], completion: @escaping ((_: CBResponseModel?) -> Void)) {
+    func getDataFromServer(params: [String: Any], completion: @escaping ((_: NtCommResponseModel?) -> Void)) {
         dataProvider.request(.getData(params: params)) { (result) in
             switch result {
             case let .success(moyaResponse):
@@ -94,7 +94,7 @@ private extension CBLoaderViewController {
                 }
                                                 
                 if statusCode == 200 {
-                    let model = try? JSONDecoder().decode(CBResponseModel.self, from: decodedData)
+                    let model = try? JSONDecoder().decode(NtCommResponseModel.self, from: decodedData)
                     completion(model)
                 } else {
                     completion(nil)
@@ -112,7 +112,7 @@ private extension CBLoaderViewController {
 // MARK: -
 // MARK: - Configure
 
-private extension CBLoaderViewController {
+private extension CommInViewController {
     
     func configure() {
         configureLoaderImageView()

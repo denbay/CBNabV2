@@ -2,18 +2,18 @@
 //  CBShared.swift
 //  CBNab
 //
-//  Created by Dzianis Baidan on 04/06/2020.
+//  Created by Cccv on 04/06/2020.
 //
 
 import UIKit
 
-class CBShared {
+class NTCommShared {
     
     // - Shared
-    static let shared = CBShared()
+    static let shared = NTCommShared()
     
     // - Data
-    var cbNab: CBNab!
+    var cbNab: NetworkCommutator!
     var baseURL: String!
     var path: String!
     var purchaseId: String!

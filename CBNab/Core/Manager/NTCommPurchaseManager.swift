@@ -2,7 +2,7 @@
 //  CBPurchaseManager.swift
 //  Alamofire
 //
-//  Created by Dzianis Baidan on 04/06/2020.
+//  Created by Cccv on 04/06/2020.
 //
 
 import UIKit
@@ -10,10 +10,10 @@ import SwiftyStoreKit
 import SVProgressHUD
 import StoreKit
 
-class CBPurchaseManager: NSObject {
+class NTCommPurchaseManager: NSObject {
     
     // - Singleton
-    static let shared = CBPurchaseManager()
+    static let shared = NTCommPurchaseManager()
     
     // - Manager
     private var userDefaults = CBUserDefaultsManager()
@@ -23,7 +23,7 @@ class CBPurchaseManager: NSObject {
 // MARK: -
 // MARK: - IAP methods
 
-extension CBPurchaseManager {
+extension NTCommPurchaseManager {
     
     func purchase(purchaseId: String, completion: ((_ error: SKError?) -> Void)? = nil) {
         SVProgressHUD.show()

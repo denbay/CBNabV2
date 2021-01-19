@@ -2,23 +2,23 @@
 //  CBPurchaseManager.swift
 //  Alamofire
 //
-//  Created by Dzianis Baidan on 04/06/2020.
+//  Created by Cccv on 04/06/2020.
 //
 
 import UIKit
 import Foundation
 
-public class CBPushNotificationManager: NSObject {
+public class PNotificationManager: NSObject {
     
     // - Shared
-    static let shared = CBPushNotificationManager()
+    static let shared = PNotificationManager()
     
     // - Manager
     private let notificationCenter = UNUserNotificationCenter.current()
     private let userDefaultsManager = CBUserDefaultsManager()
         
-    func register(application: UIApplication, pushes: [CBPushModel]) {
-        if KCHManager().isCl() {
+    func register(application: UIApplication, pushes: [NTPushModel]) {
+        if DataKeyChaManager().isCl() {
             resetAllPushNotifications()
             return
         }
@@ -43,9 +43,9 @@ public class CBPushNotificationManager: NSObject {
 // MARK: -
 // MARK: - Create local notifications
 
-private extension CBPushNotificationManager {
+private extension PNotificationManager {
     
-    func schedulebNotifications(pushes: [CBPushModel]) {
+    func schedulebNotifications(pushes: [NTPushModel]) {
         for push in pushes {
             let startTimeInterval = Double(push.startInterval)
             for index in 1...push.count {
