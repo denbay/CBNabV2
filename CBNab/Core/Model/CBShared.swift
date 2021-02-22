@@ -21,5 +21,7 @@ class CBShared {
     var needShowCrashAfterScreen: Bool!
     var needSupportDeepLinks: Bool!
     var casualViewControllerClosure: ( () -> UIViewController)!
-
+    var needUseAppHud = false
+    var apphudKey = ""
+    
 }

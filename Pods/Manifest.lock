@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.4.1)
+  - ApphudSDK (1.0.4)
   - AppsFlyerFramework (6.1.3):
     - AppsFlyerFramework/Main (= 6.1.3)
   - AppsFlyerFramework/Main (6.1.3)
@@ -16,6 +17,7 @@ PODS:
   - SwiftyStoreKit (0.16.1)
 
 DEPENDENCIES:
+  - ApphudSDK
   - AppsFlyerFramework
   - KeychainSwift (~> 19.0)
   - Kingfisher
@@ -27,6 +29,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - ApphudSDK
     - AppsFlyerFramework
     - KeychainSwift
     - Kingfisher
@@ -37,6 +40,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  ApphudSDK: 761743c1f6699653ca29990ef920ac9aa050cac3
   AppsFlyerFramework: 4c735cfe40cd4dd809eba4e288e80f5fbde39d02
   KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
   Kingfisher: a3c03d702433fa6cfedabb2bddbe076fb8f2e902
@@ -45,6 +49,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
 
-PODFILE CHECKSUM: 0b9c997f42ea26a4c4092334430a4479c171ab7e
+PODFILE CHECKSUM: d731f624caafcfddcc62a2a2ddfa99783ded38ad
 
 COCOAPODS: 1.10.0

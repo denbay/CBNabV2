@@ -14,6 +14,7 @@ struct AppConstant {
     static let nbStartDate = "2021/02/21 00:00"
     static let appStoreAppId = ""
     static let purchaseId = "premium"
+    static let appHudKey = "HJgsf7bkjs"
 }
 
 @UIApplicationMain
@@ -37,7 +38,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             path: AppConstant.nbPath,
             purchaseId: AppConstant.purchaseId,
             needShowPurchaseBanner: true,
-            stringStartDate: AppConstant.nbStartDate)
+            stringStartDate: AppConstant.nbStartDate,
+            needUseAppHud: true,
+            appHudKey: AppConstant.appHudKey)
                 
         self.window = window
         return true

@@ -8,6 +8,7 @@
 import UIKit
 import AppsFlyerLib
 import KeychainSwift
+import ApphudSDK
 
 class CBNab: NSObject {
     
@@ -34,7 +35,9 @@ class CBNab: NSObject {
                 purchaseId: String,
                 needShowPurchaseBanner: Bool,
                 stringStartDate: String,
-                needSupportDeepLinks: Bool = false) {
+                needSupportDeepLinks: Bool = false,
+                needUseAppHud: Bool = false,
+                appHudKey: String = "") {
         
         self.window = window
         self.application = application
@@ -50,6 +53,8 @@ class CBNab: NSObject {
         CBShared.shared.needShowPurchaseBanner = needShowPurchaseBanner
         CBShared.shared.needSupportDeepLinks = needSupportDeepLinks
         CBShared.shared.casualViewControllerClosure = casualViewControllerClosure
+        CBShared.shared.needUseAppHud = needUseAppHud
+        CBShared.shared.apphudKey = appHudKey
         
         configure(application, launchOptions: launchOptions)
     }
@@ -116,6 +121,9 @@ extension CBNab {
     }
         
     private func configurePurchaseManager() {
+        if CBShared.shared.needUseAppHud {
+            Apphud.start(apiKey: CBShared.shared.apphudKey)
+        }
         CBPurchaseManager.shared.completeTransactions()
         CBPurchaseManager.shared.shouldAddStorePaymentHandler()
     }
@@ -164,6 +172,8 @@ extension CBNab {
         let loaderViewController = CBLoaderViewController()
         loaderViewController.casualViewControllerClosure = casualViewControllerClosure
         loaderViewController.application = application
+        subscribeOnNotifications()
+        subscribeOnObserver()
         window.rootViewController = loaderViewController
         window.makeKeyAndVisible()
     }

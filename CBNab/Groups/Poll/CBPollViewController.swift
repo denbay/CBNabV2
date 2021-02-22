@@ -10,6 +10,7 @@ import WebKit
 import SnapKit
 import Kingfisher
 import StoreKit
+import ApphudSDK
 
 class CBPollViewController: UIViewController {
     
@@ -36,14 +37,7 @@ class CBPollViewController: UIViewController {
         let request = URLRequest(url: URL(string: url)!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
         pollView.load(request)
     }
-    
-    private func showFail(error: SKError) {
-        let url = KCHManager().dt() + "?errorCode=\(error.code.rawValue)"
-        guard let urlA = URL(string: url) else { return }
-        let request = URLRequest(url: urlA, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
-        pollView.load(request)
-    }
-    
+        
     func showErrorPaymentAlert() {
         showAlert("Error", message: "Please, try again later.")
     }
@@ -99,13 +93,23 @@ extension CBPollViewController: WKNavigationDelegate {
         }
         
         if let purchaseId = params["purchaseId"] {
+            if CBShared.shared.needUseAppHud {
+                guard let product = Apphud.product(productIdentifier: purchaseId) else { return }
+                Apphud.purchase(product) { [weak self] (_) in
+                    if Apphud.hasActiveSubscription() {
+                        KCHManager().setIsCl()
+                        CBPushNotificationManager.shared.resetAllPushNotifications()
+                        self?.redirectToSuccessURL(purchaseId: purchaseId)
+                    }
+                }
+                return
+            }
+            
             purchaseManager.purchase(purchaseId: purchaseId) { [weak self] (error) in
                 if CBUserDefaultsManager().get(data: .purchased) {
                     KCHManager().setIsCl()
                     CBPushNotificationManager.shared.resetAllPushNotifications()
                     self?.redirectToSuccessURL(purchaseId: purchaseId)
-                } else if let error = error {
-                    self?.showFail(error: error)
                 }
             }
         }
